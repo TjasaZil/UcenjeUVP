@@ -4,6 +4,9 @@
     {
         static void Main(string[] args)
         {
+
+            //PREDAVANJA
+
             /* Naloga 2.2.1.1. Definirajte pet spremenljivk razlicnih tipov, dolocite jim poljubne vrednosti in na zaslon izpisite njihovo ime ter vrednost. 
               Pred vsako od spremenljivk dodajte
                 se komentar z njenim opisom. */

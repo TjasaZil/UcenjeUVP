@@ -9,6 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpremenljivkeInTipi", "Spre
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Operacije", "Operacije\Operacije.csproj", "{4DFA363A-E903-443E-96E7-981AB92D4CCD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DodatneNaloge", "DodatneNaloge", "{2C6681F9-9C75-4861-807A-97DE6638D639}"
+	ProjectSection(SolutionItems) = preProject
+		ReadMe.txt = ReadMe.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IzbirniStavkiInZanke", "IzbirniStavkiInZanke\IzbirniStavkiInZanke.csproj", "{E1E24F8C-FC75-4E13-85AF-C9FBF2FD0CDA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +34,10 @@ Global
 		{4DFA363A-E903-443E-96E7-981AB92D4CCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DFA363A-E903-443E-96E7-981AB92D4CCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DFA363A-E903-443E-96E7-981AB92D4CCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1E24F8C-FC75-4E13-85AF-C9FBF2FD0CDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1E24F8C-FC75-4E13-85AF-C9FBF2FD0CDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1E24F8C-FC75-4E13-85AF-C9FBF2FD0CDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1E24F8C-FC75-4E13-85AF-C9FBF2FD0CDA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
