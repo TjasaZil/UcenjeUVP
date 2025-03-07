@@ -134,6 +134,9 @@
             drugaSpremenljivka = 'c';
             Console.WriteLine($"Spremenljivke po spremembi: {prvaSpremenljivka}, {drugaSpremenljivka}");
 
+
+            //VAJE
+
             Console.ReadKey();
         }
     }
