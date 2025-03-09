@@ -139,7 +139,7 @@
 
             /* Naloga 1.0.0.2. Deklarirajte vsaj 6 osnovnih tipov spremenljivk in jim dolocite poljubne vrednosti. Vsako od spremenljivk tudi izpisite na zaslon. */
 
-            //tim ime = vrednost;
+            //tip ime = vrednost;
 
             //logični tipi
             bool spr1 = true; //false
@@ -156,8 +156,8 @@
 
             //Decimalni tipi
             double spr5 = 5.1; //64 bitov
-            float spr6 =4.2F;
-            decimal spr7 =6.4M;
+            float spr6 = 4.2F;
+            decimal spr7 = 6.4M;
 
             //ni osnovni tip ampak sklicni tip
             string spr8 = "hello";
@@ -206,11 +206,11 @@
             char unicodeZnak = '\u0041';
             Console.WriteLine(unicodeZnak);
             string ime2 = "\u0049\u004D\u0045";
-            Console.WriteLine( ime2 );
+            Console.WriteLine(ime2);
             char znakI = '\u0049';
             char znakM = '\u004D';
             char znakE = '\u0045';
-            Console.WriteLine( znakI+znakM+znakE );
+            Console.WriteLine(znakI + znakM + znakE);
 
 
             /* Naloga 1.0.0.7. Na zaslon izpisite svoj naslov z nizi (ime in priimek, ulica in hisna stevilka, postna stevilka in posta) v treh vrsticah. */
@@ -221,7 +221,7 @@
             Console.WriteLine(ime + " " + priimek);
             Console.WriteLine(ulica);
             Console.WriteLine(posta1);
-            
+
 
             /* Naloga 1.0.0.8. Program iz prejsnje naloge popravite tako, da ukaz za izpis na zaslon uporabite le enkrat. Pomagajte si z ukazom \n, ki ga morate zapisati v samem nizu. */
 
@@ -270,11 +270,30 @@
             e) 5 + 15 / 3 ∗ 2 − 8 % 3
             */
 
+            //Console.WriteLine("rezultat a: " + (−3 % 8));
+            //Console.WriteLine("rezultat b: " + (−5 + 4 ∗ 7));
+            //Console.WriteLine("rezultat c: " + ((25 + 3) % 8));
+            //Console.WriteLine("rezultat d: " + (10 + −3 ∗ 5 / 7));
+            //Console.WriteLine("rezultat e: " + (5 + 15 / 3 ∗ 2 − 8 % 3));
 
             /* Naloga 1.0.0.13. Za dano trimestno stevilo izpisite stevilo stotic, desetic in enic. */
 
+            int x = 123;
+            int stotice = x / 100;
+            int desetice = (x % 100) / 10;
+            int enice = x % 10;
+
+            Console.WriteLine("stotice: " + stotice);
+            Console.WriteLine("desetice: " + desetice);
+            Console.WriteLine("enice: " + enice);
+
             /* Naloga 1.0.0.14. Ustvarite tri poljubne celostevilske spremenljivke in na zaslon izpisite njihovo povprecje. */
 
+            st1 = 41;
+            st2 = 121;
+            int st3 = 36;
+            double povprecje = (double)(st1 + st2 + st3) / 3;
+            Console.WriteLine("povprečna starost:" + povprecje);
 
             /* Naloga 1.0.0.15. Deklarirajte stiri celostevilske spremenljivke a, b, c in d, ter jim dolocite poljubno vrednost. Nato na zaslon izpisite rezultate naslednjih logicnih izrazov.
             a) a manjse ali enako b
@@ -296,15 +315,33 @@
             /* Naloga 1.0.0.16. Deklarirajte dve spremenljivki enakega tipa, dolocite jima poljubno vrednost in ju izpisite na zaslon. Nato spremenljivkama v programu zamenjajte vrednosti in na zaslon izpisite njune nove vrednosti. */
 
 
-            /* Naloga 1.0.0.17. Izracunajte ploscino kvadrata in kroga s stranico (oziroma polmerom) enako/-im 2.5. Konstanto π dobimo s pomocjo ukaza M ath.P I. */
+            b = 3;
+            c = 4;
+            Console.WriteLine($"To je b: {b}, to je c:{c}");
+
+            b = 4;
+            c = 3;
+            Console.WriteLine($"To je b: {b}, to je c:{c}");
+
+
+            /* Naloga 1.0.0.17. Izracunajte ploscino kvadrata in kroga s stranico (oziroma polmerom) enako/-im 2.5. Konstanto π dobimo s pomocjo ukaza Math.P I. */
+
+            double r = 2.5;
+            double plKvadrat = r * r;
+            double plKrog = Math.PI * r * r;
+
+            Console.WriteLine($"Tukaj je ploščina kvadrata: {plKvadrat} in ploščina kroga: {plKrog}");
 
 
             /* Naloga 1.0.0.18. Da dobimo najmanjso in najvecjo vrednost, ki jo lahko spremenljivka tipa short shrani, lahko uporabimo ukaz short.MinValue oziroma short.MaxValue. Na
             zaslon izpisite ti dve vrednosti. Enako naredite tudi za ushort, int, uint, long in ulong, da vidite kaksne vrednosti lahko sprejmejo. */
 
+            Console.WriteLine($"short min: {short.MinValue} \n short max: {short.MaxValue} \n ushort min: {ushort.MinValue} \n ushort max: {ushort.MaxValue} \n int min: {int.MinValue} \n int max: {int.MaxValue} \n uint min: {uint.MinValue} \n uint max: {uint.MaxValue} \n long min: {long.MinValue} \n long max: {long.MaxValue} \n ulong min: {ulong.MinValue} \n ulong max: {ulong.MaxValue} \n");
 
             /* Naloga 1.0.0.19. Deklarirajte decimalno stevilo z vsaj petimi decimalkami, med katerimi naj bo vsaj ena manjsa od 5 in vsaj ena vecja ali enaka 5. Nato preizkusite zaokrozevanje na nekaj decimalnih mest. To lahko storite z uporabo ukaza Math.Round("vrednost", stevilo decimalnih mest").*/
 
+            double doubleStevilka = 1.2354726;
+            Console.WriteLine($"Zaokroženo na 6 decimalk: {Math.Round(doubleStevilka, 6)} \n Zaokroženo na 5 decimalk: {Math.Round(doubleStevilka, 5)} \n Zaokroženo na 4 decimalke: {Math.Round(doubleStevilka, 4)} \n Zaokroženo na 3 decimalke: {Math.Round(doubleStevilka, 3)} \n Zaokroženo na 2 decimalki: {Math.Round(doubleStevilka, 2)} \n Zaokroženo na 1 decimalko: {Math.Round(doubleStevilka, 1)} \n");
 
             Console.ReadKey();
         }
