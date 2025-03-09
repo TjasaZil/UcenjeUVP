@@ -6,32 +6,124 @@
         {
 
             //PREDAVANJA
-            /* Naloga 4.1.3.1. Definirajte spremenljivko ocena in ji kot vrednost podajte stevilsko oceno, ki jo pricakujete pri tem predmetu. Nato s pomocjo stavka if - else if izpisite opisno ime vase pricakovane ocene (6 - zadostno, 7 - dobro, 8 in 9 - prav dobro, 10 - odlicno).* /
+            /* Naloga 4.1.3.1. Definirajte spremenljivko ocena in ji kot vrednost podajte stevilsko oceno, ki jo pricakujete pri tem predmetu. Nato s pomocjo stavka if - else if izpisite opisno ime vase pricakovane ocene (6 - zadostno, 7 - dobro, 8 in 9 - prav dobro, 10 - odlicno).*/
 
+            int ocena = 8;
+
+            if (ocena == 10)
+            {
+                Console.WriteLine("odlično");
+            }
+            else if (ocena == 9 || ocena == 8)
+            {
+                Console.WriteLine("prav dobro");
+            }
+            else if (ocena == 7)
+            {
+                Console.WriteLine("dobro");
+            }
+            else if (ocena == 6)
+            {
+                Console.WriteLine("zadostno");
+            }
+            else
+            {
+                Console.WriteLine("nezadostno");
+            }
 
             /* Naloga 4.1.3.2. Definirajte spremenljivko, ki kot vrednost prejme stevilko meseca (1 za
             januar, 2 za februar itd.). Pripravite izpis, ki bo povedal, ce ima mesec 31 dni ali ne. */
 
 
+            int mesec = 6;
+
+            if (mesec == 1 || mesec == 3 || mesec == 5 || mesec == 7 || mesec == 8 || mesec == 10 || mesec == 12)
+            {
+                Console.WriteLine("mesec ima 31 dni");
+            }
+            else
+            {
+                Console.WriteLine("mesec nima 31 dni");
+            }
+
             /* Naloga 4.1.3.3. V programiranju se izogibamo pisanju enake kode veckrat, kot je nujno
             potrebno. Nalogo 4.1.3.2 resite s stavkom switch, ki bo imel le dve jedri, pa vseeno 12
             stavkov case. */
-
-
             /* Naloga 4.1.3.4. Se enkrat resite Nalogo 4.1.3.2 s stavkom switch, ki bo imel le dve jedri,
             vendar tokrat z uporabo primerjalnih vzorcev v dveh stavkih case. */
 
 
-            /* Naloga 4.2.1.1. Za dano stevilo n izracunajte in izpisite vsoto vseh ˇstevil od 1 do n. */
+            switch (mesec)
+            {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    Console.WriteLine("mesec ima 31 dni");
+                    break;
+                default:
+                    Console.WriteLine("mesec nima 31 dni");
+                    break;
+            }
+
+
+            /* Naloga 4.2.1.1. Za dano stevilo n izracunajte in izpisite vsoto vseh stevil od 1 do n. */
+
+
+            int n = 10;
+            int vsota = 0;
+            for (int i = 0; i <= n; i++)
+            {
+                vsota += i;
+            }
+
+            Console.WriteLine($"vsota vseh števil do {n} je {vsota}");
 
 
             /* Naloga 4.2.1.2. Za dano stevilo n izracunajte in izpisite vsoto vseh stevil od 1 do n, ki so deljiva s 7. */
 
 
+            vsota = 0;
+            for (int i = 0; i <= n; i++)
+            {
+                if (i % 7 == 0) { vsota += i; }
+
+            }
+            Console.WriteLine($"vsota vseh števil do {n}, ki so deljiva s 7, je {vsota}");
+
+
             /*  Naloga 4.2.1.3. Za dano stevilo n zapisite njegovo vrednost v petiskem sistemu.  */
+
+            n = 643;
+            string petiskiZapis = "";
+            int ost;
+            int stevilo = n;
+
+            while (stevilo > 0)
+            {
+                ost = stevilo % 5;
+                petiskiZapis = ost.ToString() + petiskiZapis;
+                stevilo /= 5;
+            }
+
+            Console.WriteLine($"Število {n} v petiškem sistemu je: {petiskiZapis}");
 
 
             /* Naloga 4.2.1.4. Fibonaccijevo zaporedje je definirano z rekurzivno zvezo an = an−1+an−2, kjer sta a1 = 1 in a2 = 1. Izpisite prvih 20 clenov zaporedja. Poskusite nalogo resiti se z uporabo zgolj dveh spremenljivk (poleg iteratorja zanke). */
+
+            int a = 1, b = 1;
+            Console.WriteLine(a);
+            Console.WriteLine(b);
+
+            for (int i = 3; i <= 20; i++)
+            {
+                b = a + b;
+                Console.WriteLine(b);
+                a = b - a;
+            }
 
 
             /* Naloga 4.2.1.5. Uporabite dve gnezdeni zanki in ustrezne stavke if za izris diamanta, ki ima eno stranico dolzine n, s pomocjo zvezdic. Rezultat za n = 4 mora biti kot spodaj.
