@@ -3,20 +3,22 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UcenjeUVP", "UcenjeUVP\UcenjeUVP.csproj", "{E3FBC2FA-C55E-42B1-B014-449737274FD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UcenjeUVP", "UcenjeUVP\UcenjeUVP.csproj", "{E3FBC2FA-C55E-42B1-B014-449737274FD7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpremenljivkeInTipi", "SpremenljivkeInTipi\SpremenljivkeInTipi.csproj", "{4B8397BF-7D71-418C-957B-D88590D32442}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpremenljivkeInTipi", "SpremenljivkeInTipi\SpremenljivkeInTipi.csproj", "{4B8397BF-7D71-418C-957B-D88590D32442}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Operacije", "Operacije\Operacije.csproj", "{4DFA363A-E903-443E-96E7-981AB92D4CCD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Operacije", "Operacije\Operacije.csproj", "{4DFA363A-E903-443E-96E7-981AB92D4CCD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DodatneNaloge", "DodatneNaloge", "{2C6681F9-9C75-4861-807A-97DE6638D639}"
 	ProjectSection(SolutionItems) = preProject
 		ReadMe.txt = ReadMe.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IzbirniStavkiInZanke", "IzbirniStavkiInZanke\IzbirniStavkiInZanke.csproj", "{E1E24F8C-FC75-4E13-85AF-C9FBF2FD0CDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IzbirniStavkiInZanke", "IzbirniStavkiInZanke\IzbirniStavkiInZanke.csproj", "{E1E24F8C-FC75-4E13-85AF-C9FBF2FD0CDA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Izpiti", "Izpiti", "{415CB15E-56CB-454A-9FCF-7D2DB0100E65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabeleInSeznami", "TabeleInSeznami\TabeleInSeznami.csproj", "{D2CA954A-8EC9-4622-81AA-62FFF34D964C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,6 +42,10 @@ Global
 		{E1E24F8C-FC75-4E13-85AF-C9FBF2FD0CDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1E24F8C-FC75-4E13-85AF-C9FBF2FD0CDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1E24F8C-FC75-4E13-85AF-C9FBF2FD0CDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2CA954A-8EC9-4622-81AA-62FFF34D964C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2CA954A-8EC9-4622-81AA-62FFF34D964C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2CA954A-8EC9-4622-81AA-62FFF34D964C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2CA954A-8EC9-4622-81AA-62FFF34D964C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

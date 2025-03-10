@@ -315,60 +315,48 @@
                     break;
             }
 
-            /* Naloga 2.3.0.6. Deklarirajte spremenljivko ocena in ji kot vrednost podajte celostevilsko oceno, ki jo priˇcakujete pri tem predmetu. Nato s pomoˇcjo stavka switch izpiˇsite opisno ime vaˇse priˇcakovane ocene (≤ 5 - nezadostno, 6 - zadostno, 7 - dobro, 8 in 9 - prav dobro in 10 - odliˇcno). V programu uporabite primerjalni vzorec. */
+            /* Naloga 2.3.0.6. Deklarirajte spremenljivko ocena in ji kot vrednost podajte celostevilsko oceno, ki jo priˇcakujete pri tem predmetu. Nato s pomocjo stavka switch izpisite opisno ime vase pricakovane ocene (≤ 5 - nezadostno, 6 - zadostno, 7 - dobro, 8 in 9 - prav dobro in 10 - odlicno). V programu uporabite primerjalni vzorec. */
 
-            /*Naloga 3.0.0.1. Izraˇcunajte vsoto prvih desetih naravnih ˇstevil z uporabo vseh treh zank.*/
+            /* Naloga 3.0.0.1. Izracunajte vsoto prvih desetih naravnih stevil z uporabo vseh treh zank.*/
 
-            /*Naloga 3.0.0.2. Izpiˇsite vsa soda ˇstevila manjˇsa od 100 z uporabo zanke for. R*/
+            /* Naloga 3.0.0.2. Izpisite vsa soda stevila manjsa od 100 z uporabo zanke for. */
 
-            /*Naloga 3.0.0.3. Za dano pozitivno celo ˇstevilo izraˇcunajte vsoto njegovih ˇstevk z uporabo
-            zanke while. R*/
+            /* Naloga 3.0.0.3. Za dano pozitivno celo stevilo izracunajte vsoto njegovih stevk z uporabo
+            zanke while. */
 
-            /*Naloga 3.0.0.4. Generator nakljuˇcnih ˇstevil deklariramo z ukazom
+            /* Naloga 3.0.0.4. Generator nakljucnih stevil deklariramo z ukazom
             Random <imeSpremenljivke> = new Random();.
-            Nakljuˇcno vrednost lahko zgeneriramo z ukazom
+            Nakljucno vrednost lahko zgeneriramo z ukazom
             <imeSpremenljivke>.Next(<min>,<max>),
-            ki vzame nakljuˇcno vrednost med vkljuˇcno z min in izkljuˇcno z max. Z uporabo zanke
-            do-while napiˇsite kodo, ki bo nakljuˇcno generirala ˇstevila od 0 do 100 in jih izpisovala na
-            zaslon. Izpisovanje naj se zakljuˇci, ko je zgenerirana vrednost veˇcja od 90. Na koncu naj
-            se izpiˇse ˇstevilo vseh zgeneriranih nakljuˇcnih vrednosti. R*/
-            /*Naloga 3.0.0.5. Izpiˇsite vsa pozitivna cela ˇstevila manjˇsa od 200, ki so deljiva z 2 in niso
-            deljiva s 5. R*/
+            ki vzame nakljucno vrednost med vkljucno z min in izkljucno z max. Z uporabo zanke
+            do-while napisite kodo, ki bo nakljucno generirala stevila od 0 do 100 in jih izpisovala na
+            zaslon. Izpisovanje naj se zakljuci, ko je zgenerirana vrednost vecja od 90. Na koncu naj
+            se izpise stevilo vseh zgeneriranih nakljucnih vrednosti. */
 
-            /*Naloga 3.0.0.6. Deklarirajte celoˇstevilsko spremenljivko n in izraˇcunajte vsoto vseh ˇstevil
-            manjˇsih ali enakih n, ki so deljiva s 3 ali s 5. R*/
+            /* Naloga 3.0.0.5. Izpisite vsa pozitivna cela stevila manjsa od 200, ki so deljiva z 2 in niso deljiva s 5. */
 
-            /*Naloga 3.0.0.7. Napiˇsite program, ki ˇstevke danega celega ˇstevila zapiˇse v obratnem
-            vrstnem redu. R*/
+            /* Naloga 3.0.0.6. Deklarirajte celostevilsko spremenljivko n in izracunajte vsoto vseh stevil manjsih ali enakih n, ki so deljiva s 3 ali s 5. */
 
-            /*Naloga 3.0.0.8. Napiˇsite program, ki za dano celo ˇstevilo preveri ali je palindrom. Palindrom je zaporedje znakov, ki je enako, ˇce ga beremo iz leve proti desni ali iz desne proti
-            levi. R*/
+            /* Naloga 3.0.0.7. Napisite program, ki stevke danega celega stevila zapise v obratnem vrstnem redu. */
 
-            /*Naloga 3.0.0.9. Izpiˇsite vsa razliˇcna 4-mestna naravna ˇstevila sestavljena iz ˇstevk 1, 2, 3, 4
-            in 5. Izpiˇsite tudi ˇstevilo takih ˇstevil. R*/
+            /* Naloga 3.0.0.8. Napisite program, ki za dano celo stevilo preveri ali je palindrom. Palindrom je zaporedje znakov, ki je enako, ce ga beremo iz leve proti desni ali iz desne proti levi. */
 
-            /*Naloga 3.0.0.10. Za dano pozitivno celo ˇstevilo n izpiˇsite vsa Fibonaccijeva ˇstevila, ki so
-            manjˇsa od n. R*/
+            /* Naloga 3.0.0.9. Izpisite vsa razlicna 4-mestna naravna stevila sestavljena iz stevk 1, 2, 3, 4
+            in 5. Izpisite tudi stevilo takih stevil. */
 
-            /*Naloga 3.0.0.11. Izraˇcunajte vsoto vseh trimestnih ˇstevil, ki vsebujejo ˇstevko 1. Nato
-            izraˇcunajte vsoto vseh trimestnih ˇstevil, ki vsebujejo natanko eno ˇstevko 1. R*/
+            /* Naloga 3.0.0.10. Za dano pozitivno celo stevilo n izpisite vsa Fibonaccijeva stevila, ki so manjsa od n. */
 
-            /*Naloga 3.0.0.12. Za pozitivno celo ˇstevilo, ki ga vnese uporabnik, izpiˇsite vse lihe ˇstevke
-            in vsoto sodih ˇstevk, do prve pojavitve ˇstevke 0. Pri tem lahko uporabite samo if stavke
-            in nobenega else ali else if stavka. R*/
+            /* Naloga 3.0.0.11. Izracunajte vsoto vseh trimestnih stevil, ki vsebujejo stevko 1. Nato izracunajte vsoto vseh trimestnih stevil, ki vsebujejo natanko eno stevko 1. */
 
-            /*Naloga 3.0.0.13. Za dano pozitivno celo ˇstevilo n, ki ga vnese uporabnik, na zaslon
-            izpiˇsite vsa soda ˇstevila manjˇsa ali enaka n, ter ˇstevilo vseh lihih ˇstevil od 1 do vkljuˇcno z
-            n. Pri tem lahko uporabite le if stavek in nobenega else ali else if stavka. R*/
+            /* Naloga 3.0.0.12. Za pozitivno celo stevilo, ki ga vnese uporabnik, izpisite vse lihe stevke in vsoto sodih stevk, do prve pojavitve stevke 0. Pri tem lahko uporabite samo if stavke in nobenega else ali else if stavka. */
 
-            /*Naloga 3.0.0.14. V vsaki od vrstic 1 do 9 izpiˇsite vse ˇstevke z izjemo i-te ˇstevke, kjer je
-            i zaporedna ˇstevilka vrstice. V 3. vrstici bi se tako izpisalo 012456789. Uporabite lahko le
-            if stavek in nobenega else ali else if stavka. R*/
+            /* Naloga 3.0.0.13. Za dano pozitivno celo stevilo n, ki ga vnese uporabnik, na zaslon izpisite vsa soda stevila manjsa ali enaka n, ter stevilo vseh lihih stevil od 1 do vkljucno z n. Pri tem lahko uporabite le if stavek in nobenega else ali else if stavka. */
 
-            /*Naloga 3.0.0.15. Izpiˇsite vsa ˇstevila manjˇsa od 1000, za katera so vsi delitelji razliˇcni od
-            1 sodi. Uporabite lahko le if stavek in nobenega else ali else if stavka. R*/
+            /* Naloga 3.0.0.14. V vsaki od vrstic 1 do 9 izpiˇsite vse stevke z izjemo i-te stevke, kjer je i zaporedna stevilka vrstice. V 3. vrstici bi se tako izpisalo 012456789. Uporabite lahko le if stavek in nobenega else ali else if stavka. */
 
-            /*Naloga 3.1.0.1. Na zaslon z zvezdicami izriˇsite kvadrat viˇsine n, kjer ˇstevilo n vnese
+            /*Naloga 3.0.0.15. Izpisite vsa stevila manjsa od 1000, za katera so vsi delitelji razlicni od 1 sodi. Uporabite lahko le if stavek in nobenega else ali else if stavka. */
+
+            /* Naloga 3.1.0.1. Na zaslon z zvezdicami izriˇsite kvadrat viˇsine n, kjer ˇstevilo n vnese
             uporabnik.
             Primer za n = 5:
             *****
@@ -378,17 +366,17 @@
             *****
             */
 
-            /*Naloga 3.1.0.2. Na zaslon z zvezdicami izriˇsite okvir kvadrata viˇsine n, kjer ˇstevilo n
+            /* Naloga 3.1.0.2. Na zaslon z zvezdicami izrisite okvir kvadrata visine n, kjer stevilo n
             vnese uporabnik.
             Primer za n = 5:
             *****
-            * *
-            * *
-            * *
+            *   *
+            *   *
+            *   *
             *****
             */
 
-            /*Naloga 3.1.0.3. Na zaslon z zvezdicami izriˇsite velik X viˇsine n, kjer ˇstevilo n vnese
+            /* Naloga 3.1.0.3. Na zaslon z zvezdicami izrisite velik X visine n, kjer stevilo n vnese
             uporabnik. Program naj deluje vsaj za lihe vrednosti n.
             Primer za n = 5:
             8
@@ -399,7 +387,7 @@
             * *
             */
 
-            /*Naloga 3.1.0.4. Na zaslon z zvezdicami izriˇsite zgornji levi trikotnik viˇsine n, kjer ˇstevilo
+            /* Naloga 3.1.0.4. Na zaslon z zvezdicami izriˇsite zgornji levi trikotnik visine n, kjer stevilo
             n vnese uporabnik.
             Primer za n = 5:
             *****
@@ -409,7 +397,7 @@
             *
             */
 
-            /*Naloga 3.1.0.5. Na zaslon z zvezdicami izriˇsite spodnji levi trikotnik viˇsine n, kjer ˇstevilo
+            /* Naloga 3.1.0.5. Na zaslon z zvezdicami izrisite spodnji levi trikotnik visine n, kjer stevilo
             n vnese uporabnik.
             Primer za n = 5:
             *
@@ -419,8 +407,7 @@
             *****
             */
 
-            /*Naloga 3.1.0.6. Na zaslon z zvezdicami izriˇsite zgornji desni trikotnik viˇsine n, kjer ˇstevilo
-            n vnese uporabnik.
+            /* Naloga 3.1.0.6. Na zaslon z zvezdicami izrisite zgornji desni trikotnik visine n, kjer stevilo n vnese uporabnik.
             Primer za n = 5:
             *****
             ****
@@ -429,8 +416,7 @@
             *
             */
 
-            /*Naloga 3.1.0.7. Na zaslon z zvezdicami izriˇsite spodnji desni trikotnik viˇsine n, kjer
-            ˇstevilo n vnese uporabnik.
+            /* Naloga 3.1.0.7. Na zaslon z zvezdicami izrisite spodnji desni trikotnik visine n, kjer stevilo n vnese uporabnik.
             Primer za n = 5:
             9
             *
@@ -440,8 +426,7 @@
             *****
             */
 
-            /*Naloga 3.1.0.8. Na zaslon z zvezdicami izriˇsite piramido viˇsine n, kjer ˇstevilo n vnese
-            uporabnik. Program naj deluje vsaj za lihe vrednosti n.
+            /* Naloga 3.1.0.8. Na zaslon z zvezdicami izrisite piramido visine n, kjer stevilo n vnese uporabnik. Program naj deluje vsaj za lihe vrednosti n.
             Primer za n = 5:
             *
             ***
@@ -450,8 +435,7 @@
             *********
             */
 
-            /*Naloga 3.1.0.9. Na zaslon z zvezdicami izriˇsite obrnjeno piramido viˇsine n, kjer ˇstevilo
-            n vnese uporabnik. Program naj deluje vsaj za lihe vrednosti n.
+            /* Naloga 3.1.0.9. Na zaslon z zvezdicami izrisite obrnjeno piramido visine n, kjer stevilo n vnese uporabnik. Program naj deluje vsaj za lihe vrednosti n.
             Primer za n = 5:
             *********
             *******
@@ -460,8 +444,7 @@
             *
             */
 
-            /*Naloga 3.1.0.10. Na zaslon z zvezdicami izriˇsite diamant viˇsine n, kjer ˇstevilo n vnese
-            uporabnik. Program naj deluje vsaj za lihe vrednosti n.
+            /* Naloga 3.1.0.10. Na zaslon z zvezdicami izrisite diamant visine n, kjer stevilo n vnese uporabnik. Program naj deluje vsaj za lihe vrednosti n.
             Primer za n = 7:
             *
             ***
@@ -472,58 +455,56 @@
             *
             */
 
-            /*Naloga 3.1.0.11. Na zaslon z zvezdicami izriˇsite peˇsˇceno uro viˇsine n, kjer ˇstevilo n vnese
+            /* Naloga 3.1.0.11. Na zaslon z zvezdicami izrisite pesceno uro visine n, kjer stevilo n vnese
             uporabnik. Program naj deluje vsaj za lihe vrednosti n.
             Primer za n = 7:
             10
             *******
-            *****
-            ***
-            *
-            ***
-            *****
+             *****
+              ***
+               *
+              ***
+             *****
             *******
             */
 
-            /*Naloga 3.1.0.12. Na zaslon z zvezdicami izriˇsite rob diamanta viˇsine n, kjer ˇstevilo n
-            vnese uporabnik. Program naj deluje vsaj za lihe vrednosti n.
+            /* Naloga 3.1.0.12. Na zaslon z zvezdicami izriˇsite rob diamanta visine n, kjer stevilo n vnese uporabnik. Program naj deluje vsaj za lihe vrednosti n.
             Primer za n = 7:
-            *
-            * *
-            * *
-            * *
-            * *
-            * *
-            *
+               *
+              * *
+             *   *
+            *     *
+             *   *
+              * *
+               *
             */
 
-            /*Naloga 3.1.0.13. Na zaslon z zvezdicami izriˇsite metuljˇcka viˇsine n, kjer ˇstevilo n vnese
-            uporabnik. Program naj deluje vsaj za lihe vrednosti n.
+            /* Naloga 3.1.0.13. Na zaslon z zvezdicami izrisite metuljcka visine n, kjer stevilo n vnese uporabnik. Program naj deluje vsaj za lihe vrednosti n.
             Primer za n = 7:
-            * *
-            ** **
+
+            *     *
+            **   **
             *** ***
             *******
             *** ***
-            ** **
-            * *
-            */
+            **   **
+            *     *
+            
+             */
 
-            /*Naloga 3.1.0.14. Na zaslon izriˇsite vzorec ˇsahovnice sestavljen iz 2 × 2 praznih ˇcrnih
-            kvadratkov in 2 × 2 belih kvadratkov sestavljenih iz zvezdic. Velikost ˇsahovnice naj vnese
-            uporabnik.
+            /* Naloga 3.1.0.14. Na zaslon izrisite vzorec sahovnice sestavljen iz 2 × 2 praznih crnih kvadratkov in 2 × 2 belih kvadratkov sestavljenih iz zvezdic.Velikost sahovnice naj vnese uporabnik.
             Primer za ˇsahovnico velikosti 4 × 4:
-            ** **
-            ** **
-            ** **
-            ** **
-            ** **
-            ** **
-            ** **
-            ** **
+            **  **
+            **  **
+              **  **
+              **  **
+            **  **
+            **  **
+              **  **
+              **  **
             */
 
-            /*Naloga 3.2.0.1. Napiˇsite program za igranje igre ugibanja ˇstevila. Stevilo naj se zgenerira ˇsamodejno z uporabo generatorja Random (glej nalogo 3.0.0.4), kjer uporabnik sam odloˇci najveˇcje moˇzno ˇstevilo. Nato naj uporabnik vnaˇsa ˇstevila dokler ne ugane iskanega ˇstevila. Ob vsakem ugibanju mora program uporabniku povedati ali je iskano ˇstevilo veˇcje ali manjˇse od vneˇsenega ˇstevila, ˇce pa je uporabnik uganil iskano ˇstevilo, mu program izpiˇse koliko poskusov je potreboval, da je ˇstevilo uganil. 
+            /* Naloga 3.2.0.1. Napisite program za igranje igre ugibanja stevila. Stevilo naj se zgenerira samodejno z uporabo generatorja Random (glej nalogo 3.0.0.4), kjer uporabnik sam odloci najvecje mozno stevilo. Nato naj uporabnik vnasa stevila dokler ne ugane iskanega stevila. Ob vsakem ugibanju mora program uporabniku povedati ali je iskano stevilo vecje ali manjse od vnesenega stevila, ce pa je uporabnik uganil iskano stevilo, mu program izpise koliko poskusov je potreboval, da je stevilo uganil. 
             */
 
             Console.ReadKey();
