@@ -42,6 +42,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatotekeInNizi", "DatotekeI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazrediInObjekti", "RazrediInObjekti\RazrediInObjekti.csproj", "{D0847A0A-B37F-40CE-ACF8-D10866CABC45}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DedovanjeInPolimorfizmi", "DedovanjeInPolimorfizmi\DedovanjeInPolimorfizmi.csproj", "{710BFB4F-7C85-4FDF-9C43-108051CA7877}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -112,6 +114,10 @@ Global
 		{D0847A0A-B37F-40CE-ACF8-D10866CABC45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0847A0A-B37F-40CE-ACF8-D10866CABC45}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0847A0A-B37F-40CE-ACF8-D10866CABC45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{710BFB4F-7C85-4FDF-9C43-108051CA7877}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{710BFB4F-7C85-4FDF-9C43-108051CA7877}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{710BFB4F-7C85-4FDF-9C43-108051CA7877}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{710BFB4F-7C85-4FDF-9C43-108051CA7877}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
