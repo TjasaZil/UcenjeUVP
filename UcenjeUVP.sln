@@ -36,6 +36,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Izpit_2024_09_26", "Izpit_2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Izpit_2023_06_30", "Izpit_2023_06_30\Izpit_2023_06_30.csproj", "{2986C90E-ACB9-4F49-B6DA-9B9C1A6D7931}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetodeInIzjeme", "MetodeInIzjeme\MetodeInIzjeme.csproj", "{1B86578F-9139-4488-9870-42C0018B55FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -94,6 +96,10 @@ Global
 		{2986C90E-ACB9-4F49-B6DA-9B9C1A6D7931}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2986C90E-ACB9-4F49-B6DA-9B9C1A6D7931}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2986C90E-ACB9-4F49-B6DA-9B9C1A6D7931}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B86578F-9139-4488-9870-42C0018B55FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B86578F-9139-4488-9870-42C0018B55FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B86578F-9139-4488-9870-42C0018B55FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B86578F-9139-4488-9870-42C0018B55FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
