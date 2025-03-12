@@ -6,30 +6,7 @@
         {
 
             //PREDAVANJA
-            /* Naloga 4.1.3.1. Definirajte spremenljivko ocena in ji kot vrednost podajte stevilsko oceno, ki jo pricakujete pri tem predmetu. Nato s pomocjo stavka if - else if izpisite opisno ime vase pricakovane ocene (6 - zadostno, 7 - dobro, 8 in 9 - prav dobro, 10 - odlicno).*/
 
-            int ocena = 8;
-
-            if (ocena == 10)
-            {
-                Console.WriteLine("odlično");
-            }
-            else if (ocena == 9 || ocena == 8)
-            {
-                Console.WriteLine("prav dobro");
-            }
-            else if (ocena == 7)
-            {
-                Console.WriteLine("dobro");
-            }
-            else if (ocena == 6)
-            {
-                Console.WriteLine("zadostno");
-            }
-            else
-            {
-                Console.WriteLine("nezadostno");
-            }
 
             /* Naloga 4.1.3.2. Definirajte spremenljivko, ki kot vrednost prejme stevilko meseca (1 za
             januar, 2 za februar itd.). Pripravite izpis, ki bo povedal, ce ima mesec 31 dni ali ne. */
@@ -356,7 +333,7 @@
 
             /*Naloga 3.0.0.15. Izpisite vsa stevila manjsa od 1000, za katera so vsi delitelji razlicni od 1 sodi. Uporabite lahko le if stavek in nobenega else ali else if stavka. */
 
-            /* Naloga 3.1.0.1. Na zaslon z zvezdicami izriˇsite kvadrat viˇsine n, kjer ˇstevilo n vnese
+            /* Naloga 3.1.0.1. Na zaslon z zvezdicami izrisite kvadrat visine n, kjer stevilo n vnese
             uporabnik.
             Primer za n = 5:
             *****
@@ -365,6 +342,20 @@
             *****
             *****
             */
+
+
+            n = 5;
+
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+
 
             /* Naloga 3.1.0.2. Na zaslon z zvezdicami izrisite okvir kvadrata visine n, kjer stevilo n
             vnese uporabnik.
@@ -376,16 +367,31 @@
             *****
             */
 
+
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    if (j == 0 || j == n - 1 || i == 0 || i == n - 1) Console.Write("*");
+                    else Console.Write(" ");
+
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+
+
             /* Naloga 3.1.0.3. Na zaslon z zvezdicami izrisite velik X visine n, kjer stevilo n vnese
             uporabnik. Program naj deluje vsaj za lihe vrednosti n.
             Primer za n = 5:
-            8
-            * *
-            * *
-            *
-            * *
-            * *
-            */
+            
+            *   *
+             * *
+              *
+             * *
+            *   *
+            
+             */
 
             /* Naloga 3.1.0.4. Na zaslon z zvezdicami izriˇsite zgornji levi trikotnik visine n, kjer stevilo
             n vnese uporabnik.
@@ -397,6 +403,18 @@
             *
             */
 
+
+            for (int i = n; i > 0; i--)
+            {
+                for (int j = i; j > 0; j--)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+
+
             /* Naloga 3.1.0.5. Na zaslon z zvezdicami izrisite spodnji levi trikotnik visine n, kjer stevilo
             n vnese uporabnik.
             Primer za n = 5:
@@ -407,31 +425,73 @@
             *****
             */
 
+
+            for (int i = 1; i <= n; i++)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+
+
             /* Naloga 3.1.0.6. Na zaslon z zvezdicami izrisite zgornji desni trikotnik visine n, kjer stevilo n vnese uporabnik.
             Primer za n = 5:
             *****
-            ****
-            ***
-            **
-            *
+             ****
+              ***
+               **
+                *
             */
+
+            for (int i = n; i > 0; i--)
+            {
+
+                for (int j = 0; j < n - i; j++)
+                {
+                    Console.Write(" ");
+                }
+                for (int k = 0; k < i; k++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine();
 
             /* Naloga 3.1.0.7. Na zaslon z zvezdicami izrisite spodnji desni trikotnik visine n, kjer stevilo n vnese uporabnik.
             Primer za n = 5:
-            9
-            *
-            **
-            ***
-            ****
+            
+                *
+               **
+              ***
+             ****
             *****
             */
 
+            for (int i = n; i > 0; i--)
+            {
+                for (int k = i - 1; k > 0; k--)
+                {
+                    Console.Write(" ");
+                }
+                for (int j = n - i; j >= 0; j--)
+                {
+                    Console.Write("*");
+                }
+
+                Console.WriteLine();
+            }
+
             /* Naloga 3.1.0.8. Na zaslon z zvezdicami izrisite piramido visine n, kjer stevilo n vnese uporabnik. Program naj deluje vsaj za lihe vrednosti n.
             Primer za n = 5:
-            *
-            ***
-            *****
-            *******
+                *
+               ***
+              *****
+             *******
             *********
             */
 
@@ -510,5 +570,7 @@
             Console.ReadKey();
 
         }
+
+
     }
 }
