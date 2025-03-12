@@ -3,6 +3,45 @@
     internal class Program
     {
 
+        static void Main(string[] args)
+        {
+
+            //PREDAVANJA
+
+            Naloga1();
+            Naloga2();
+            Naloga3();
+            Naloga4();
+            Naloga5();
+            Naloga6();
+            Naloga7();
+            Naloga8();
+            Naloga9();
+
+
+
+            //VAJE
+
+            Naloga10();
+            Naloga11();
+            Naloga12();
+            Naloga13();
+            Naloga14();
+            Naloga15();
+            Naloga16();
+            Naloga17();
+            Naloga18();
+            Naloga19();
+            Naloga20();
+            Naloga21();
+            Naloga22();
+            Naloga23();
+            Naloga24();
+            Naloga25();
+            Naloga26();
+            Console.ReadKey();
+        }
+
         public static void Naloga1()
         {
             /* Naloga 2.2.1.1. Definirajte pet spremenljivk razlicnih tipov, dolocite jim poljubne vrednosti in na zaslon izpisite njihovo ime ter vrednost. Pred vsako od spremenljivk dodajte se komentar z njenim opisom. */
@@ -372,43 +411,5 @@
             Console.WriteLine($"Zaokroženo na 6 decimalk: {Math.Round(doubleStevilka, 6)} \n Zaokroženo na 5 decimalk: {Math.Round(doubleStevilka, 5)} \n Zaokroženo na 4 decimalke: {Math.Round(doubleStevilka, 4)} \n Zaokroženo na 3 decimalke: {Math.Round(doubleStevilka, 3)} \n Zaokroženo na 2 decimalki: {Math.Round(doubleStevilka, 2)} \n Zaokroženo na 1 decimalko: {Math.Round(doubleStevilka, 1)} \n");
         }
 
-        static void Main(string[] args)
-        {
-
-            //PREDAVANJA
-
-            Naloga1();
-            Naloga2();
-            Naloga3();
-            Naloga4();
-            Naloga5();
-            Naloga6();
-            Naloga7();
-            Naloga8();
-            Naloga9();
-
-
-
-            //VAJE
-
-            Naloga10();
-            Naloga11();
-            Naloga12();
-            Naloga13();
-            Naloga14();
-            Naloga15();
-            Naloga16();
-            Naloga17();
-            Naloga18();
-            Naloga19();
-            Naloga20();
-            Naloga21();
-            Naloga22();
-            Naloga23();
-            Naloga24();
-            Naloga25();
-            Naloga26();
-            Console.ReadKey();
-        }
     }
 }
