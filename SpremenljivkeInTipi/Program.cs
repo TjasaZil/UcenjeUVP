@@ -7,38 +7,36 @@
         {
 
             //PREDAVANJA
-
-            Naloga1();
-            Naloga2();
-            Naloga3();
-            Naloga4();
-            Naloga5();
-            Naloga6();
-            Naloga7();
-            Naloga8();
-            Naloga9();
+            //Naloga1();
+            //Naloga2();
+            //Naloga3();
+            //Naloga4();
+            //Naloga5();
+            //Naloga6();
+            //Naloga7();
+            //Naloga8();
+            //Naloga9();
 
 
 
             //VAJE
-
-            Naloga10();
-            Naloga11();
-            Naloga12();
-            Naloga13();
-            Naloga14();
-            Naloga15();
-            Naloga16();
-            Naloga17();
-            Naloga18();
-            Naloga19();
-            Naloga20();
-            Naloga21();
-            Naloga22();
-            Naloga23();
-            Naloga24();
-            Naloga25();
-            Naloga26();
+            //Naloga10();
+            //Naloga11();
+            //Naloga12();
+            //Naloga13();
+            //Naloga14();
+            //Naloga15();
+            //Naloga16();
+            //Naloga17();
+            //Naloga18();
+            //Naloga19();
+            //Naloga20();
+            //Naloga21();
+            //Naloga22();
+            //Naloga23();
+            //Naloga24();
+            //Naloga25();
+            //Naloga26();
             Console.ReadKey();
         }
 

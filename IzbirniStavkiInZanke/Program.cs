@@ -6,61 +6,61 @@
         {
 
             //PREDAVANJA
-            Naloga0();
-            Naloga1();
-            Naloga2();
-            Naloga3();
-            Naloga4();
-            Naloga5();
-            Naloga6();
-            Naloga7();
-            Naloga8();
-            Naloga9();
+            //Naloga0();
+            //Naloga1();
+            //Naloga2();
+            //Naloga3();
+            //Naloga4();
+            //Naloga5();
+            //Naloga6();
+            //Naloga7();
+            //Naloga8();
+            //Naloga9();
 
             //VAJE
-            Naloga10();
-            Naloga11();
-            Naloga12();
-            Naloga13();
-            Naloga14();
-            Naloga15();
-            Naloga16();
-            Naloga17();
-            Naloga18();
-            Naloga19();
-            Naloga20();
-            Naloga21();
-            Naloga22();
-            Naloga23();
-            Naloga24();
-            Naloga25();
-            Naloga26();
-            Naloga27();
-            Naloga28();
-            Naloga29();
-            Naloga30();
-            Naloga31();
-            Naloga32();
-            Naloga33();
-            Naloga34();
-            Naloga35();
-            Naloga36();
-            Naloga37();
-            Naloga38();
-            Naloga39();
-            Naloga40();
-            Naloga41();
+            //Naloga10();
+            //Naloga11();
+            //Naloga12();
+            //Naloga13();
+            //Naloga14();
+            //Naloga15();
+            //Naloga16();
+            //Naloga17();
+            //Naloga18();
+            //Naloga19();
+            //Naloga20();
+            //Naloga21();
+            //Naloga22();
+            //Naloga23();
+            //Naloga24();
+            //Naloga25();
+            //Naloga26();
+            //Naloga27();
+            //Naloga28();
+            //Naloga29();
+            //Naloga30();
+            //Naloga31();
+            //Naloga32();
+            //Naloga33();
+            //Naloga34();
+            //Naloga35();
+            //Naloga36();
+            //Naloga37();
+            //Naloga38();
+            //Naloga39();
+            //Naloga40();
+            //Naloga41();
             Naloga42();
             Naloga43();
             Naloga44();
             Naloga45();
-            Naloga46();
-            Naloga47();
+            //Naloga46();
+            //Naloga47();
             Naloga48();
-            Naloga49();
-            Naloga50();
-            Naloga51();
-            Naloga52();
+            //Naloga49();
+            //Naloga50();
+            //Naloga51();
+            //Naloga52();
             Naloga53();
             Naloga54();
             Naloga55();
@@ -754,36 +754,149 @@
         public static void Naloga35()
         {
             /* Naloga 3.0.0.5. Izpisite vsa pozitivna cela stevila manjsa od 200, ki so deljiva z 2 in niso deljiva s 5. */
+
+            for (int i = 0; i < 200; i++)
+            {
+                if (i % 2 == 0 && i % 5 != 0) Console.Write(" " + i);
+            }
+
+            Console.WriteLine();
         }
         public static void Naloga36()
         {
             /* Naloga 3.0.0.6. Deklarirajte celostevilsko spremenljivko n in izracunajte vsoto vseh stevil manjsih ali enakih n, ki so deljiva s 3 ali s 5. */
+
+            int x = 100;
+            int vsota = 0;
+
+            for (int i = 0; i <= x; i++)
+            {
+                if (i % 3 == 0 || i % 5 == 0)
+                {
+                    vsota += i;
+                }
+            }
+
+            Console.WriteLine($"Vsota vseh števil manjših ali enakih {x}, ki so deljiva z 3 ali 5 je: {vsota}");
         }
         public static void Naloga37()
         {
             /* Naloga 3.0.0.7. Napisite program, ki stevke danega celega stevila zapise v obratnem vrstnem redu. */
+            int n = 12345678;
+            int obrnjenaStevka = 0;
+
+            while (n != 0)
+            {
+                obrnjenaStevka += n % 10;
+                obrnjenaStevka *= 10;
+                n = n / 10;
+            }
+            obrnjenaStevka = obrnjenaStevka / 10;
+            Console.WriteLine($" Obrnjeno število je: {obrnjenaStevka}");
         }
         public static void Naloga38()
         {
             /* Naloga 3.0.0.8. Napisite program, ki za dano celo stevilo preveri ali je palindrom. Palindrom je zaporedje znakov, ki je enako, ce ga beremo iz leve proti desni ali iz desne proti levi. */
+
+            int n = 12321;
+            int obrnjenaStevka = 0;
+            int kopija = n;
+            while (n != 0)
+            {
+                obrnjenaStevka += n % 10;
+                obrnjenaStevka *= 10;
+                n = n / 10;
+            }
+            obrnjenaStevka = obrnjenaStevka / 10;
+
+            if (kopija == obrnjenaStevka) Console.WriteLine($"Število {kopija} je palindrom");
+            else Console.WriteLine($"Število {kopija} ni palindrom");
+
+
         }
         public static void Naloga39()
         {
             /* Naloga 3.0.0.9. Izpisite vsa razlicna 4-mestna naravna stevila sestavljena iz stevk 1, 2, 3, 4
             in 5. Izpisite tudi stevilo takih stevil. */
 
+            int count = 0;
+
+            // Zanka za prvo števko (tisočice)
+            for (int a = 1; a <= 5; a++)
+            {
+                for (int b = 1; b <= 5; b++)
+                {
+                    if (b == a) continue;
+                    for (int c = 1; c <= 5; c++)
+                    {
+                        if (c == a || c == b) continue;
+                        for (int d = 1; d <= 5; d++)
+                        {
+                            if (d == a || d == b || d == c) continue;
+                            int number = a * 1000 + b * 100 + c * 10 + d;
+                            Console.WriteLine(number);
+                            count++;
+                        }
+                    }
+                }
+            }
+            Console.WriteLine("Skupno število: " + count);
         }
         public static void Naloga40()
         {
             /* Naloga 3.0.0.10. Za dano pozitivno celo stevilo n izpisite vsa Fibonaccijeva stevila, ki so manjsa od n. */
+
+            int a = 1;
+            int b = 1;
+            int x = 1230;
+            int temp;
+            Console.WriteLine($"Vsa števila v Fibonacci zaporedju manjša od {x}: ");
+            Console.Write(" " + a + " " + b);
+            while (a + b < x)
+            {
+                temp = a + b;
+                a = b;
+                b = temp;
+                Console.Write(" " + temp);
+            }
         }
         public static void Naloga41()
         {
             /* Naloga 3.0.0.11. Izracunajte vsoto vseh trimestnih stevil, ki vsebujejo stevko 1. Nato izracunajte vsoto vseh trimestnih stevil, ki vsebujejo natanko eno stevko 1. */
+
+            int vsota1 = 0;
+            int vsota2 = 0;
+            for (int a = 1; a <= 9; a++)
+            {
+                for (int b = 1; b <= 9; b++)
+                {
+                    for (int c = 1; c <= 9; c++)
+                    {
+                        if (a == 1 || b == 1 || c == 1)
+                        {
+                            int number = a * 100 + b * 10 + c;
+                            vsota1 += number;
+                        }
+                        bool pogoj1 = a == 1 && b != 1 && c != 1;
+                        bool pogoj2 = a != 1 && b == 1 && c != 1;
+                        bool pogoj3 = a != 1 && b != 1 && c == 1;
+
+                        if (pogoj1 || pogoj2 || pogoj3)
+                        {
+                            int number = a * 100 + b * 10 + c;
+                            vsota2 += number;
+                        }
+                    }
+                }
+            }
+            Console.WriteLine($"Vsota vseh trimestnih stevil ki imajo vsaj eno stevko 1: {vsota1}");
+            Console.WriteLine($"Vsota vseh trimestnih stevil ki imajo samo eno stevko 1: {vsota2}");
         }
         public static void Naloga42()
         {
             /* Naloga 3.0.0.12. Za pozitivno celo stevilo, ki ga vnese uporabnik, izpisite vse lihe stevke in vsoto sodih stevk, do prve pojavitve stevke 0. Pri tem lahko uporabite samo if stavke in nobenega else ali else if stavka. */
+
+
         }
         public static void Naloga43()
         {

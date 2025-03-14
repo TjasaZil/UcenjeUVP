@@ -7,19 +7,19 @@
         static void Main(string[] args)
         {
             //PREDAVANJA
-            Naloga1();
-            Naloga2();
-            Naloga3();
-            Naloga4();
-            Naloga5();
-            Naloga6();
-            Naloga7();
-            Naloga8();
-            Naloga9();
-            Naloga10();
-            Naloga11();
-            Naloga12();
-            Naloga13();
+            //Naloga1();
+            //Naloga2();
+            //Naloga3();
+            //Naloga4();
+            //Naloga5();
+            //Naloga6();
+            //Naloga7();
+            //Naloga8();
+            //Naloga9();
+            //Naloga10();
+            //Naloga11();
+            //Naloga12();
+            //Naloga13();
             Console.ReadLine();
         }
 
