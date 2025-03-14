@@ -6,6 +6,7 @@
         {
 
             //PREDAVANJA
+            Naloga0();
             Naloga1();
             Naloga2();
             Naloga3();
@@ -73,6 +74,34 @@
 
         }
 
+        public static void Naloga0()
+        {
+            /* Naloga 4.1.3.1. Definirajte spremenljivko ocena in ji kot vrednost podajte stevilsko oceno, ki jo pricakujete pri tem predmetu. Nato s pomocjo stavka if - else if izpisite opisno ime vase pricakovane ocene (6 - zadostno, 7 - dobro, 8 in 9 - prav dobro, 10 - odlicno).*/
+
+            int ocena = 8;
+
+            if (ocena == 10)
+            {
+                Console.WriteLine("odlično");
+            }
+            else if (ocena == 9 || ocena == 8)
+            {
+                Console.WriteLine("prav dobro");
+            }
+            else if (ocena == 7)
+            {
+                Console.WriteLine("dobro");
+            }
+            else if (ocena == 6)
+            {
+                Console.WriteLine("zadostno");
+            }
+            else
+            {
+                Console.WriteLine("nezadostno");
+            }
+
+        }
         public static void Naloga1()
         {
             /* Naloga 4.1.3.2. Definirajte spremenljivko, ki kot vrednost prejme stevilko meseca (1 za
@@ -193,10 +222,41 @@
         {
 
             /* Naloga 4.3.1.1. Razmislite, kako bi primer z odgovarjanjem, dokler ne podate pravilnega odgovora, resili brez stavka break. */
+
+            // lahko rešimo z zanko while in kot pogoj damo dokler odgovor ni pravi
+
         }
         public static void Naloga9()
         {
             /* Naloga 4.3.1.2. Z uporabo stavka break izpisite zaporedje stevil od 1 do n, tako da bo v prvi vrstici samo stevilo 1, v drugi 1 in 2 in tako dalje do zadnje vrstice, kjer bodo izpisana vsa stevila. */
+
+            int n = 10;
+
+            // brez break rešitev
+            for (int i = 1; i <= n; i++)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    Console.Write(j + " ");
+
+                }
+                Console.WriteLine();
+            }
+
+            // z break rešitev
+
+            for (int i = 1; i <= n; i++)
+            {
+                for (int j = 1; j <= n; j++)
+                {
+                    Console.Write(j + " ");
+                    if (j == i)
+                    {
+                        break;
+                    }
+                }
+                Console.WriteLine();
+            }
         }
         public static void Naloga10()
         {
@@ -231,10 +291,30 @@
         public static void Naloga12()
         {
             /* Naloga 2.1.0.3. Napisite program, ki izpise najvecje stevilo izmed treh danih celih stevil. */
+
+            int x = 113;
+            int y = 110;
+            int z = 12;
+
+            if (x > y && x > z) Console.WriteLine($"Največje število je x: {x}");
+            else if (y > x && y > z) Console.WriteLine($"Največje število je y: {y}");
+            else Console.WriteLine($"Največje število je z: {z}");
+
         }
         public static void Naloga13()
         {
-            /* Naloga 2.1.0.4. Napiˇsite program, ki izpise absolutno vrednost danega stevila (brez uporabe knjiznice Math). */
+            /* Naloga 2.1.0.4. Napisite program, ki izpise absolutno vrednost danega stevila (brez uporabe knjiznice Math). */
+
+            Console.Write("Napiši neko število: ");
+            int stevilo = Convert.ToInt32(Console.ReadLine());
+
+            //če se uporabi math abs
+            Console.WriteLine($"Absolutna vrednost vpisanega števila z uporabo Math.Abs() je: {Math.Abs(stevilo)}");
+
+            //brez math abs
+
+            int absolutnoStev = stevilo > 0 ? stevilo : -stevilo;
+            Console.WriteLine($"Absolutna vrednost vpisanega števila brez uporabe Math.Abs() je: {absolutnoStev}");
 
         }
         public static void Naloga14()
@@ -281,22 +361,123 @@
         public static void Naloga16()
         {
             /* Naloga 2.1.0.7. Napisite program, ki za dana tri stevila izpise ali obstaja trikotnik s temi dolzinami stranic. Tak trikotnik obstaja, ce dolzine stranic ustrezajo tako imenovani trikotniski neenakosti, ki pravi, da je vsota dolzin poljubnih dveh stranic vedno vecja od dolzine tretje stranice. */
+
+            int x = 10;
+            int y = 11;
+            int z = 13;
+
+            if (x + y > z && x + z > y && y + z > x) Console.WriteLine($"Obstaja trikotnik s stranicami: {x}, {y} in {z}");
+            else Console.WriteLine($"trikotnik s stranicami: {x}, {y} in {z} ne obstaja");
+
         }
         public static void Naloga17()
         {
             /* Naloga 2.1.0.8. Napisite program, ki za dano crko crko na zaslon izpise ali je crka soglasnik ali samoglasnik. Pri tem upostevajte tako male, kot velike crke. */
+
+            char crka = 'A';
+            switch (crka)
+            {
+                case 'a':
+                case 'A':
+                case 'e':
+                case 'E':
+                case 'i':
+                case 'I':
+                case 'o':
+                case 'O':
+                case 'u':
+                case 'U':
+                    Console.WriteLine("Črka " + crka + " je samoglasnik");
+                    break;
+                default:
+                    Console.WriteLine("Črka " + crka + " ni samoglasnik");
+                    break;
+            }
+
         }
         public static void Naloga18()
         {
             /* Naloga 2.1.0.9. Napisite program, ki za dano celo stevilo n med 1 in 7 izpise ime n-tega dneva v tednu. */
+
+            int danVTednu = 8;
+            if (danVTednu == 1) Console.WriteLine($"{danVTednu}. dan v tednu je ponedeljek");
+            else if (danVTednu == 2) Console.WriteLine($"{danVTednu}. dan v tednu je torek");
+            else if (danVTednu == 3) Console.WriteLine($"{danVTednu}. dan v tednu je sreda");
+            else if (danVTednu == 4) Console.WriteLine($"{danVTednu}. dan v tednu je četrtek");
+            else if (danVTednu == 5) Console.WriteLine($"{danVTednu}. dan v tednu je petek");
+            else if (danVTednu == 6) Console.WriteLine($"{danVTednu}. dan v tednu je sobota");
+            else if (danVTednu == 7) Console.WriteLine($"{danVTednu}. dan v tednu je nedelja");
+            else Console.WriteLine($"{danVTednu} dan v tednu ne obstaja");
+
         }
         public static void Naloga19()
         {
             /* Naloga 2.1.0.10. Napisite program, ki za dano pozitivno celo stevilo leto izpise ali je leto prestopno ali ne. Leto je prestopno, ce je deljivo s 4, razen v primeru, ko je deljivo s 100 in ni deljivo s 400. */
+
+            int leto = 1992;
+            if (leto % 4 == 0 && leto % 100 != 0 || leto % 100 == 0 && leto % 400 == 0)
+            {
+                Console.WriteLine("Leto " + leto + " je prestopno");
+            }
+            else
+            {
+                Console.WriteLine("Leto " + leto + " ni prestopno");
+            }
+
         }
         public static void Naloga20()
         {
             /* Naloga 2.1.0.11. Napisite program, ki za dan datum sestavljen iz treh danih celostevilskih vrednosti (dan, mesec, leto) preveri ali je datum veljaven (to je, stevilka meseca in stevilo dni v mesecu je ustrezno) in, ce je, izpisete datum na zaslon in ali je leto prestopno. */
+
+            int dan = 31;
+            int mesec = 3;
+            int leto = 2024;
+
+            if (leto > 0 && mesec > 0 && dan > 0 && mesec < 13)
+            {
+                //preverimo za 29ga februarja ker je možno samo na prestopna leta
+
+                if (leto % 4 == 0 && leto % 100 != 0 || leto % 100 == 0 && leto % 400 == 0)
+                {
+                    Console.WriteLine("Leto je prestopno");
+                    if (mesec == 2)
+                    {
+                        if (dan <= 29)
+                            Console.WriteLine($"{dan}.{mesec}.{leto} datum je veljaven");
+                        else Console.WriteLine($"{dan}.{mesec}.{leto} datum ni veljaven");
+                    }
+                }
+                else
+                {
+                    if (mesec == 2)
+                    {
+                        if (dan <= 28)
+                            Console.WriteLine($"{dan}.{mesec}.{leto} datum je veljaven");
+                        else Console.WriteLine($"{dan}.{mesec}.{leto} datum ni veljaven");
+                    }
+                }
+
+                // preverimo za mesece z 31 možnimi dnevi
+                if (mesec == 1 || mesec == 3 || mesec == 5 || mesec == 7 || mesec == 8 || mesec == 10 || mesec == 12)
+                {
+                    if (dan <= 31)
+                        Console.WriteLine($"{dan}.{mesec}.{leto} datum je veljaven");
+                    else Console.WriteLine($"{dan}.{mesec}.{leto} datum ni veljaven");
+                }
+
+                //preverimo za mesece z 30 možnimi dnevi
+                if (mesec == 4 || mesec == 6 || mesec == 9 || mesec == 11 || mesec == 10 || mesec == 12)
+                {
+                    if (dan <= 30)
+                        Console.WriteLine($"{dan}.{mesec}.{leto} datum je veljaven");
+                    else Console.WriteLine($"{dan}.{mesec}.{leto} datum ni veljaven");
+                }
+            }
+            else
+            {
+                Console.WriteLine($"{dan}.{mesec}.{leto} datum ne obstaja");
+            }
+
         }
         public static void Naloga21()
         {
@@ -322,10 +503,20 @@
         {
 
             /* Naloga 2.2.0.3. S pomocjo ternarnega operatorja na zaslon izpisite absolutno vrednost danega stevila. */
+
+            int x = -10;
+            int absolutniX = x >= 0 ? x : -x;
+            Console.WriteLine("Absolutno število x: " + absolutniX);
+
         }
         public static void Naloga24()
         {
             /* Naloga 2.2.0.4. Deklarirajte poljuben znak in z uporabo ternarnega operatorja shranite v novo spremenljivko za nize vrednost “crka”, ce je znak crka angleske abecede in prazen niz, sicer. */
+
+            char znak = 'a';
+            string cr = ((znak >= 'A' && znak <= 'Z') || (znak >= 'a' && znak <= 'z')) ? znak.ToString() : " ";
+            Console.WriteLine(cr);
+
         }
         public static void Naloga25()
         {
@@ -362,10 +553,62 @@
         public static void Naloga27()
         {
             /* Naloga 2.3.0.3. Z uporabo stavka switch preverite ali je dana crka samoglasnik ali soglasnik. Nalogo resite tako, da uporabite le dva jedrna dela. */
+
+            char crka = 'x';
+            switch (crka)
+            {
+                case 'a':
+                case 'A':
+                case 'e':
+                case 'E':
+                case 'i':
+                case 'I':
+                case 'o':
+                case 'O':
+                case 'u':
+                case 'U':
+                    Console.WriteLine("Črka " + crka + " je samoglasnik");
+                    break;
+                default:
+                    Console.WriteLine("Črka " + crka + " ni samoglasnik");
+                    break;
+            }
+
         }
         public static void Naloga28()
         {
             /* Naloga 2.3.0.4. Z uporabo stavka switch za dano celo stevilo n med 1 in 7 izpisite ime n-tega dneva v tednu. */
+
+            int danVTednu = 2;
+            switch (danVTednu)
+            {
+                case 1:
+                    Console.WriteLine($"{danVTednu}. dan v tednu je ponedeljek");
+                    break;
+                case 2:
+                    Console.WriteLine($"{danVTednu}. dan v tednu je torek");
+                    break;
+                case 3:
+                    Console.WriteLine($"{danVTednu}. dan v tednu je sreda");
+                    break;
+                case 4:
+                    Console.WriteLine($"{danVTednu}. dan v tednu je četrtek");
+                    break;
+                case 5:
+                    Console.WriteLine($"{danVTednu}. dan v tednu je petek");
+                    break;
+                case 6:
+                    Console.WriteLine($"{danVTednu}. dan v tednu je sobota");
+                    break;
+                case 7:
+                    Console.WriteLine($"{danVTednu}. dan v tednu je nedelja");
+                    break;
+                default:
+                    Console.WriteLine($"{danVTednu}. dan v tednu ne obstaja");
+                    break;
+            }
+
+
         }
         public static void Naloga29()
         {
@@ -397,19 +640,89 @@
         public static void Naloga30()
         {
             /* Naloga 2.3.0.6. Deklarirajte spremenljivko ocena in ji kot vrednost podajte celostevilsko oceno, ki jo pricakujete pri tem predmetu. Nato s pomocjo stavka switch izpisite opisno ime vase pricakovane ocene (≤ 5 - nezadostno, 6 - zadostno, 7 - dobro, 8 in 9 - prav dobro in 10 - odlicno). V programu uporabite primerjalni vzorec. */
+
+            int ocena = 8;
+
+            switch (ocena)
+            {
+                case 10:
+                    Console.WriteLine("odlično");
+                    break;
+                case 9:
+                case 8:
+                    Console.WriteLine("prav dobro");
+                    break;
+                case 7:
+                    Console.WriteLine("dobro");
+                    break;
+                case 6:
+                    Console.WriteLine("zadostno");
+                    break;
+                default:
+                    Console.WriteLine("nezadostno");
+                    break;
+            }
+
         }
         public static void Naloga31()
         {
-            /* Naloga 3.0.0.1. Izracunajte vsoto prvih desetih naravnih stevil z uporabo vseh treh zank.*/
+            /* Naloga 3.0.0.1. Izracunajte vsoto prvih desetih naravnih stevil z uporabo vseh treh zank. */
+
+            int vsota = 0;
+            for (int i = 0; i <= 10; i++)
+            {
+                vsota += i;
+            }
+            Console.WriteLine("Vsota izračunana s for zanko:" + vsota);
+
+            vsota = 0;
+            int stevka = 0;
+            while (stevka <= 10)
+            {
+                vsota += stevka;
+                stevka++;
+            }
+            Console.WriteLine("Vsota izračunana s while zanko:" + vsota);
+
+            vsota = 0;
+            stevka = 0;
+            do
+            {
+                vsota += stevka;
+                stevka++;
+            } while (stevka <= 10);
+            Console.WriteLine("Vsota izračunana s do while zanko:" + vsota);
+
         }
         public static void Naloga32()
         {
             /* Naloga 3.0.0.2. Izpisite vsa soda stevila manjsa od 100 z uporabo zanke for. */
+
+            Console.Write("Sode števke manjše od 100:");
+            for (int i = 0; i < 100; i++)
+            {
+                if (i % 2 == 0) Console.Write(" " + i);
+            }
+
+            Console.WriteLine("");
+
         }
         public static void Naloga33()
         {
             /* Naloga 3.0.0.3. Za dano pozitivno celo stevilo izracunajte vsoto njegovih stevk z uporabo
             zanke while. */
+
+            int x = 100;
+            int vsota = 0;
+            int stevka = 0;
+
+            while (stevka <= x)
+            {
+                vsota += stevka;
+                stevka++;
+            }
+            Console.WriteLine($"Vsota vseh števk celega števila {x} je {vsota}");
+
         }
         public static void Naloga34()
         {
@@ -421,6 +734,22 @@
                 do-while napisite kodo, ki bo nakljucno generirala stevila od 0 do 100 in jih izpisovala na
                 zaslon. Izpisovanje naj se zakljuci, ko je zgenerirana vrednost vecja od 90. Na koncu naj
                 se izpise stevilo vseh zgeneriranih nakljucnih vrednosti. */
+
+            int stevec = 0;
+            Random nakljucnaStevilka = new Random();
+            int nakljStev;
+
+            do
+            {
+                nakljStev = nakljucnaStevilka.Next(0, 100);
+                stevec++;
+                Console.Write(" " + nakljStev);
+            } while (nakljStev < 90);
+
+            Console.WriteLine();
+            Console.WriteLine($"Število zgeneriranih naključnih vrednosti je: {stevec}");
+
+
         }
         public static void Naloga35()
         {
