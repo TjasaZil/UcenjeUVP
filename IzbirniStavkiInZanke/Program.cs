@@ -50,10 +50,10 @@
             //Naloga39();
             //Naloga40();
             //Naloga41();
-            Naloga42();
-            Naloga43();
-            Naloga44();
-            Naloga45();
+            //Naloga42();
+            //Naloga43();
+            //Naloga44();
+            //Naloga45();
             //Naloga46();
             //Naloga47();
             Naloga48();
@@ -895,20 +895,88 @@
         public static void Naloga42()
         {
             /* Naloga 3.0.0.12. Za pozitivno celo stevilo, ki ga vnese uporabnik, izpisite vse lihe stevke in vsoto sodih stevk, do prve pojavitve stevke 0. Pri tem lahko uporabite samo if stavke in nobenega else ali else if stavka. */
+            Console.Write("Vnesi pozitivno celo število:");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int vsota = 0;
 
-
+            while (n % 10 != 0)
+            {
+                int ostanek = n % 10;
+                if (ostanek % 2 == 0)
+                {
+                    vsota += ostanek;
+                    n = n / 10;
+                    continue;
+                }
+                if (ostanek % 2 == 1)
+                {
+                    Console.Write(" " + ostanek);
+                    n = n / 10;
+                    continue;
+                }
+            }
+            Console.WriteLine();
+            Console.WriteLine($"Vsoda sodih števil do števke 0 je: {vsota}");
         }
         public static void Naloga43()
         {
             /* Naloga 3.0.0.13. Za dano pozitivno celo stevilo n, ki ga vnese uporabnik, na zaslon izpisite vsa soda stevila manjsa ali enaka n, ter stevilo vseh lihih stevil od 1 do vkljucno z n. Pri tem lahko uporabite le if stavek in nobenega else ali else if stavka. */
+
+            Console.Write("Vnesi pozitivno celo število:");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int stevec = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                if (i % 2 != 0)
+                {
+                    stevec++;
+                    continue;
+                }
+                if (i % 2 == 0)
+                {
+                    Console.Write(" " + i);
+                    continue;
+                }
+            }
+            Console.WriteLine();
+            Console.WriteLine($"od 1 do {n} je {stevec} lihih stevil.");
         }
         public static void Naloga44()
         {
-            /* Naloga 3.0.0.14. V vsaki od vrstic 1 do 9 izpiˇsite vse stevke z izjemo i-te stevke, kjer je i zaporedna stevilka vrstice. V 3. vrstici bi se tako izpisalo 012456789. Uporabite lahko le if stavek in nobenega else ali else if stavka. */
+            /* Naloga 3.0.0.14. V vsaki od vrstic 1 do 9 izpisite vse stevke z izjemo i-te stevke, kjer je i zaporedna stevilka vrstice. V 3. vrstici bi se tako izpisalo 012456789. Uporabite lahko le if stavek in nobenega else ali else if stavka. */
+
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    if (i == j)
+                    {
+                        continue;
+                    }
+                    Console.Write(" " + j);
+                }
+                Console.WriteLine();
+            }
         }
         public static void Naloga45()
         {
             /*Naloga 3.0.0.15. Izpisite vsa stevila manjsa od 1000, za katera so vsi delitelji razlicni od 1 sodi. Uporabite lahko le if stavek in nobenega else ali else if stavka. */
+            bool sodo = true;
+            Console.WriteLine("Števila manjša od 1000 s samo sodimi deljitelji:");
+            for (int i = 2; i < 1000; i++)
+            {
+
+                for (int j = 2; j <= i; j++)
+                {
+                    if (i % j == 0 && j % 2 != 0)
+                    {
+                        sodo = false;
+                        break;
+                    }
+                }
+                if (sodo) Console.Write(" " + i);
+                sodo = true;
+            }
         }
         public static void Naloga46()
         {

@@ -7,59 +7,59 @@
         {
             // PREDAVANJA
 
-            Naloga1();
-            Naloga2();
-            Naloga3();
-            Naloga4();
+            //Naloga1();
+            //Naloga2();
+            //Naloga3();
+            //Naloga4();
 
 
             //VAJE
 
-            Naloga5();
-            Naloga6();
-            Naloga7();
-            Naloga8();
-            Naloga9();
-            Naloga10();
-            Naloga11();
-            Naloga12();
-            Naloga13();
-            Naloga14();
-            Naloga15();
-            Naloga16();
-            Naloga17();
-            Naloga18();
-            Naloga19();
-            Naloga20();
-            Naloga21();
-            Naloga22();
-            Naloga23();
-            Naloga24();
-            Naloga25();
-            Naloga26();
-            Naloga27();
-            Naloga28();
-            Naloga29();
-            Naloga30();
-            Naloga31();
-            Naloga32();
-            Naloga33();
-            Naloga34();
-            Naloga35();
-            Naloga36();
-            Naloga37();
-            Naloga38();
-            Naloga39();
-            Naloga40();
-            Naloga41();
-            Naloga42();
-            Naloga43();
-            Naloga44();
-            Naloga45();
-            Naloga46();
-            Naloga47();
-            Naloga48();
-            Naloga49();
+            //Naloga5();
+            //Naloga6();
+            //Naloga7();
+            //Naloga8();
+            //Naloga9();
+            //Naloga10();
+            //Naloga11();
+            //Naloga12();
+            //Naloga13();
+            //Naloga14();
+            //Naloga15();
+            //Naloga16();
+            //Naloga17();
+            //Naloga18();
+            //Naloga19();
+            //Naloga20();
+            //Naloga21();
+            //Naloga22();
+            //Naloga23();
+            //Naloga24();
+            //Naloga25();
+            //Naloga26();
+            //Naloga27();
+            //Naloga28();
+            //Naloga29();
+            //Naloga30();
+            //Naloga31();
+            //Naloga32();
+            //Naloga33();
+            //Naloga34();
+            //Naloga35();
+            //Naloga36();
+            //Naloga37();
+            //Naloga38();
+            //Naloga39();
+            //Naloga40();
+            //Naloga41();
+            //Naloga42();
+            //Naloga43();
+            //Naloga44();
+            //Naloga45();
+            //Naloga46();
+            //Naloga47();
+            //Naloga48();
+            //Naloga49();
 
             Console.ReadKey();
 
@@ -71,7 +71,7 @@
         }
         public static void Naloga2()
         {
-            /* Naloga 5.1.2.2. Ustvarite tabelo celih stevil s 40 polji in vanjo zapisite zacetnih 40 vrednosti Fibonaccijevega zaporedja. Pokusite storiti enako v veˇcji tabeli za prvih 100 vrednosti zaporedja. Izpisite jih in preverite, ce je z njimi vse v redu. Kaj je tezava? */
+            /* Naloga 5.1.2.2. Ustvarite tabelo celih stevil s 40 polji in vanjo zapisite zacetnih 40 vrednosti Fibonaccijevega zaporedja. Pokusite storiti enako v vecji tabeli za prvih 100 vrednosti zaporedja. Izpisite jih in preverite, ce je z njimi vse v redu. Kaj je tezava? */
         }
         public static void Naloga3()
         {
