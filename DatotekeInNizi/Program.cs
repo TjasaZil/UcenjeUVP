@@ -6,8 +6,8 @@
         {
             // PREDAVANJA
 
-            Naloga1();
-            //Naloga2();
+            //Naloga1();
+            //Naloga2("niziziziz", "i");
             //Naloga3();
             //Naloga4();
             //Naloga5();
@@ -41,21 +41,55 @@
         }
 
 
-        public static void Naloga2()
+        public static void Naloga2(string niz, string znak)
         {
             /* Naloga 7.1.1.2. Zapisite metodo, ki kot vhodna podatka dobi niz in znak, vrne pa stevilo pojavitev znaka v nizu.*/
+            int stevec = 0;
+            for (int i = 0; i < niz.Length; i++)
+            {
+                string temp = niz.Substring(i, 1);
+                if (temp == znak) stevec++;
+            }
+
+            Console.WriteLine($"Število znakov {znak} v nizu {niz} je: {stevec}");
         }
         public static void Naloga3()
         {
             /* Naloga 7.1.1.3. Zgornji primer s podatki o osebi smo zapisali precej naivno. V realnih aplikacijah moramo preveriti in precistiti vnose. Na primer, vrednosti za visino, tezo in starost morajo biti stevilske in iz primernih intervalov (npr. starost med 0 in (recimo) 120). Prav tako obicajno statuse izbiramo iz sifrantov, da nimamo nekaj razlicnih zapisov istega statusa ipd. Dopolnite zgornjo kodo s preverjanjem, da spremenljivke res dobijo ustrezne vrednosti in v primeru napak izpisite obvestilo, s sporocilom, kaj je slo narobe.*/
+
+            //TO DO
         }
         public static void Naloga4()
         {
             /* Naloga 7.1.1.4. Napisite metodo, ki uporabniku naroci vpis besede z dano zacetno crko in danim (slucajno izbranim) stevilom znakov med 4 in 8. Nato preverite, ce je odgovor pravilen. Nalogo lahko popestrite tako, da namesto prve crke nakljucno izberete mesto crke, ki jo mora uporabiti.*/
+            Random randomStevka = new Random();
+            int steviloZnakov = randomStevka.Next(4, 9);
+            string zacetnaCrka = Helpers.izracunajZacetnoCrko(randomStevka.Next(1, 26));
+            Console.Write($"Zapiši besedo, ki se začne na črko {zacetnaCrka} in je dolga {steviloZnakov} znakov: ");
+            string vnesenaBeseda = Console.ReadLine();
+            bool pravilenOdgovor = Helpers.preveriOdgovor(vnesenaBeseda, steviloZnakov, zacetnaCrka);
+
+            if (pravilenOdgovor) Console.WriteLine("Beseda ustreza kriterijem");
+            else Console.WriteLine("Beseda ne ustreza kriterijem");
+
         }
+
+
         public static void Naloga5()
         {
             /* Naloga 7.1.1.5. Napisite metodo, ki za dani niz vrne stevilo razlicnih znakov v njem. */
+
+            string niz = "nizizizi";
+            List<char> unikatniZnaki = new List<char>();
+
+            foreach (char znak in niz)
+            {
+                if (!unikatniZnaki.Contains(znak))
+                {
+                    unikatniZnaki.Add(znak);
+                }
+            }
+            Console.WriteLine($"Niz {niz} ima {unikatniZnaki.Count} različnih znakov");
         }
         public static void Naloga6()
         {

@@ -75,5 +75,102 @@
             return mesec;
         }
 
+        public static string izracunajZacetnoCrko(int stevilo)
+        {
+            string crka;
+            switch (stevilo)
+            {
+                case 1:
+                    crka = "A";
+                    break;
+                case 2:
+                    crka = "B";
+                    break;
+                case 3:
+                    crka = "C";
+                    break;
+                case 4:
+                    crka = "Č";
+                    break;
+                case 5:
+                    crka = "D";
+                    break;
+                case 6:
+                    crka = "E";
+                    break;
+                case 7:
+                    crka = "F";
+                    break;
+                case 8:
+                    crka = "G";
+                    break;
+                case 9:
+                    crka = "H";
+                    break;
+                case 10:
+                    crka = "I";
+                    break;
+                case 11:
+                    crka = "J";
+                    break;
+                case 12:
+                    crka = "K";
+                    break;
+                case 13:
+                    crka = "L";
+                    break;
+                case 14:
+                    crka = "M";
+                    break;
+                case 15:
+                    crka = "N";
+                    break;
+                case 16:
+                    crka = "O";
+                    break;
+                case 17:
+                    crka = "P";
+                    break;
+                case 18:
+                    crka = "R";
+                    break;
+                case 19:
+                    crka = "S";
+                    break;
+                case 20:
+                    crka = "Š";
+                    break;
+                case 21:
+                    crka = "T";
+                    break;
+                case 22:
+                    crka = "U";
+                    break;
+                case 23:
+                    crka = "V";
+                    break;
+                case 24:
+                    crka = "Z";
+                    break;
+                case 25:
+                    crka = "Ž";
+                    break;
+                default:
+                    crka = " ";
+                    break;
+            }
+            return crka;
+        }
+        public static bool preveriOdgovor(string vnesenaBeseda, int steviloZnakov, string zacetnaCrka)
+        {
+            bool pravilenOdgovor;
+            if (vnesenaBeseda.Substring(0, 1) == zacetnaCrka && vnesenaBeseda.Length == steviloZnakov)
+                pravilenOdgovor = true;
+            else pravilenOdgovor = false;
+
+            return pravilenOdgovor;
+        }
+
+
     }
 }
