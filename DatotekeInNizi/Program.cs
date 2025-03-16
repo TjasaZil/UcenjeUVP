@@ -6,7 +6,7 @@
         {
             // PREDAVANJA
 
-            //Naloga1();
+            Naloga1();
             //Naloga2();
             //Naloga3();
             //Naloga4();
@@ -30,7 +30,17 @@
         public static void Naloga1()
         {
             /* Naloga 7.1.1.1. Zgoraj smo delali z EMSO stevilko in prebrali letnico rojstva osebe.  Pridobite se ostale podatke o osebi, ki jih lahko prepoznate iz EMSO stevilke. */
+
+            string emso = "1403999505001";
+            string dan = emso.Substring(0, 2);
+            string spol = Helpers.izracunajSpol(emso.Substring(7, 3));
+            int leto = Helpers.izracunajLetnico(emso.Substring(4, 3));
+            string mesec = Helpers.izracunajMesec(emso.Substring(2, 2));
+
+            Console.WriteLine("dan: " + dan + " mesec: " + mesec + " leto " + leto + " spol: " + spol);
         }
+
+
         public static void Naloga2()
         {
             /* Naloga 7.1.1.2. Zapisite metodo, ki kot vhodna podatka dobi niz in znak, vrne pa stevilo pojavitev znaka v nizu.*/

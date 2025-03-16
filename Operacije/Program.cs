@@ -196,6 +196,7 @@
 
             Console.Write("Kakšna je vaša višina?");
             int visina = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine();
             Console.Write("Kakšen je vaš spol?");
             string spolString = Console.ReadLine();
             bool spol;
