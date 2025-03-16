@@ -11,11 +11,11 @@
             //Naloga2();
             //Naloga3();
             //Naloga4();
-
+            //Naloga5();
 
             //VAJE
 
-            //Naloga5();
+
             //Naloga6();
             //Naloga7();
             //Naloga8();
@@ -24,7 +24,7 @@
             //Naloga11();
             //Naloga12();
             //Naloga13();
-            //Naloga14();
+            Naloga14();
             //Naloga15();
             //Naloga16();
             //Naloga17();
@@ -68,55 +68,259 @@
         public static void Naloga1()
         {
             /* Naloga 5.1.2.1. Ustvarite tabelo znakov s 25 polji in vanjo zapisite vse (velike) znake slovenske abecede. */
+            char[] tabela;
+            tabela = new char[26];
+            int stevec = 0;
+            char x = 'A';
+
+            do
+            {
+                tabela[stevec] = x;
+                stevec++;
+                x++;
+            }
+            while (stevec != 26);
+            Console.WriteLine(tabela);
+
         }
         public static void Naloga2()
         {
             /* Naloga 5.1.2.2. Ustvarite tabelo celih stevil s 40 polji in vanjo zapisite zacetnih 40 vrednosti Fibonaccijevega zaporedja. Pokusite storiti enako v vecji tabeli za prvih 100 vrednosti zaporedja. Izpisite jih in preverite, ce je z njimi vse v redu. Kaj je tezava? */
+            long[] tabela;
+            tabela = new long[40];
+            long a = 1;
+            long b = 1;
+            tabela[0] = a; tabela[1] = b;
+
+            for (int i = 2; i < tabela.Length; i++)
+            {
+
+                tabela[i] = a + b;
+                a = b;
+                b = tabela[i];
+
+
+            }
+
+            Console.WriteLine("Prvih 40 števil Fibonaccijevega zaporedja: " + string.Join(", ", tabela));
+
+            long[] tabelaDolga;
+            tabelaDolga = new long[100];
+            a = 1;
+            b = 1;
+            tabelaDolga[0] = a; tabelaDolga[1] = b;
+            for (int i = 2; i < tabelaDolga.Length; i++)
+            {
+                tabelaDolga[i] = a + b;
+                a = b;
+                b = tabelaDolga[i];
+            }
+            //začne metati ven negativne številke, ker so tako dolge/velike cifre
+            Console.WriteLine("Prvih 100 števil Fibonaccijevega zaporedja: " + string.Join(", ", tabelaDolga));
         }
         public static void Naloga3()
         {
-            /* Naloga 5.1.2.3. Ustvarite dvodimenzionalno tabelo, ki bo predstavljala figure na sahovski plosci. Figuro in njeno barvo predstavite z dvema crkama, npr. beli kralj dobi oznako “bK”. Prazna polja oznaˇcite z dvema presledkoma, ce so bela, oziroma z dvema posevnicama, ce so crna. Elemente tabele tudi izpisite in pazite na razmike med polji (dodajte ustrezno stevilo presledkov). Za lepsi izpis lahko dodate se stevilke vrstic in oznake stolpcev (od A do H).*/
+            /* Naloga 5.1.2.3. Ustvarite dvodimenzionalno tabelo, ki bo predstavljala figure na sahovski plosci. Figuro in njeno barvo predstavite z dvema crkama, npr. beli kralj dobi oznako “bK”. Prazna polja oznacite z dvema presledkoma, ce so bela, oziroma z dvema posevnicama, ce so crna. Elemente tabele tudi izpisite in pazite na razmike med polji (dodajte ustrezno stevilo presledkov). Za lepsi izpis lahko dodate se stevilke vrstic in oznake stolpcev (od A do H). */
+            string[] tabelaCrk = ["   ", " A ", " B ", " C ", " D ", " E ", " F ", " G ", " H ", "   "];
+            string[] beleFigure = ["bT ", "bkn", "bt ", "bK ", "bkr", "bt ", "bkn", "bT"];
+            string[] crneFigure = ["cT ", "ckn", "ct ", "cK ", "ckr", "ct ", "ckn", "cT"];
+            string[][] sahovnica = new string[10][];
+            for (int i = 0; i < 10; i++)
+            {
+                sahovnica[i] = new string[10];
+                for (int y = 0; y < 10; y++)
+                {
+                    //tole je da izpiše črke:
+                    if (i == 0 || i == 9)
+                    {
+                        sahovnica[i][y] = tabelaCrk[y];
+
+                    }
+                    else if (y == 0 || y == 9)
+                    {
+                        sahovnica[i][y] = tabelaCrk[i];
+
+                    }
+                    //tole nariše prazna bela in črna polja
+                    else if (i > 2 && i < 7)
+                    {
+                        if (i % 2 == 0 && y % 2 != 0) sahovnica[i][y] = "// ";
+                        else if (i % 2 != 0 && y % 2 == 0) sahovnica[i][y] = "// ";
+                        else sahovnica[i][y] = "   ";
+
+                    }
+                    //napise crne in bele kmete
+                    else if (i == 2) sahovnica[i][y] = "ck ";
+                    else if (i == 7) sahovnica[i][y] = "bk ";
+                    else if (i == 1) sahovnica[i][y] = crneFigure[y - 1];
+                    else if (i == 8) sahovnica[i][y] = beleFigure[y - 1];
+
+
+                    Console.Write(sahovnica[i][y]);
+                }
+                Console.WriteLine();
+            }
+
+            Console.WriteLine();
         }
         public static void Naloga4()
         {
             /* Naloga 5.2.1.1. Zapisite kodo, ki bo v dani seznam zapisala vsa prastevila od 1 do izbranega stevila n.*/
+            int n = 100;
+            List<int> seznamPrastevil = new List<int>();
+            //int[] tabela = new int[n];
+            bool jePrastevilo = false;
+            for (int i = 2; i <= 100; i++)
+            {
+                for (int j = 1; j < i; j++)
+                {
+                    if (i % j == 0 && j != 1)
+                    {
+                        jePrastevilo = true;
+                        break;
+                    }
+                }
+                if (!jePrastevilo)
+                {
+                    seznamPrastevil.Add(i);
+                }
+                jePrastevilo = false;
+            }
+            Console.WriteLine("praštevila do " + n + ": ");
+            foreach (var prastevilo in seznamPrastevil)
+            {
+                Console.Write(" " + prastevilo);
+            }
+            Console.WriteLine();
         }
         public static void Naloga5()
         {
             /* Naloga 5.2.1.2. Seznam lahko kot tip vrednosti prejme katerikoli tip. Tudi drug seznam. Kako bi to dejstvo uporabili pri kreiranju nakupovalnega seznama, ki poleg produktov, ki jih zelite kupiti, navedete se njihovo kolicino? Na primer, 3kg makaronov, 5 zemelj in 12 jajc. */
+            List<(int kolicina, string ime)> nakupovalniSeznam = new List<(int, string)>() {
+            (3, "kg makaronov"),
+            (5, "zemelj"),
+            (12, "jajc")
+            };
+            Console.WriteLine("Nakupovalni seznam:");
+            foreach (var par in nakupovalniSeznam)
+            {
+                Console.Write(par.kolicina + " " + par.ime);
+                Console.WriteLine();
+            }
         }
         public static void Naloga6()
         {
             /* Naloga 4.0.0.1. Deklarirajte tabelo poljubnega tipa in izpisite prvi in zadnji element. */
+
+            int[] tabela = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+            Console.WriteLine("Prvi element v tabeli: " + tabela[0] + " Zadnji element v tabeli: " + tabela[tabela.Length - 1]);
         }
         public static void Naloga7()
         {
             /* Naloga 4.0.0.2. Deklarirajte tabelo poljubnega tipa in izpisite vse njene elemente. */
+            int[] tabela = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+            Console.Write("Vsi elementi tabele:");
+            foreach (var tab in tabela)
+            {
+                Console.Write(" " + tab);
+            }
+            Console.WriteLine();
         }
         public static void Naloga8()
         {
             /* Naloga 4.0.0.3. Tabelo iz prejsnje naloge izpisite se v obratnem vrstnem redu. */
+            int[] tabela = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+            Console.Write("Vsi elementi tabele v obratnem vrstnem redu:");
+
+            for (int i = 9; i >= 0; i--)
+            {
+                Console.Write(" " + tabela[i]);
+            }
+            Console.WriteLine();
+
         }
         public static void Naloga9()
         {
             /* Naloga 4.0.0.4. Deklarirajte tabelo poljubnega tipa in ji zamenjajte vrstni red elementov.*/
+
+            int[] tabela = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+            int temp;
+            int j = tabela.Length - 1;
+
+            for (int i = 0; i <= j; i++)
+            {
+
+                temp = tabela[j];
+                tabela[j] = tabela[i];
+                tabela[i] = temp;
+                j--;
+            }
+            Console.WriteLine("Obrnjena tabela: " + string.Join(", ", tabela));
         }
         public static void Naloga10()
         {
             /* Naloga 4.0.0.5. Za dano tabelo celih stevil izpisite indeks elementa, ki ga vnese uporabnik, ce le ta obstaja. Sicer izpisite, da element ne obstaja. */
+
+            Console.Write("Vnesite celo število: ");
+            int vnesenoStevilo = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine();
+            int[] tabela = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+            int index;
+            bool najdenIndex = false;
+            for (int i = 0; i <= tabela.Length - 1; i++)
+            {
+                if (tabela[i] == vnesenoStevilo)
+                {
+                    Console.Write("Vneseno stevilo je v tabeli na mestu z indeksom: " + i);
+                    najdenIndex = true;
+                    break;
+                }
+            }
+            if (!najdenIndex)
+            {
+                Console.WriteLine("Element ne obstaja");
+            }
+            najdenIndex = false;
         }
 
         public static void Naloga11()
         {
             /* Naloga 4.0.0.6. Deklarirajte poljubno celostevilsko tabelo in izpisite vsoto vseh lihih elementov v tabeli. */
+
+            int[] tabela = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+            int vsota = 0;
+
+            foreach (int i in tabela)
+            {
+                if (i % 2 != 0) vsota += i;
+            }
+            Console.WriteLine($"Vsota vseh lihih elementov v tabeli je: {vsota}");
         }
         public static void Naloga12()
         {
             /* Naloga 4.0.0.7. Deklarirajte poljubno celostevilsko tabelo. Nato vsem sodim elementom zamenjajte vrednost na 0. */
+
+            int[] tabela = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+
+            for (int i = 0; i < tabela.Length; i++)
+            {
+                if (tabela[i] % 2 == 0) tabela[i] = 0;
+            }
+            Console.WriteLine("tabela z zamenjanimi sodimi števili: " + string.Join(", ", tabela));
         }
         public static void Naloga13()
         {
             /* Naloga 4.0.0.8. Deklarirajte poljubno celoˇstevilsko tabelo in iz nje izpisite vse elemente, ki so vecji od stevila, ki ga vnese uporabnik. */
+            Console.Write("Vpišite pozitivno naravno celo število: ");
+            int x = Convert.ToInt32(Console.ReadLine());
+            int[] tabela = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+            Console.WriteLine();
+            Console.Write($"Števila v tabeli, večja od vpisanega števila {x}: ");
+            foreach (int i in tabela)
+            {
+                if (i > x) Console.Write(" " + i);
+            }
+            Console.WriteLine();
         }
         public static void Naloga14()
         {
@@ -237,11 +441,11 @@
         }
         public static void Naloga42()
         {
-            /* Naloga 5.0.0.10. Deklarirajte poljuben seznam celih ˇstevil in ga razvrstite tako, da bodo vsa liha stevila na zacetku seznama in vsa soda stevila na koncu seznama. */
+            /* Naloga 5.0.0.10. Deklarirajte poljuben seznam celih stevil in ga razvrstite tako, da bodo vsa liha stevila na zacetku seznama in vsa soda stevila na koncu seznama. */
         }
         public static void Naloga43()
         {
-            /* Naloga 5.0.0.11. Deklarirajte poljuben celoˇstevilski seznam in v njem vse sode elemente pomnozite z 2. */
+            /* Naloga 5.0.0.11. Deklarirajte poljuben celostevilski seznam in v njem vse sode elemente pomnozite z 2. */
         }
         public static void Naloga44()
         {

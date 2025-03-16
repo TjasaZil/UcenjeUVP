@@ -2,6 +2,30 @@
 {
     internal class Program
     {
+        static void Main(string[] args)
+        {
+            // PREDAVANJA
+
+            //Naloga1();
+            //Naloga2();
+            //Naloga3();
+            //Naloga4();
+            //Naloga5();
+            //Naloga6();
+            //Naloga7();
+            //Naloga8();
+            //Naloga9();
+            //Naloga10();
+
+            // VAJE
+            //Naloga11();
+            //Naloga12();
+            //Naloga13();
+            //Naloga14();
+            //Naloga15();
+            Console.ReadKey();
+
+        }
 
         public static void Naloga1()
         {
@@ -63,47 +87,6 @@
         public static void Naloga15()
         {
             /* Naloga 7.0.0.5. Program iz prejsnje naloge ustrezno razsirite tako, se ob zagonu vsebina datoteke, katere ime poda uporabnik, najprej prebere. Nato naj ima uporabnik moznost dodajanja novih porab financ ali moznosti hitre analize stroskov. Na primer: vsota po mesecih, vsota po namenu, letna vsota, itd. */
-        }
-
-
-        static void Main(string[] args)
-        {
-            // PREDAVANJA
-
-            Naloga1();
-            Naloga2();
-            Naloga3();
-            Naloga4();
-            Naloga5();
-            Naloga6();
-            Naloga7();
-            Naloga8();
-            Naloga9();
-            Naloga10();
-
-            // VAJE
-            Naloga11();
-            Naloga12();
-            Naloga13();
-            Naloga14();
-            Naloga15();
-            Console.ReadKey();
-
-
-
-
-            // VAJE
-
-
-
-
-
-
-
-
-
-
-
         }
     }
 }
