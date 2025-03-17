@@ -24,7 +24,7 @@
             //Naloga11();
             //Naloga12();
             //Naloga13();
-            Naloga14();
+            //Naloga14();
             //Naloga15();
             //Naloga16();
             //Naloga17();
@@ -33,7 +33,7 @@
             //Naloga20();
             //Naloga21();
             //Naloga22();
-            //Naloga23();
+            Naloga23();
             //Naloga24();
             //Naloga25();
             //Naloga26();
@@ -353,36 +353,230 @@
         public static void Naloga15()
         {
             /* Naloga 4.0.0.10. Deklarirajte poljubno celostevilsko tabelo in iz nje izpisite n-to zaporedno sodo stevilo, kjer stevilo n vnese uporabnik. Ce je n vecji od stevila sodih elementov v tabeli, naj program izpise, da tako stevilo ne obstaja. */
+
+            int[] tabela = [42, 87, 19, 33, 56, 11, 74, 9, 61, 22, 39, 68, 55, 80, 3, 29, 47, 65, 91, 7];
+
+            Console.Write("Vnesi poljubno pozitivno celo število: ");
+            int x = Convert.ToInt32(Console.ReadLine());
+            int steviloSodih = 0;
+            int sodiIndex = 0;
+
+            //preveri koliko je sodih in preveri dolžino tabele. Če je število sodih manjše od vpisane številke, ali če je tabela prekratka, vrne da ne more narest ničesar.
+            foreach (int tab in tabela)
+            {
+
+                if (tab % 2 == 0) steviloSodih++;
+            }
+            if (x > steviloSodih || x > tabela.Length)
+            {
+                Console.WriteLine("Ne morem izpisati primernega sodega števila");
+            }
+            //če vse štima potem poiščemo cifro
+            else
+            {
+                for (int i = 0; i < tabela.Length; i++)
+                {
+                    if (tabela[i] % 2 == 0) sodiIndex++;
+                    if (sodiIndex == x)
+                    {
+                        Console.WriteLine($"{x}-to sodo število v tabeli je {tabela[i]}");
+                        break;
+                    }
+                }
+            }
         }
         public static void Naloga16()
         {
             /* Naloga 4.0.0.11. Deklarirajte poljubno celostevilsko tabelo. Nato naj uporabnik vnese poljubno stevilo in na zaslon izpisite indekse poljubnih dveh elementov tabele, ki se sestejeta v stevilo, ki ga je vnesel uporabnik. Ce taki stevili ne obstajata, naj program izpise, da taksne vsote ne moremo dobiti. */
+
+            int[] tabela = [2, 8, 15, 21, 26, 34, 40, 49, 57, 63, 70, 76, 84, 88, 95, 6, 12, 18, 24, 30];
+
+            //dva indexa pošljemo čez tabelo in seštevamo. loop v loopu; break če najdemo
+            Console.Write("Vnesi poljubno pozitivno celo število: ");
+            int x = Convert.ToInt32(Console.ReadLine());
+            bool nasliVsoto = false;
+            for (int i = 0; i < tabela.Length; i++)
+            {
+                for (int j = 0; j < tabela.Length; j++)
+                {
+                    if (j != i && tabela[j] + tabela[i] == x)
+                    {
+                        Console.WriteLine($"števki na indeksih {i} in {j} imata vsoto {x}");
+                        nasliVsoto = true;
+                        break;
+                    }
+                }
+                if (nasliVsoto) break;
+            }
+
+            if (!nasliVsoto) Console.WriteLine($"Nobena kombinacija števil v tabeli ne vrne vsote {x}");
         }
         public static void Naloga17()
         {
             /* Naloga 4.0.0.12. Deklarirajte poljubno tabelo znakov. Nato izpisite vse razlicne znake, ki se pojavijo v tabeli. */
+
+            //iz tabele pogledamo znake, definitamo listo, damo znak iz tabele v listo če tega znaka še ni v listi. Na koncu izpišemo listo.
+
+            char[] tabela = ['A', 'M', 'F', 'B', 'X', 'K', 'R', 'T', 'Z', 'O', 'P', 'Q', 'S', 'J', 'E', 'U', 'I', 'C', 'D', 'L', 'N', 'W', 'G', 'Y', 'V', 'H', 'U', 'Z', 'M', 'R'];
+
+            List<char> nepodvojenSeznam = new List<char>();
+
+            foreach (char crka in tabela)
+            {
+                if (!nepodvojenSeznam.Contains(crka)) nepodvojenSeznam.Add(crka);
+            }
+            Console.Write("Različni znaki v tabeli: ");
+            for (int i = 0; i < nepodvojenSeznam.Count(); i++)
+            {
+                Console.Write(" " + nepodvojenSeznam[i]);
+            }
+            Console.WriteLine();
         }
         public static void Naloga18()
         {
             /* Naloga 4.0.0.13. Deklarirajte poljubno tabelo znakov. Nato izpisite vse znake, ki se v tabeli pojavijo natanko enkrat. */
+            char[] tabela = ['A', 'M', 'A', 'B', 'A', 'K', 'A', 'T', 'B', 'O', 'O', 'B', 'A', 'J', 'J', 'U', 'I', 'C', 'M', 'L', 'N', 'W', 'G', 'Y', 'V', 'H', 'U', 'Z', 'M', 'A'];
+            List<char> unikatniSeznam = new List<char>();
+            bool podvojenaCrka = false;
+            for (int i = 0; i < tabela.Length; i++)
+            {
+                for (int j = 0; j < tabela.Length; j++)
+                {
+                    if (tabela[i] == tabela[j] && i != j)
+                    {
+                        podvojenaCrka = true;
+                        break;
+                    }
+
+                }
+                if (!podvojenaCrka) unikatniSeznam.Add(tabela[i]);
+
+                podvojenaCrka = false;
+            }
+            Console.Write("Nepodvojeni znaki v tabeli: ");
+            foreach (char crka in unikatniSeznam)
+            {
+                Console.Write(" " + crka);
+            }
+            Console.WriteLine();
         }
         public static void Naloga19()
         {
             /* Naloga 4.0.0.14. Deklarirajte poljubno tabelo osnovnega tipa in iz nje izpisite vse razlicne elemente, ki se v tabeli pojavijo vsaj dvakrat. */
+            char[] tabela = ['A', 'M', 'A', 'B', 'A', 'K', 'A', 'T', 'B', 'O', 'O', 'B', 'A', 'J', 'J', 'U', 'I', 'C', 'M', 'L', 'N', 'W', 'G', 'Y', 'V', 'H', 'U', 'Z', 'M', 'A'];
+            List<char> podvojeniSeznam = new List<char>();
+            int stevec = 0;
+
+            for (int i = 0; i < tabela.Length; i++)
+            {
+                for (int j = 0; j < tabela.Length; j++)
+                {
+                    if (tabela[i] == tabela[j] && i != j)
+                    {
+                        stevec++;
+                        break;
+                    }
+
+                }
+                if (stevec > 0 && !podvojeniSeznam.Contains(tabela[i])) podvojeniSeznam.Add(tabela[i]);
+
+                stevec = 0;
+            }
+            Console.Write("Podvojeni znaki v tabeli: ");
+            foreach (char crka in podvojeniSeznam)
+            {
+                Console.Write(" " + crka);
+            }
+            Console.WriteLine();
+
         }
         public static void Naloga20()
         {
             /* Naloga 4.0.0.15. Napisite program, ki elemente celostevilske tabele razvrsti po velikosti od najmanjsega do najvecjega. Na koncu tabelo izpisite na zaslon. */
+            int[] tabela = [2, 8, 15, 21, 26, 34, 40, 49, 57, 63, 70, 76, 84, 88, 95, 6, 12, 18, 24, 30];
+
+            for (int i = 0; i < tabela.Length; i++)
+            {
+                int minIndex = i;
+                for (int j = i + 1; j < tabela.Length; j++)
+                {
+                    if (tabela[j] < tabela[minIndex]) minIndex = j;
+                }
+
+                int temp = tabela[i];
+                tabela[i] = tabela[minIndex];
+                tabela[minIndex] = temp;
+            }
+            Console.Write("Urejena tabela:");
+
+            foreach (int stevka in tabela)
+            {
+                Console.Write(" " + stevka);
+            }
+            Console.WriteLine();
         }
 
         public static void Naloga21()
         {
             /* Naloga 4.0.0.16. Za dano po velikosti urejeno celostevilsko tabelo poiscite indeks elementa, ki je enak poljubni dani vrednosti, ce ta obstaja, sicer poiscite indeks na katerega bi element postavili, da bi tabela ostala urejena. */
+            int[] tabela = [2, 6, 8, 12, 15, 18, 21, 24, 26, 30, 34, 40, 49, 57, 63, 70, 76, 84, 88, 95];
+            Console.Write("Vpišite poljubno pozitivno celo število: ");
+            int x = Convert.ToInt32(Console.ReadLine());
+            bool najdenIndeks = false;
+            Console.WriteLine();
+            for (int i = 0; i < tabela.Length; i++)
+            {
+                if ((tabela[i] == x))
+                {
+                    Console.WriteLine($"Število {x} je prisotno v tabeli na indeksu {i}");
+                    najdenIndeks = true;
+                    break;
+                }
+            }
+            if (!najdenIndeks)
+            {
+                for (int i = 0; i < tabela.Length; i++)
+                {
+                    if ((tabela[i] > x))
+                    {
+                        Console.WriteLine($"Število {x} ni prisotno v tabeli, lahko bi ga vstavili na indeks {i}, tako da tabela ostane urejena.");
+                        break;
+                    }
+                }
+            }
         }
         public static void Naloga22()
         {
             /* Naloga 4.0.0.16. Za dano po velikosti urejeno celostevilsko tabelo poiscite indeks elementa, ki je enak poljubni dani vrednosti, ce ta obstaja, sicer poiscite indeks na katerega bi element postavili, da bi tabela ostala urejena. */
+
+            int[] tabela = [2, 6, 8, 12, 15, 18, 21, 24, 26, 30, 34, 40, 49, 57, 63, 70, 76, 84, 88, 95];
+            Console.Write("Vpišite poljubno pozitivno celo število: ");
+            int x = Convert.ToInt32(Console.ReadLine());
+            bool najdenIndeks = false;
+            Console.WriteLine();
+            for (int i = 0; i < tabela.Length; i++)
+            {
+                if ((tabela[i] == x))
+                {
+                    Console.WriteLine($"Število {x} je prisotno v tabeli na indeksu {i}");
+                    najdenIndeks = true;
+                    break;
+                }
+            }
+            if (!najdenIndeks)
+            {
+                for (int i = 0; i < tabela.Length; i++)
+                {
+                    if ((tabela[i] > x))
+                    {
+                        Console.WriteLine($"Število {x} ni prisotno v tabeli, lahko bi ga vstavili na indeks {i}, tako da tabela ostane urejena.");
+                        break;
+                    }
+                }
+            }
+
         }
+
         public static void Naloga23()
         {
             /* Naloga 4.0.0.17. Deklarirajte dve po velikosti urejeni tabeli celih stevil in ju zdruzite v eno tabelo tako, da bodo njeni elementi prav tako urejeni po velikost. */
