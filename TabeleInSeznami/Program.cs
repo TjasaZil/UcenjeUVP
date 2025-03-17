@@ -35,11 +35,11 @@
             //Naloga22();
             //Naloga23();
             //Naloga24();
-            Naloga25();
-            //Naloga26();
+            //Naloga25();
+            //Naloga26(); -> TO DO
             //Naloga27();
             //Naloga28();
-            //Naloga29();
+            //Naloga29(); -> To Do
             //Naloga30();
             //Naloga31();
             //Naloga32();
@@ -51,7 +51,7 @@
             //Naloga38();
             //Naloga39();
             //Naloga40();
-            //Naloga41();
+            Naloga41();
             //Naloga42();
             //Naloga43();
             //Naloga44();
@@ -654,74 +654,363 @@
         {
             /* Naloga 4.0.0.19. Napisite program, ki bo od uporabnika zahteval vnos dolzine celostevilske tabele, nato pa se vnos njenih elementov, ter ustvaril tabelo s podanimi elementi. Dodatno omogocite uporabniku vnos vrednosti 0 ali 1, kjer 0 pomeni, da zeli izpisati vse sode elemente tabele in 1 pomeni, da zeli izpisati vse lihe elemente tabele. */
 
+            Console.Write("Prosim vnesite dolžino tabele: ");
+            int x = Convert.ToInt32(Console.ReadLine());
+
+            int[] tabela = new int[x];
+            int index = 0;
+            Console.WriteLine();
+            while (index < tabela.Length)
+            {
+                Console.Write($"Katero naravno število bo v tabeli na indexsu {index}:");
+                int n = Convert.ToInt32(Console.ReadLine());
+                tabela[index] = n;
+                index++;
+            }
+            Console.WriteLine();
+            int ukaz = 0;
+            while (true)
+            {
+                Console.WriteLine("Kaj želite narediti s tabelo? \n 0 - prikaz sodih elementov \n 1 - prikaz lihih elementov \n 2 - prikaz vseh elementov \n -1 - izhod ");
+                ukaz = Convert.ToInt32(Console.ReadLine());
+                if (ukaz == -1)
+                {
+                    Console.WriteLine("Zaključujemo delo s tabelo");
+                    break;
+                }
+                else Helpers.manipulacijaTabele(ukaz, tabela);
+            }
         }
+
         public static void Naloga26()
         {
             /* Naloga 4.0.0.20. Za dano celo stevilo n vecje ali enako 1 na zaslon izpisite prvih n vrstic Pascalovega trikotnika. Pascalov trikotnik nam pove koeficiente pri razsiritvi vsote dvoclenika na n-to potenco, to je (a + b)n. Kot namig, ker izracun vrednosti v posamezni vrstici sloni na predhodni vrstici, si lahko predhodno vrstico vsakic shranimo kot tabelo. */
+
+            //TO DO
         }
         public static void Naloga27()
         {
             /* Naloga 4.1.0.1. Deklarirajte poljubno dvodimenzionalno tabelo (tabelo tabel) in jo izpisite na zaslon. */
+
+            int[][] dvodimTabela = [[1, 2, 3], [4, 5, 6], [7, 8, 9],];
+
+            Helpers.izpisDvodimenzionalneTabele(dvodimTabela);
         }
         public static void Naloga28()
         {
             /* Naloga 4.1.0.2. Deklarirajte poljubno dvodimenzionalno tabelo in jo obrnite tako, da bodo vrstice postali stolpci in stolpci vrstice. Izpisite jo na zaslon. */
+
+            int[][] dvodimTabela = [[1, 2, 3], [4, 5, 6], [7, 8, 9],];
+
+            for (int i = 0; i < dvodimTabela.Length; i++)
+            {
+                for (int j = i + 1; j < dvodimTabela[i].Length; j++)
+                {
+                    int temp = dvodimTabela[i][j];
+                    dvodimTabela[i][j] = dvodimTabela[j][i];
+                    dvodimTabela[j][i] = temp;
+                }
+            }
+            Helpers.izpisDvodimenzionalneTabele(dvodimTabela);
         }
         public static void Naloga29()
         {
             /* Naloga 4.1.0.3. Deklarirajte poljubno celostevilsko dvodimenzionalno tabelo in na zaslon izpisite vsote njenih elementov po stolpcih. */
+            int[][] dvodimTabela = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+            //TO DO
         }
         public static void Naloga30()
         {
             /* Naloga 4.1.0.4. Ustvarite dvodimenzionalno tabelo, ki predstavlja postevanko do stevila 10 in jo izpisite na zaslon. */
+            int[][] postevanka = new int[10][];
+
+            for (int i = 1; i <= 10; i++)
+            {
+                postevanka[i - 1] = new int[10];
+                for (int j = 1; j <= 10; j++)
+                {
+                    postevanka[i - 1][j - 1] = i * j;
+                }
+
+            }
+            Helpers.izpisDvodimenzionalneTabele(postevanka);
 
         }
 
         public static void Naloga31()
         {
             /* Naloga 4.1.0.5. Napisite program, ki za dano dvodimenzionalno tabelo celih stevil preveri ali je simetricna preko glavne diagonale. Glavna diagonala se zacne levo zgoraj in konca desno spodaj. */
+
+            //int[][] dvodimTabela = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+            //int[][] dvodimTabela = [[1, 2, 3], [2, 1, 2], [3, 2, 1]];
+            int[][] dvodimTabela = [[1, 2, 3], [2, 2], [3, 2, 1]];
+            bool simetricnost = true;
+
+            for (int i = 0; i < dvodimTabela.Length; i++)
+            {
+                if (dvodimTabela.Length == dvodimTabela[i].Length)
+                {
+                    Console.WriteLine("Tabela ni simetrična ker nima isto vrstic in stolpcev");
+                    simetricnost = false;
+                    break;
+                }
+                else
+                {
+                    for (int j = 0; j < dvodimTabela[i].Length; j++)
+                    {
+                        if (dvodimTabela[i][j] != dvodimTabela[j][i])
+                        {
+
+                            simetricnost = false;
+                            break;
+                        }
+                    }
+                }
+            }
+            if (!simetricnost) Console.WriteLine("Tabela ni simetrična");
+            else Console.WriteLine("Tabela je simetrična");
+
+            Console.WriteLine("Tabela:");
+            Helpers.izpisDvodimenzionalneTabele(dvodimTabela);
         }
         public static void Naloga32()
         {
             /* Naloga 4.1.0.6. Deklarirajte poljubno celostevilsko dvodimenzionalno tabelo z imenom tabela in ustvarite novo tabelo katere elementi naj bodo najmanjsi elementi posamezne vrstice tabele tabela. Na koncu tabelo izpisite na zaslon. */
+            int[][] dvodimTabela = [[1, 2, 3], [6, 5, 4], [9, 7, 8]];
+            int dolzina = dvodimTabela.Length;
+            int[] tabela = new int[dolzina];
+
+            for (int i = 0; i < dolzina; i++)
+            {
+                int minimum = dvodimTabela[i][0];
+                for (int j = 0; j < dvodimTabela[i].Length; j++)
+                {
+                    if (dvodimTabela[i][j] < minimum) minimum = dvodimTabela[i][j];
+                }
+                tabela[i] = minimum;
+            }
+            Helpers.izpisTabele(tabela);
+            //TOLE ŠE NAREDI
         }
         public static void Naloga33()
         {
             /* Naloga 5.0.0.1. Ustvarite seznam prvih 10-ih naravnih stevil in ga izpisite. */
+            List<int> seznam = new List<int>();
+
+            for (int i = 1; i <= 10; i++)
+            {
+                seznam.Add(i);
+            }
+
+            Helpers.izpisSeznama(seznam);
         }
         public static void Naloga34()
         {
             /* Naloga 5.0.0.2. V seznam iz prejsnje naloge vrinite stevilo 11 med stevili 5 in 6. */
+
+            List<int> seznam = new List<int>();
+
+            for (int i = 1; i <= 10; i++)
+            {
+                seznam.Add(i);
+            }
+
+            seznam.Insert(5, 11);
+
+            Helpers.izpisSeznama(seznam);
         }
         public static void Naloga35()
         {
             /* Naloga 5.0.0.3. Napisite program, ki bo v danem celostevilskem seznamu preveril ali obstaja stevilo, ki ga vnese uporabnik. Program naj izpise vse pozicije tega elementa, ce le ta obstaja v seznamu, sicer naj izpise, da elementa ni mogoce najti. */
+
+            List<int> seznam = new List<int>();
+            List<int> listaIndexsov = new List<int>();
+            Random random = new Random();
+            //naredim nek random seznam
+            for (int i = 1; i <= 300; i += 10)
+            {
+                seznam.Add(random.Next(0, i));
+            }
+
+            Console.Write("Prosim vpišite naravno število med 1 in 300:");
+            int x = Convert.ToInt32(Console.ReadLine());
+            Console.Write("To je moj seznam:");
+            Helpers.izpisSeznama(seznam);
+
+            for (int i = 0; i < seznam.Count; i++)
+            {
+                if (seznam[i] == x) listaIndexsov.Add(i);
+            }
+            if (listaIndexsov.Count > 0)
+            {
+                Console.Write("Na teh indeksih se nahaja vaš element: ");
+                Helpers.izpisSeznama(listaIndexsov);
+            }
+            else Console.Write("Elementa ni v seznamu");
+
+
         }
         public static void Naloga36()
         {
             /* Naloga 5.0.0.4. Deklarirajte poljuben celostevilski seznam. Tega nato razdelite na seznam sodih in seznam lihih elementov. */
+
+            List<int> seznam = new List<int>();
+            List<int> seznamLihih = new List<int>();
+            List<int> seznamSodih = new List<int>();
+            Random random = new Random();
+            //naredim nek random seznam
+            for (int i = 1; i <= 300; i += 10)
+            {
+                seznam.Add(random.Next(0, i));
+            }
+            Console.Write("To je moj seznam:");
+            Helpers.izpisSeznama(seznam);
+            foreach (int i in seznam)
+            {
+                if (i % 2 == 0) seznamSodih.Add(i);
+                else seznamLihih.Add(i);
+            }
+            Console.Write("To je moj seznam Sodih števil:");
+            Helpers.izpisSeznama(seznamSodih);
+            Console.Write("To je moj seznam Lihih števil:");
+            Helpers.izpisSeznama(seznamLihih);
         }
         public static void Naloga37()
         {
             /* Naloga 5.0.0.5. Deklarirajte poljuben celo stevilski seznam in v njem poiscite najmanjsi element in ga izpisite. Izpisite tudi pozicijo tega elementa. */
+
+            List<int> seznam = new List<int>();
+
+            Random random = new Random();
+            //naredim nek random seznam
+            for (int i = 100; i <= 400; i += 10)
+            {
+                seznam.Add(random.Next(0, i));
+            }
+            Console.Write("To je moj seznam:");
+            Helpers.izpisSeznama(seznam);
+            int indexMin = 0;
+            int minimum = seznam[indexMin];
+            for (int i = 0; i < seznam.Count; i++)
+            {
+                if (seznam[i] < minimum)
+                {
+                    indexMin = i;
+                    minimum = seznam[i];
+
+                }
+            }
+
+            Console.Write($"Minumum je {minimum} na indeksu {indexMin}");
         }
         public static void Naloga38()
         {
             /* Naloga 5.0.0.6. Napisite program, ki bo od uporabnika zahteval vnos nizov dokler uporabnik ne vnese niza ”X”. Nizi naj se shranjujejo v seznam, ki se na koncu izpise. */
+            List<string> seznam = new List<string>();
+            while (true)
+            {
+                Console.Write("Prosim napišite niz:");
+                string niz = Console.ReadLine();
+                if (niz == "X") break;
+                else
+                    seznam.Add(niz);
+            }
+            Console.Write("To je moj seznam:");
+            Helpers.izpisSeznama(seznam);
+
         }
         public static void Naloga39()
         {
             /* Naloga 5.0.0.7. Deklarirajte poljuben seznam in napisite program, ki bo za dano pozitivno celo stevilo n ustvaril nov seznam, ki je sestavljen iz n kopij originalnega seznama. Kaj pa, ce zelimo originalni seznam le podaljsati in ne kreiramo novega seznama? */
+            List<int> seznam = new List<int>();
+            List<int> ponavljalniSeznam = new List<int>();
+
+            Random random = new Random();
+            //naredim nek random seznam
+            for (int i = 0; i <= 100; i += 10)
+            {
+                seznam.Add(random.Next(0, i));
+            }
+            Console.Write("To je moj zgenerirani seznam:");
+            Helpers.izpisSeznama(seznam);
+            int prvotnaDolzina = seznam.Count;
+
+            Console.Write("kolikokrat želiš da se seznam ponovi v novem seznamu?");
+            int x = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 0; i < x; i++)
+            {
+                for (int j = 0; j < prvotnaDolzina; j++) { ponavljalniSeznam.Add(seznam[j]); }
+
+            }
+            Console.Write("To je moj ponavljalni Seznam:");
+            Helpers.izpisSeznama(ponavljalniSeznam);
+            Console.Write("kolikokrat želiš da se seznam podaljša?");
+            x = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 0; i < x; i++)
+            {
+                for (int j = 0; j < prvotnaDolzina; j++) { seznam.Add(seznam[j]); }
+
+            }
+
+            Console.Write("To je moj podaljšani seznam:");
+            Helpers.izpisSeznama(seznam);
         }
         public static void Naloga40()
         {
             /* Naloga 5.0.0.8. Deklarirajte poljuben seznam in zamenjajte prvi in zadnji element. */
+
+            List<int> seznam = new List<int>();
+
+            Random random = new Random();
+            //naredim nek random seznam
+            for (int i = 0; i <= 100; i += 10)
+            {
+                seznam.Add(random.Next(0, i));
+            }
+            Console.Write("To je moj zgenerirani seznam:");
+            Helpers.izpisSeznama(seznam);
+            int dolzina = seznam.Count;
+
+            int temp = seznam[0];
+            seznam[0] = seznam[dolzina - 1];
+            seznam[dolzina - 1] = temp;
+
+            Console.Write("To je moj seznam z zamenjamina prvim in zadnjim elementom:");
+            Helpers.izpisSeznama(seznam);
         }
 
         public static void Naloga41()
         {
-            /* Naloga 5.0.0.9. Deklarirajte poljuben seznam in mu zamenjajte vrstni red elementov. Seznam nato izpiˇsite na zaslon. */
+            /* Naloga 5.0.0.9. Deklarirajte poljuben seznam in mu zamenjajte vrstni red elementov. Seznam nato izpisite na zaslon. */
+
+            List<int> seznam = new List<int>();
+
+            Random random = new Random();
+            //naredim nek random seznam
+            for (int i = 0; i <= 100; i += 10)
+            {
+                seznam.Add(random.Next(0, i));
+            }
+
+            Console.Write("To je moj zgenerirani seznam:");
+            Helpers.izpisSeznama(seznam);
+            int j = seznam.Count - 1;
+
+            for (int i = 0; i <= j; i++)
+            {
+
+                int temp = seznam[j];
+                seznam[j] = seznam[i];
+                seznam[i] = temp;
+                j--;
+            }
+
+            Console.Write("To je moj obrnjeni seznam:");
+            Helpers.izpisSeznama(seznam);
         }
+
         public static void Naloga42()
         {
             /* Naloga 5.0.0.10. Deklarirajte poljuben seznam celih stevil in ga razvrstite tako, da bodo vsa liha stevila na zacetku seznama in vsa soda stevila na koncu seznama. */
