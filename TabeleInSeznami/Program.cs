@@ -324,8 +324,31 @@
         }
         public static void Naloga14()
         {
-
             /* Naloga 4.0.0.9. Deklarirajte poljubno celostevilsko tabelo in v njej poiscite najvecji in najmanjsi element, ter indeks njune pozicije v tabeli. */
+
+            int[] tabela = [42, 87, 19, 33, 56, 11, 74, 9, 61, 22, 39, 68, 55, 80, 3, 29, 47, 65, 91, 7];
+
+            int min = tabela[0];
+            int indexMin = 0;
+            int max = tabela[0];
+            int indexMax = 0;
+
+            for (int i = 1; i < tabela.Length; i++)
+            {
+                if (tabela[i] < min)
+                {
+                    min = tabela[i];
+                    indexMin = i;
+                    continue;
+                }
+                if (tabela[i] > max)
+                {
+                    max = tabela[i];
+                    indexMax = i;
+                    continue;
+                }
+            }
+            Console.WriteLine($"Najmanjše število v tabeli je {min} na indeksu {indexMin}, največje pa {max} na indeksu {indexMax}");
         }
         public static void Naloga15()
         {
