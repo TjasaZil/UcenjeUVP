@@ -33,9 +33,9 @@
             //Naloga20();
             //Naloga21();
             //Naloga22();
-            Naloga23();
+            //Naloga23();
             //Naloga24();
-            //Naloga25();
+            Naloga25();
             //Naloga26();
             //Naloga27();
             //Naloga28();
@@ -580,14 +580,80 @@
         public static void Naloga23()
         {
             /* Naloga 4.0.0.17. Deklarirajte dve po velikosti urejeni tabeli celih stevil in ju zdruzite v eno tabelo tako, da bodo njeni elementi prav tako urejeni po velikost. */
+            int[] tabela1 = [2, 8, 15, 18, 24, 26, 30, 63, 70, 76, 88, 95];
+            int[] tabela2 = [6, 12, 21, 34, 40, 49, 57, 84,];
+            int dolzina = tabela1.Length + tabela2.Length;
+            int[] tabela3 = new int[dolzina];
+            int i = 0;
+            int j = 0;
+            int k = 0;
+
+            while (i < tabela1.Length && j < tabela2.Length)
+            {
+                if (tabela1[i] <= tabela2[j])
+                {
+                    tabela3[k++] = tabela1[i++];
+                }
+                else
+                {
+                    tabela3[k++] = tabela2[j++];
+                }
+            }
+            while (i < tabela1.Length)
+            {
+                tabela3[k++] = tabela1[i++];
+            }
+            while (j < tabela2.Length)
+            {
+                tabela3[k++] = tabela2[j++];
+            }
+
+            Console.Write("Urejena tabela iz dveh tabel:");
+            foreach (int cifra in tabela3)
+            {
+                Console.Write(" " + cifra);
+            }
+            Console.WriteLine();
+
         }
         public static void Naloga24()
         {
             /* Naloga 4.0.0.18. Deklarirajte poljubno tabelo in njene elemente premaknite za n mest v desno, kjer je n pozitivno celo stevilo, ki ga vnese uporabnik. Na koncu izpisite elemente nove tabele. */
+
+            char[] tabela = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'];
+            char[] novaTabela = new char[tabela.Length];
+            Console.Write("Za koliko mest naj se vrednosti v tabeli zamaknejo v desno?: ");
+            int x = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 0; i < tabela.Length; i++)
+            {
+                if (x > tabela.Length)
+                {
+                    Console.WriteLine("Število je daljše od dolžine tabele");
+                    break;
+                }
+
+                if (x + i < tabela.Length)
+                {
+                    novaTabela[x + i] = tabela[i];
+                }
+                else novaTabela[x + i - tabela.Length] = tabela[i];
+            }
+
+            if (x <= tabela.Length)
+            {
+                Console.Write($"Nova tabela zamaknjena za {x} mest:");
+                foreach (var element in novaTabela)
+                {
+                    Console.Write(" " + element);
+                }
+            }
+            Console.WriteLine();
         }
         public static void Naloga25()
         {
             /* Naloga 4.0.0.19. Napisite program, ki bo od uporabnika zahteval vnos dolzine celostevilske tabele, nato pa se vnos njenih elementov, ter ustvaril tabelo s podanimi elementi. Dodatno omogocite uporabniku vnos vrednosti 0 ali 1, kjer 0 pomeni, da zeli izpisati vse sode elemente tabele in 1 pomeni, da zeli izpisati vse lihe elemente tabele. */
+
         }
         public static void Naloga26()
         {
