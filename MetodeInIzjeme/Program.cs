@@ -9,14 +9,12 @@
         {
 
             // PREDAVANJA
-
-            Naloga1();
+            //Naloga1();
             Naloga2();
             Naloga3();
             Naloga4();
 
             // VAJE
-
             Naloga5();
             Naloga6();
             Naloga7();
@@ -34,17 +32,44 @@
             Naloga19();
             Naloga20();
             Naloga21();
-
             Console.ReadLine();
         }
 
         public static void Naloga1()
         {
             /* Naloga 6.1.1.1. Zapisite metodo, ki kot parameter dobi celo stevilo n, kot rezultat pa vrne seznam vseh prastevil manjsih od n. */
+
+            Console.Write("Vpišite celo število: ");
+            int x = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine();
+            Helpers.preveriPrastevilo(x);
         }
+
+
         public static void Naloga2()
         {
             /* Naloga 6.1.1.2. Zapisite metodo, ki kot parameter dobi stevilo v desetiskem zapisu in ga pretvori v dvojiski zapis. Zapisite se metodo, ki zgornjo metodo izvede na vseh stevilih od 1 do n in rezultate zapise v seznam.*/
+
+            Console.Write("Vpišite števko v desetiškem zapisu:");
+            int x = Convert.ToInt32(Console.ReadLine());
+            int stevka = x;
+            int obrnjena = 0;
+            List<int> binarna = new List<int>();
+            while (stevka > 0)
+            {
+                binarna.Add(stevka % 2);
+                stevka = stevka / 2;
+
+            }
+
+            for (int i = binarna.Count - 1; i >= 0; i--)
+            {
+                obrnjena += binarna[i];
+                obrnjena = obrnjena * 10;
+            }
+            obrnjena = obrnjena / 10;
+            Console.Write($"Številka {x} v desetiškem zapisu je: {obrnjena}");
+
         }
         public static void Naloga3()
         {
