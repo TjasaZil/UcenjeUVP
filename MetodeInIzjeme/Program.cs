@@ -10,30 +10,30 @@
 
             // PREDAVANJA
 
-            //Naloga1();
-            //Naloga2();
-            //Naloga3();
-            //Naloga4();
+            Naloga1();
+            Naloga2();
+            Naloga3();
+            Naloga4();
 
             // VAJE
 
-            //Naloga5();
-            //Naloga6();
-            //Naloga7();
-            //Naloga8();
-            //Naloga9();
-            //Naloga10();
-            //Naloga11();
-            //Naloga12();
-            //Naloga13();
-            //Naloga14();
-            //Naloga15();
-            //Naloga16();
-            //Naloga17();
-            //Naloga18();
-            //Naloga19();
-            //Naloga20();
-            //Naloga21();
+            Naloga5();
+            Naloga6();
+            Naloga7();
+            Naloga8();
+            Naloga9();
+            Naloga10();
+            Naloga11();
+            Naloga12();
+            Naloga13();
+            Naloga14();
+            Naloga15();
+            Naloga16();
+            Naloga17();
+            Naloga18();
+            Naloga19();
+            Naloga20();
+            Naloga21();
 
             Console.ReadLine();
         }

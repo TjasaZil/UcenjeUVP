@@ -57,9 +57,17 @@
         }
         public static void izpisSeznama(List<string> seznam)
         {
-            foreach (var stevka in seznam)
+            foreach (var niz in seznam)
             {
-                Console.Write(stevka + " ");
+                Console.Write(niz + " ");
+            }
+            Console.WriteLine();
+        }
+        public static void izpisSeznama(List<char> seznam)
+        {
+            foreach (var znak in seznam)
+            {
+                Console.Write(znak + " ");
             }
             Console.WriteLine();
         }

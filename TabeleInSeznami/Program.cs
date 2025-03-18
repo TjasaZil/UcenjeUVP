@@ -51,15 +51,15 @@
             //Naloga38();
             //Naloga39();
             //Naloga40();
-            Naloga41();
+            //Naloga41();
             //Naloga42();
             //Naloga43();
             //Naloga44();
-            //Naloga45();
-            //Naloga46();
-            //Naloga47();
-            //Naloga48();
-            //Naloga49();
+            Naloga45();  //to do
+            Naloga46();  // to do
+            Naloga47();  //to do
+            Naloga48();  // to do
+            Naloga49();  // to do
 
             Console.ReadKey();
 
@@ -1014,15 +1014,88 @@
         public static void Naloga42()
         {
             /* Naloga 5.0.0.10. Deklarirajte poljuben seznam celih stevil in ga razvrstite tako, da bodo vsa liha stevila na zacetku seznama in vsa soda stevila na koncu seznama. */
+
+            List<int> seznam = new List<int>();
+
+            Random random = new Random();
+            //naredim nek random seznam
+            for (int i = 0; i <= 200; i += 10)
+            {
+                seznam.Add(random.Next(0, i));
+            }
+
+            Console.Write("To je moj zgenerirani seznam:");
+            Helpers.izpisSeznama(seznam);
+
+            for (int i = 0; i < seznam.Count; i++)
+            {
+                if (seznam[i] % 2 != 0)
+                {
+                    int lihaStevka = seznam[i];
+                    seznam.RemoveAt(i);
+                    seznam.Insert(0, lihaStevka);
+                }
+            }
+            Console.Write("To je moj presortiran seznam seznam:");
+            Helpers.izpisSeznama(seznam);
         }
         public static void Naloga43()
         {
             /* Naloga 5.0.0.11. Deklarirajte poljuben celostevilski seznam in v njem vse sode elemente pomnozite z 2. */
+            List<int> seznam = new List<int>();
+
+            Random random = new Random();
+            //naredim nek random seznam
+            for (int i = 0; i <= 100; i += 10)
+            {
+                seznam.Add(random.Next(0, i));
+            }
+
+            Console.Write("To je moj zgenerirani seznam:");
+            Helpers.izpisSeznama(seznam);
+
+            for (int i = 0; i < seznam.Count; i++)
+            {
+                if (seznam[i] % 2 == 0)
+                {
+                    int podvojenaStevka = seznam[i] * 2;
+                    seznam.RemoveAt(i);
+                    seznam.Insert(i, podvojenaStevka);
+                }
+            }
+            Console.Write("To je moj podvojen seznam:");
+            Helpers.izpisSeznama(seznam);
         }
         public static void Naloga44()
         {
 
             /* Naloga 5.0.0.12. Deklarirajte poljuben seznam znakov in ga napolnite z vsaj 10 znaki. Nato iz njega izbrisite vse samoglasnike. */
+            List<char> seznam = new List<char>();
+            List<char> samoglasniki = ['a', 'e', 'i', 'o', 'u'];
+
+            while (true)
+            {
+                Console.Write("Prosim vpišite znak:");
+                char x = Convert.ToChar(Console.ReadLine());
+                seznam.Add(x);
+                Console.WriteLine();
+                if (seznam.Count > 11)
+                {
+                    break;
+                }
+            }
+            Console.Write("To je moj vaš seznam:");
+            Helpers.izpisSeznama(seznam);
+            for (int i = 0; i < seznam.Count; i++)
+            {
+                if (samoglasniki.Contains(seznam[i]))
+                {
+                    seznam.RemoveAt(i);
+                    i--;
+                }
+            }
+            Console.Write("To je moj vaš seznam brez samoglasnikov:");
+            Helpers.izpisSeznama(seznam);
         }
         public static void Naloga45()
         {
