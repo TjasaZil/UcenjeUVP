@@ -56,19 +56,19 @@
             //Naloga45();
             //Naloga46();
             //Naloga47();
-            Naloga48();
+            Naloga48(); //TO DO
             //Naloga49();
             //Naloga50();
             //Naloga51();
             //Naloga52();
-            Naloga53();
-            Naloga54();
-            Naloga55();
-            Naloga56();
-            Naloga57();
-            Naloga58();
-            Naloga59();
-            Naloga60();
+            Naloga53();  //TO DO
+            Naloga54();  //TO DO
+            Naloga55();  //TO DO
+            Naloga56();  //TO DO
+            Naloga57();  //TO DO
+            Naloga58();  //TO DO
+            Naloga59();  //TO DO
+            Naloga60();  //TO DO
 
             Console.ReadKey();
 

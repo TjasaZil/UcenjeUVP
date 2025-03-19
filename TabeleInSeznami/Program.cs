@@ -36,10 +36,10 @@
             //Naloga23();
             //Naloga24();
             //Naloga25();
-            //Naloga26(); -> TO DO
+            Naloga26(); //-> TO DO
             //Naloga27();
             //Naloga28();
-            //Naloga29(); -> To Do
+            //Naloga29(); 
             //Naloga30();
             //Naloga31();
             //Naloga32();
@@ -55,8 +55,8 @@
             //Naloga42();
             //Naloga43();
             //Naloga44();
-            Naloga45();  //to do
-            Naloga46();  // to do
+            //Naloga45(); 
+            //Naloga46();  // to do
             Naloga47();  //to do
             Naloga48();  // to do
             Naloga49();  // to do
@@ -717,7 +717,34 @@
         {
             /* Naloga 4.1.0.3. Deklarirajte poljubno celostevilsko dvodimenzionalno tabelo in na zaslon izpisite vsote njenih elementov po stolpcih. */
             int[][] dvodimTabela = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
-            //TO DO
+            //obrnemo da so stolpci vrstice in nato sestejemo :D
+
+            Console.Write("Naša tabela");
+            Helpers.izpisDvodimenzionalneTabele(dvodimTabela);
+
+            for (int i = 0; i < dvodimTabela.Length; i++)
+            {
+                for (int j = i + 1; j < dvodimTabela[i].Length; j++)
+                {
+                    int temp = dvodimTabela[i][j];
+                    dvodimTabela[i][j] = dvodimTabela[j][i];
+                    dvodimTabela[j][i] = temp;
+                }
+            }
+
+
+            int vsota = 0;
+            for (int i = 0; i < dvodimTabela.Length; i++)
+            {
+
+                for (int j = 0; j < dvodimTabela[i].Length; j++)
+                {
+                    int temp = dvodimTabela[i][j];
+                    vsota += temp;
+                }
+                Console.WriteLine($"Vsota elementov v stolpcu {i} je {vsota}");
+                vsota = 0;
+            }
         }
         public static void Naloga30()
         {
@@ -1100,12 +1127,74 @@
         public static void Naloga45()
         {
             /* Naloga 5.0.0.13. Napisite program, ki bo iz danega seznama celih stevil izbrisal vse podvojene elemente. */
+
+            List<int> seznam = new List<int>();
+
+            Random random = new Random();
+            //naredim nek random seznam
+            for (int i = 0; i <= 300; i += 10)
+            {
+                seznam.Add(random.Next(0, i));
+            }
+
+            Console.Write("To je moj zgenerirani seznam:");
+            Helpers.izpisSeznama(seznam);
+
+            for (int i = 0; i < seznam.Count; i++)
+            {
+                for (int j = 0; j < seznam.Count; j++)
+                {
+                    if (seznam[j] == seznam[i] && j != i)
+                    {
+                        seznam.RemoveAt(j);
+
+                        j--;
+                    }
+                }
+            }
+
+            Console.Write("To je moj seznam brez podvojenih števil:");
+            Helpers.izpisSeznama(seznam);
+
         }
 
         public static void Naloga46()
         {
 
             /* Naloga 5.0.0.14. Deklarirajte dva poljubna seznama enakega tipa in na zaslon izpisite vse elemente, ki pripadajo natanko enemu izmed obeh seznamov. */
+
+            List<int> seznam1 = [1, 2, 3, 4, 5, 6];
+            List<int> seznam2 = [2, 4, 8, 0, 9, 23];
+            int dolzina1 = seznam1.Count;
+            int dolzina2 = seznam2.Count;
+            bool unikaten = true;
+
+            for (int i = 0; i < dolzina1; i++)
+            {
+                for (int j = 0; j < dolzina2; j++)
+                {
+                    if (seznam1[i] == seznam2[j])
+                    {
+                        unikaten = false;
+                        seznam1.RemoveAt(i);
+                        seznam2.RemoveAt(j);
+
+                        if (j != 0) j--;
+
+                        dolzina2--;
+                        break;
+                    }
+                }
+
+                if (unikaten && i != 0) i--;
+
+                dolzina1--;
+                unikaten = true;
+            }
+
+            Console.WriteLine("Elementi ki pripadajo samo enemu od seznamov:");
+            Helpers.izpisSeznama(seznam1);
+            Helpers.izpisSeznama(seznam2);
         }
         public static void Naloga47()
         {
