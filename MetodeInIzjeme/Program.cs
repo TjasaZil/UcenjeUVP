@@ -7,31 +7,35 @@
 
         static void Main(string[] args)
         {
+            char[] tabela = ['u', 'd', 's', 'a', 'q', 'Q', 'a', 'A'];
 
+            List<string> listaNakljucnihBesed = ["jabolko", "miza", "stol", "knjiga", "sonce", "mesec", "reka", "gora", "gozd", "veter", "dež", "cvet", "ptica", "avtomobil", "letalo", "telefon", "računalnik", "svetloba", "senca", "pot", "most", "vrata", "okno", "sončnica", "drevo", "travnik", "oblak", "pes", "mačka", "zvezda"];
+
+            string niz = "to je beseda nekaj presledkov sledi      halo halo je kdo tu";
             // PREDAVANJA
             //Naloga1();
-            Naloga2();
-            Naloga3();
-            Naloga4();
+            //Naloga2();
+            //Naloga3(10, 10);
+            //Naloga4();
 
             // VAJE
-            Naloga5();
-            Naloga6();
-            Naloga7();
-            Naloga8();
-            Naloga9();
-            Naloga10();
-            Naloga11();
-            Naloga12();
-            Naloga13();
-            Naloga14();
-            Naloga15();
-            Naloga16();
-            Naloga17();
-            Naloga18();
-            Naloga19();
-            Naloga20();
-            Naloga21();
+            //Naloga5(10, 13);
+            //Naloga6(1345);
+            //Naloga7(tabela, 'p');
+            //Naloga8(11, 23);
+            //Naloga9(tabela, 'a');
+            // Naloga10(niz);
+            //Naloga11(listaNakljucnihBesed, 'r');
+            //Naloga12(niz);
+            //Naloga13(); TO DO
+            //Naloga14();  TO DO
+            // Naloga15(); TO DO
+            // Naloga16();  TO DO
+            //Naloga17(); To DO
+            //Naloga18(); TO DO
+            //Naloga19(); TO DO
+            //Naloga20(); TO DO
+            //Naloga21();  TO DO
             Console.ReadLine();
         }
 
@@ -53,101 +57,272 @@
             Console.Write("Vpišite števko v desetiškem zapisu:");
             int x = Convert.ToInt32(Console.ReadLine());
             int stevka = x;
-            int obrnjena = 0;
-            List<int> binarna = new List<int>();
-            while (stevka > 0)
+            List<int> listaBinarnihStevil = new List<int>();
+            int binarna = Helpers.izracunBinarneStevke(stevka);
+
+            Console.Write($"Številka {x} v desetiškem zapisu je: {binarna}");
+            Console.WriteLine();
+            for (int i = 1; i <= x; i++)
             {
-                binarna.Add(stevka % 2);
-                stevka = stevka / 2;
+                int n = Helpers.izracunBinarneStevke(i);
+                listaBinarnihStevil.Add(n);
 
             }
-
-            for (int i = binarna.Count - 1; i >= 0; i--)
+            Console.Write($"Vsa binarna števila od 1 do {x} so:");
+            foreach (int stevilka in listaBinarnihStevil)
             {
-                obrnjena += binarna[i];
-                obrnjena = obrnjena * 10;
+                Console.Write(" " + stevilka);
             }
-            obrnjena = obrnjena / 10;
-            Console.Write($"Številka {x} v desetiškem zapisu je: {obrnjena}");
-
+            Console.WriteLine();
         }
-        public static void Naloga3()
+
+
+        public static void Naloga3(int n, int m)
         {
             /* Naloga 6.1.1.3. Zapisite metodo, ki kot rezultat izrise sahovnico dimenzije n × m, kjer sta n in m parametra metode. */
+
+            for (int i = 0; i <= n; i++)
+            {
+                for (int j = 0; j <= m; j++)
+                {
+                    if (i % 2 == 0 && j % 2 == 0 || i % 2 != 0 && j % 2 != 0)
+                    {
+                        Console.Write("//");
+                    }
+                    else Console.Write("  ");
+                }
+                Console.WriteLine();
+            }
         }
         public static void Naloga4()
         {
             /* Naloga 6.2.1.1. Zapisite metodo, ki uporabnika sprasuje po kvadratu danega, slucajno izbranega stevila (uporabite razred Random). Predvidite razlicne moznosti napacnih vnosov in jih ustrezno ujemite. */
-        }
-        public static void Naloga5()
-        {
-            /* Naloga 6.0.0.1. Napisite metodo, ki za dani naravni stevili a in b izracuna vrednost a in b brez uporabe knjiznice Math z eno od zank. */
-        }
-        public static void Naloga6()
-        {
-            /* Naloga 6.0.0.2. Napisite metodo, ki prejme celo stevilo in zanj na zaslon izpiˇse vse njegove delitelje in vrne koliko deliteljev ima. */
-        }
-        public static void Naloga7()
-        {
-            /* Naloga 6.0.0.3. Napisite metodo, ki prejme tabelo znakov in nek znak, ter vrne ali je podan znak v tabeli ali ne. */
-        }
-        public static void Naloga8()
-        {
-            /* Naloga 6.0.0.4. Napisite metodo, ki za podani naravni stevili n in m vrne tabelo vseh stevil med njima. Tabelo nato izpisite na zaslon. */
-        }
-        public static void Naloga9()
-        {
-            /* Naloga 6.0.0.5. Napisite metodo, ki prejme niz in znak ter vrne stevilo pojavitev znaka v nizu. */
-        }
-        public static void Naloga10()
-        {
-            /* Naloga 6.0.0.6. Napisite metodo, ki prejme niz in ga pretvori v tabelo znakov, ki jo nato vrne. Tabelo nato izpisite na zaslon. */
+            Random random = new Random();
+
+            while (true)
+            {
+                int randomStevilka = random.Next(1, 21);
+                try
+                {
+                    Console.Write($"Kakšen je kvadrat številke {randomStevilka}? \n 0 - exit \n");
+                    int x = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine();
+                    Helpers.preveriVpisanoStevilko(x);
+                    if (x == 0) break;
+                    if (x == randomStevilka * randomStevilka)
+                    {
+                        Console.WriteLine($"Bravo! {x} je kvadrat {randomStevilka} ");
+                    }
+                    else if (x > 0 && x <= 400 && x != randomStevilka * randomStevilka) Console.WriteLine($"Škoda :( {x} ni kvadrat {randomStevilka}");
+                }
+                catch (FormatException ex)
+                {
+                    Console.WriteLine($"Format ni v pravilni obliki!: {ex.Message}");
+                }
+                catch (OverflowException ex)
+                {
+                    Console.WriteLine($"Vpisano število je preveliko oziroma premajhno za izbrani format spremenljivke: {ex.Message}");
+                }
+                catch (ArgumentNullException ex)
+                {
+                    Console.WriteLine($"Vhodni podatek je null: {ex.Message}");
+                }
+                catch (ArgumentOutOfRangeException ex)
+                {
+                    Console.WriteLine($"Vpisana cifra ni v predvidenih okvirjih {ex.Message}");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Prišlo je do nepredvidene napake: {ex.Message}");
+                }
+            }
         }
 
-        public static void Naloga11()
+
+        public static void Naloga5(int a, int b)
+        {
+            /* Naloga 6.0.0.1. Napisite metodo, ki za dani naravni stevili a in b izracuna vrednost a^b brez uporabe knjiznice Math z eno od zank. */
+            try
+            {
+                int potenca = 1;
+                // checked -> preveri če je rezultat potence večji od max števila ki ga lahko sprejme int. Tako vedno dobimo pravi rezultat ali pa error :D
+                checked
+                {
+                    for (int i = 0; i <= b; i++)
+                    {
+                        potenca *= a;
+                    }
+                }
+                Console.WriteLine($"Rezultat je: {potenca}");
+            }
+            catch (OverflowException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+        }
+
+
+        public static void Naloga6(int n)
+        {
+            /* Naloga 6.0.0.2. Napisite metodo, ki prejme celo stevilo in zanj na zaslon izpise vse njegove delitelje in vrne koliko deliteljev ima. */
+
+            int stevec = 0;
+            List<int> listaDeljiteljev = new List<int>();
+            for (int i = 1; i <= n; i++)
+            {
+                if (n % i == 0)
+                {
+                    listaDeljiteljev.Add(i);
+                    stevec++;
+                }
+            }
+            Console.WriteLine($"Število {n} ima {stevec} deljiteljev. To so: ");
+
+            Helpers.napisiListo(listaDeljiteljev);
+        }
+
+
+        public static void Naloga7(char[] tabela, char znak)
+        {
+            /* Naloga 6.0.0.3. Napisite metodo, ki prejme tabelo znakov in nek znak, ter vrne ali je podan znak v tabeli ali ne. */
+            bool najdenZnak = false;
+            for (int i = 0; i < tabela.Length; i++)
+            {
+                if (tabela[i] == znak)
+                {
+                    najdenZnak = true;
+                    Console.WriteLine($"Znak {znak} je v tabeli na mestu {i}");
+                    break;
+                }
+            }
+            if (!najdenZnak)
+            {
+                Console.WriteLine($"Znaka {znak} ni v tabeli. Več sreče prihodnjič");
+            }
+        }
+        public static void Naloga8(int n, int m)
+        {
+            /* Naloga 6.0.0.4. Napisite metodo, ki za podani naravni stevili n in m vrne tabelo vseh stevil med njima. Tabelo nato izpisite na zaslon. */
+            int dolzina = m - n - 1;
+            int[] tabela = new int[dolzina];
+            int x = n + 1; //rabim zato da izpisem pravo cifro v končnem console.write
+            for (int i = 0; i < dolzina; i++)
+            {
+                tabela[i] = x++;
+            }
+            Console.Write($"Tabela števil med {n} in {m} je: ");
+            Helpers.napisiTabelo(tabela);
+        }
+        public static void Naloga9(char[] tabela, char znak)
+        {
+            /* Naloga 6.0.0.5. Napisite metodo, ki prejme niz in znak ter vrne stevilo pojavitev znaka v nizu. */
+
+            int stevec = 0;
+            for (int i = 0; i < tabela.Length; i++)
+            {
+                if (tabela[i] == znak) stevec++;
+            }
+
+            Console.Write($"Znak {znak} se v tabeli ponovi {stevec} krat.");
+        }
+        public static void Naloga10(string niz)
+        {
+            /* Naloga 6.0.0.6. Napisite metodo, ki prejme niz in ga pretvori v tabelo znakov, ki jo nato vrne. Tabelo nato izpisite na zaslon. */
+            int dolzina = niz.Length;
+            char[] tabelaZnakov = new char[dolzina];
+            string[] tabelaNizov = niz.Split(' ');
+            int k = 0;
+
+            for (int i = 0; i < tabelaNizov.Length; i++)
+            {
+                for (int j = 0; j < tabelaNizov[i].Length; j++)
+                {
+
+                    tabelaZnakov[k] = tabelaNizov[i][j];
+                    k++;
+                }
+            }
+            Helpers.napisiTabelo(tabelaZnakov);
+        }
+
+        public static void Naloga11(List<string> list, char znak)
         {
             /* Naloga 6.0.0.7. Napisite metodo, ki za podan seznam besed in podano crko vrne seznam vseh besed, ki se zacnejo z dano crko. */
+            List<string> seznamBesed = new List<string>();
+            for (int i = 0; i < list.Count; i++)
+            {
+                string beseda = list[i];
+                if (beseda.IndexOf(znak) == 0) seznamBesed.Add(beseda);
+            }
+
+            Console.Write($"Besede v listi, ki se začnejo s črko {znak}: ");
+            Helpers.napisiListo(seznamBesed);
         }
-        public static void Naloga12()
+        public static void Naloga12(string niz)
         {
             /* Naloga 6.0.0.8. Napisite metodo, ki vrne stevilo besed v podanem nizu. Predpostavite lahko, da so besede v nizu locene le s presledki in ne vsebujejo nobenih drugih znakov. */
+
+            string[] tabelaBesed = niz.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+            int dolzina = tabelaBesed.Length;
+
+            Console.WriteLine($"V nizu je {dolzina} besed");
+
         }
         public static void Naloga13()
         {
             /* Naloga 6.0.0.9. Napisite metodo, ki prejme seznam besed in vrne par, kjer je na prvem mestu najdaljsa beseda, na drugem pa njen indeks v seznamu. */
+
+            //TO DO
         }
         public static void Naloga14()
         {
             /* Naloga 6.0.0.10. Napisite metodo, ki vrne tabelo malih crk angleske abecede, metodo, ki vrne tabelo velikih crk angleske abecede in metodo, ki vrne tabelo stevk. */
+
+            //TO DO
         }
         public static void Naloga15()
         {
             /* Naloga 6.0.0.11. Napisite metodo, ki prejme niz in vrne trojico vrednosti, kjer je na prvem mestu stevilo crk, na drugem mestu stevilo stevk, na tretjem mestu pa stevilo preostalih znakov v nizu. */
+
+            //TO DO
         }
         public static void Naloga16()
         {
             /* Naloga 6.0.0.12. Napisite metodo, ki bo izracunala vsoto stevil v celostevilskem seznamu v primeru, da ta ni prazen. Nato v Main metodi to vsoto izpisite v kolikor je bila izracunana. */
+
+            //TO DO
         }
         public static void Naloga17()
         {
             /* Naloga 6.0.0.13. Napisite program, ki bo od uporabnika zahteval nastavitev gesla. Geslo je ustrezno, ce ima vsaj 8 znakov, vsebuje vsaj dve crki in vsaj dve stevki, ob tem pa ima vsaj eno veliko in vsaj eno majhno crko. */
+
+            //to do
         }
         public static void Naloga18()
         {
             /* Naloga 6.0.0.14. Napisite program, ki bo uporabniku 10-krat na zaslon izpisal nakljucno stevilo, ki ga more uporabnik vnesti. Na koncu naj se izpise stevilo pravilnih vnosov, napacnih vnosov in napak pri vnosu. */
+
+            //to do
         }
         public static void Naloga19()
         {
             /* Naloga 6.0.0.15. Napisite program, ki bo uporabniku omogocal vnasanje enostavnih matematicnih izrazov z dvema vrednostima v obliki enega niza, kjer je med stevilkami in operacijo le en presledek. Program naj nato vrne rezultat izraza. Uporabite metode in pa try-catch stavek za moznost deljenja z 0. */
+
+            //to do
         }
         public static void Naloga20()
         {
             /* Naloga 6.1.0.1. Napisite program za igranje vislic, kjer se beseda nakljucno izbere iz predhodno dolocenega seznama besed. */
+
+            //to do
         }
 
         public static void Naloga21()
         {
             /* Naloga 6.1.0.2. Napisite program za igranje stiri v vrsto v konzoli, kjer je stevilo vrstic 6 in stevilo stolpcev 7. */
+
+            //to do
 
         }
     }

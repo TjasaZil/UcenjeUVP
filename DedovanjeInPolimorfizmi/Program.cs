@@ -3,6 +3,26 @@
     internal class Program
     {
 
+        static void Main(string[] args)
+        {
+            // PREDAVANJA
+
+            Naloga1();
+            Naloga2();
+            Naloga3();
+
+            // VAJE
+            Naloga4();
+            Naloga5();
+            Naloga6();
+            Naloga7();
+            Naloga8();
+            Naloga9();
+            Naloga10();
+            Console.ReadKey();
+
+        }
+
         public static void Naloga1()
         {
 
@@ -45,27 +65,6 @@
         public static void Naloga10()
         {
             /* Naloga 9.0.0.7. V razredih Tocka2D in Tocka3D napisite metodo za sestevek vseh koordinat. Nato za seznam iz prejsnjih dveh nalog ugotovite koliksen je skupni sestevek vseh koordinat, ki jih imamo zapisane. */
-        }
-
-
-        static void Main(string[] args)
-        {
-            // PREDAVANJA
-
-            Naloga1();
-            Naloga2();
-            Naloga3();
-
-            // VAJE
-            Naloga4();
-            Naloga5();
-            Naloga6();
-            Naloga7();
-            Naloga8();
-            Naloga9();
-            Naloga10();
-            Console.ReadKey();
-
         }
     }
 }
