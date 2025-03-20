@@ -89,5 +89,67 @@
                 Console.Write(el + " ");
             }
         }
+
+        public static char[] vrniVelikeCrke()
+        {
+            char[] tabela = new char[26];
+            char j = 'A';
+            for (int i = 0; i < tabela.Length; i++)
+            {
+                tabela[i] = j;
+                j++;
+            }
+
+            return tabela;
+        }
+        public static char[] vrniMaleCrke()
+        {
+            char[] tabela = new char[26];
+            char j = 'a';
+            for (int i = 0; i < tabela.Length; i++)
+            {
+                tabela[i] = j;
+                j++;
+            }
+
+            return tabela;
+        }
+
+        public static int[] vrniStevke()
+        {
+            int[] tabela = new int[10];
+            for (int i = 0; i < tabela.Length; i++)
+            {
+                tabela[i] = i;
+            }
+            return tabela;
+        }
+        public static char[] vrniCharStevke()
+        {
+            char j = '0';
+            char[] tabela = new char[10];
+            for (int i = 0; i < tabela.Length; i++)
+            {
+                tabela[i] = j;
+                j++;
+
+            }
+            return tabela;
+        }
+
+        public static List<int> generirajSeznamInt(int zacetek, int konec, int korak)
+        {
+            //metoda zgenerira listo random celih števil
+            List<int> list = new List<int>();
+            Random random = new Random();
+
+            for (int i = zacetek; i <= konec; i += korak)
+            {
+                int element = random.Next(i);
+                list.Add(element);
+            }
+
+            return list;
+        }
     }
 }

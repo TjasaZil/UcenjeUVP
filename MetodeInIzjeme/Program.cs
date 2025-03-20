@@ -12,6 +12,8 @@
             List<string> listaNakljucnihBesed = ["jabolko", "miza", "stol", "knjiga", "sonce", "mesec", "reka", "gora", "gozd", "veter", "dež", "cvet", "ptica", "avtomobil", "letalo", "telefon", "računalnik", "svetloba", "senca", "pot", "most", "vrata", "okno", "sončnica", "drevo", "travnik", "oblak", "pes", "mačka", "zvezda"];
 
             string niz = "to je beseda nekaj presledkov sledi      halo halo je kdo tu";
+            string niz1 = "1htiH6798,.O-30179XOIczd56q-.,+";
+
             // PREDAVANJA
             //Naloga1();
             //Naloga2();
@@ -27,15 +29,23 @@
             // Naloga10(niz);
             //Naloga11(listaNakljucnihBesed, 'r');
             //Naloga12(niz);
-            //Naloga13(); TO DO
-            //Naloga14();  TO DO
-            // Naloga15(); TO DO
-            // Naloga16();  TO DO
-            //Naloga17(); To DO
-            //Naloga18(); TO DO
-            //Naloga19(); TO DO
-            //Naloga20(); TO DO
-            //Naloga21();  TO DO
+
+            //var par = Naloga13(listaNakljucnihBesed);
+            //Console.WriteLine($"Najdaljša beseda je {par.Item1} na indeksu {par.Item2}");
+
+            //Naloga14(); //TO DO
+
+            //var trojica = Naloga15(niz1);
+            //Console.WriteLine($"Stevilo crk je {trojica.Item1}, stevilo stevk je {trojica.Item2} in stevilo preostalih znakov je {trojica.Item3}");
+
+            //Console.WriteLine("Vsota: " + Naloga16());
+
+            //bool ustreznost = Naloga17();
+            //if (ustreznost) Console.WriteLine("Geslo ustreza");
+            //else Console.WriteLine("Geslo ne ustreza");
+
+            Naloga18(); //TO DO
+            Naloga19(); //TO DO
             Console.ReadLine();
         }
 
@@ -269,35 +279,103 @@
             Console.WriteLine($"V nizu je {dolzina} besed");
 
         }
-        public static void Naloga13()
+        public static (string, int) Naloga13(List<string> seznam)
         {
             /* Naloga 6.0.0.9. Napisite metodo, ki prejme seznam besed in vrne par, kjer je na prvem mestu najdaljsa beseda, na drugem pa njen indeks v seznamu. */
+            int index = 0;
+            string beseda = "";
+            int stevecZnakov = 0;
 
-            //TO DO
+            for (int i = 0; i < seznam.Count; i++)
+            {
+                if (seznam[i].Length > stevecZnakov)
+                {
+                    stevecZnakov = seznam[i].Length;
+                    beseda = seznam[i];
+                    index = i;
+                }
+
+            }
+
+            return (beseda, index);
+
         }
         public static void Naloga14()
         {
             /* Naloga 6.0.0.10. Napisite metodo, ki vrne tabelo malih crk angleske abecede, metodo, ki vrne tabelo velikih crk angleske abecede in metodo, ki vrne tabelo stevk. */
-
-            //TO DO
+            char[] tabelaVelikihCrk = Helpers.vrniVelikeCrke();
+            char[] tabelaMalihCrk = Helpers.vrniMaleCrke();
+            int[] tabelaStevk = Helpers.vrniStevke();
         }
-        public static void Naloga15()
+
+
+        public static (int, int, int) Naloga15(string niz)
         {
             /* Naloga 6.0.0.11. Napisite metodo, ki prejme niz in vrne trojico vrednosti, kjer je na prvem mestu stevilo crk, na drugem mestu stevilo stevk, na tretjem mestu pa stevilo preostalih znakov v nizu. */
 
-            //TO DO
+            int steviloCrk = 0;
+            int steviloStevk = 0;
+            int steviloZnakov = 0;
+            char[] tabelaVelikihCrk = Helpers.vrniVelikeCrke();
+            char[] tabelaMalihCrk = Helpers.vrniMaleCrke();
+            char[] tabelaStevk = Helpers.vrniCharStevke();
+
+            for (int i = 0; i < niz.Length; i++)
+            {
+                if (tabelaVelikihCrk.Contains(niz[i]) || tabelaMalihCrk.Contains(niz[i])) steviloCrk++;
+                else if (tabelaStevk.Contains(niz[i])) steviloStevk++;
+                else steviloZnakov++;
+            }
+
+            return (steviloCrk, steviloStevk, steviloZnakov);
         }
-        public static void Naloga16()
+        public static int Naloga16()
         {
             /* Naloga 6.0.0.12. Napisite metodo, ki bo izracunala vsoto stevil v celostevilskem seznamu v primeru, da ta ni prazen. Nato v Main metodi to vsoto izpisite v kolikor je bila izracunana. */
 
-            //TO DO
+            List<int> seznamStevil = Helpers.generirajSeznamInt(0, 200, 10);
+            //Helpers.napisiListo(seznamStevil); -> da lahko vidiš kakšen seznam generira. Ni nujno, samo za pomoč in da preveriš če ostalo lepo dela
+            int vsota = 0;
+            for (int i = 0; i < seznamStevil.Count; i++)
+            {
+                vsota += seznamStevil[i];
+            }
+            return vsota;
+
         }
-        public static void Naloga17()
+        public static bool Naloga17()
         {
             /* Naloga 6.0.0.13. Napisite program, ki bo od uporabnika zahteval nastavitev gesla. Geslo je ustrezno, ce ima vsaj 8 znakov, vsebuje vsaj dve crki in vsaj dve stevki, ob tem pa ima vsaj eno veliko in vsaj eno majhno crko. */
 
-            //to do
+            int steviloVelikihCrk = 0;  //vsaj ena velika crka
+            int steviloStevk = 0; //vsaj dve stevki
+            int steviloMalihCrk = 0; //vsaj ena mala crka
+            char[] tabelaVelikihCrk = Helpers.vrniVelikeCrke();
+            char[] tabelaMalihCrk = Helpers.vrniMaleCrke();
+            char[] tabelaStevk = Helpers.vrniCharStevke();
+            //bool gesloUstreza = false;
+            string vpisanoGeslo = "";
+
+            Console.Write("Prosim vpišite željeno geslo");
+            vpisanoGeslo = Console.ReadLine();
+            Console.WriteLine();
+            if (vpisanoGeslo == null) return false;
+            for (int i = 0; i < vpisanoGeslo.Length; i++)
+            {
+                char znak = vpisanoGeslo[i];
+                if (tabelaVelikihCrk.Contains(znak)) steviloVelikihCrk++;
+                else if (tabelaMalihCrk.Contains(znak)) steviloMalihCrk++;
+                else if (tabelaStevk.Contains(znak)) steviloStevk++;
+            }
+
+            if (vpisanoGeslo.Length >= 8)
+            {
+                if (steviloMalihCrk >= 1 && steviloVelikihCrk >= 1 && steviloStevk >= 2) return true;
+                else return false;
+            }
+            else return false;
+
+
         }
         public static void Naloga18()
         {
@@ -311,19 +389,6 @@
 
             //to do
         }
-        public static void Naloga20()
-        {
-            /* Naloga 6.1.0.1. Napisite program za igranje vislic, kjer se beseda nakljucno izbere iz predhodno dolocenega seznama besed. */
 
-            //to do
-        }
-
-        public static void Naloga21()
-        {
-            /* Naloga 6.1.0.2. Napisite program za igranje stiri v vrsto v konzoli, kjer je stevilo vrstic 6 in stevilo stolpcev 7. */
-
-            //to do
-
-        }
     }
 }
