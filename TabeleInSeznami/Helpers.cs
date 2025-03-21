@@ -79,5 +79,40 @@
             }
             Console.WriteLine();
         }
+
+        public static void izpisListe(List<int> lista)
+        {
+            Console.Write("Trenutni elementi v seznamu: ");
+            foreach (int el in lista)
+            {
+                Console.Write(" " + el);
+            }
+            Console.WriteLine();
+        }
+
+        public static List<int> dodajanjeElementa(List<int> lista)
+        {
+            Console.Write("Katero številko želite dodati v seznam?:");
+            int n = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine();
+            lista.Add(n);
+            Console.WriteLine("Število je dodano v seznam!");
+            return lista;
+        }
+
+        public static List<int> odstranitevElementa(List<int> lista)
+        {
+            Console.Write("Katero številko želite dodati v seznam?: ");
+            int j = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine();
+            if (lista.Contains(j))
+            {
+                lista.RemoveAll(el => el == j); //odstrani vse elemente ki so enaki vpisani vrednosti
+                Console.WriteLine($"Vse pojavitve števila {j} so izbrisane iz seznama");
+            }
+            else Console.WriteLine("Te številke ni v seznamu");
+
+            return lista;
+        }
     }
 }

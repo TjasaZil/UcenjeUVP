@@ -56,19 +56,19 @@
             //Naloga45();
             //Naloga46();
             //Naloga47();
-            Naloga48(); //TO DO
+            //Naloga48(); 
             //Naloga49();
             //Naloga50();
             //Naloga51();
             //Naloga52();
-            Naloga53();  //TO DO
-            Naloga54();  //TO DO
-            Naloga55();  //TO DO
+            //Naloga53();  
+            //Naloga54();
+            //Naloga55();
             Naloga56();  //TO DO
             Naloga57();  //TO DO
             Naloga58();  //TO DO
             Naloga59();  //TO DO
-            Naloga60();  //TO DO
+            //Naloga60(); 
 
             Console.ReadKey();
 
@@ -1041,6 +1041,17 @@
                 *   *
 
                  */
+            int n = 5;
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                {
+                    //|| j == n - i
+                    if (j == i || j == n - 1 - i) Console.Write("*");
+                    else Console.Write(" ");
+                }
+                Console.WriteLine();
+            }
         }
         public static void Naloga49()
         {
@@ -1151,6 +1162,20 @@
              *******
             *********
             */
+
+            int n = 5;
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n - i; j++)
+                {
+                    Console.Write(" ");
+                }
+                for (int k = 0; k < 2 * i + 1; k++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
         }
         public static void Naloga54()
         {
@@ -1161,7 +1186,22 @@
                   *****
                    ***
                     *
+                    *
                 */
+            int n = 5;
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    Console.Write(" ");
+                }
+                for (int k = 0; k < 2 * (n - i) - 1; k++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+
+            }
         }
         public static void Naloga55()
         {
@@ -1175,6 +1215,24 @@
                 ***
                 *
                 */
+
+            int n = 7;
+            for (int i = 0; i <= n / 2; i++)
+            {
+                for (int j = 0; j < 2 * i + 1; j++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
+            for (int i = (n / 2) + 2; i > 0; i -= 2)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
         }
         public static void Naloga56()
         {
@@ -1235,10 +1293,38 @@
         }
         public static void Naloga60()
         {
-
-
             /* Naloga 3.2.0.1. Napisite program za igranje igre ugibanja stevila. Stevilo naj se zgenerira samodejno z uporabo generatorja Random (glej nalogo 3.0.0.4), kjer uporabnik sam odloci najvecje mozno stevilo. Nato naj uporabnik vnasa stevila dokler ne ugane iskanega stevila. Ob vsakem ugibanju mora program uporabniku povedati ali je iskano stevilo vecje ali manjse od vnesenega stevila, ce pa je uporabnik uganil iskano stevilo, mu program izpise koliko poskusov je potreboval, da je stevilo uganil. 
             */
+            Random random = new Random();
+            Console.Write("Določi največje možno število: ");
+            int najvecjeMozno = Convert.ToInt32(Console.ReadLine());
+
+            int randomStevilka = random.Next(0, najvecjeMozno + 1);
+            int stevec = 1;
+            while (true)
+            {
+                Console.Write($"Zgeneriral sem neko random stevilo med 0 in {najvecjeMozno}. Ugani ga! ");
+                int uganjenaStevilka = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine();
+                if (uganjenaStevilka > randomStevilka)
+                {
+                    Console.WriteLine("V mislih imam manjšo številko");
+                    stevec++;
+                    continue;
+                }
+                if (uganjenaStevilka < randomStevilka)
+                {
+                    Console.WriteLine("V mislih imam večjo številko");
+                    stevec++;
+                    continue;
+                }
+                else
+                {
+                    Console.WriteLine($"Bravo! Zgeneriral sem številko {randomStevilka}. Potreboval si {stevec} poizkusov");
+                    break;
+                }
+
+            }
         }
 
 

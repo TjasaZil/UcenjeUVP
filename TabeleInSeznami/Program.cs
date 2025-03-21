@@ -56,9 +56,9 @@
             //Naloga43();
             //Naloga44();
             //Naloga45(); 
-            //Naloga46();  // to do
-            Naloga47();  //to do
-            Naloga48();  // to do
+            //Naloga46();  
+            //Naloga47();  
+            //Naloga48(); 
             Naloga49();  // to do
 
             Console.ReadKey();
@@ -1199,14 +1199,120 @@
         public static void Naloga47()
         {
             /* Naloga 5.1.0.1. Napisite program, ki bo uporabniku omogocal sprotno dodajanje in brisanje elementov seznama podatkov tipa int dokler se uporabnik ne odloci zakljuciti z delom.*/
+
+            List<int> lista = new List<int>();
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Kakšno akcijo želite narediti?:\n 1 - izpis seznama \n 2 - dodajanje podatkov v seznam \n 3 - brisanje podatkov iz seznama \n 0 - konec");
+                    int x = Convert.ToInt32(Console.ReadLine());
+                    if (x == 1)
+                    {
+                        if (lista.Count == 0) Console.WriteLine("Seznam je trenutno prazen!");
+                        else Helpers.izpisListe(lista);
+                        continue;
+                    }
+                    if (x == 2)
+                    {
+                        Helpers.dodajanjeElementa(lista);
+                        continue;
+                    }
+                    if (x == 3)
+                    {
+                        Helpers.odstranitevElementa(lista);
+                        continue;
+                    }
+                    if (x == 0)
+                    {
+                        Console.WriteLine("Konec dela!");
+                        break;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Exception sporočilo: " + ex.Message);
+                }
+
+            }
+        }
+
+        public class Sadje
+        {
+            public string imeSadja { get; set; }
+            public int kolicinaSadja { get; set; }
         }
         public static void Naloga48()
         {
             /* Naloga 5.1.0.2. Napisite program, ki nam bo pomagal shranjevati podatke o kolicini sadja v shrambi. Podatki se shranjujejo v en seznam, za vsako sadje pa moramo shraniti dva podatka, in sicer, ime sadeza in koliko kosov ga imamo. Nato naj program od uporabnika zahteva vnos imena sadeza in kolicine, kolikor ga zeli dodati v shrambo. Pri tem moramo paziti, da v kolikor sadez ze obstaja v shrambi, mu kolicino le pristejemo. */
+
+            List<Sadje> seznamSadja = new List<Sadje>();
+
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Kaj želite narediti?: \n 0 - konec \n 1 - vpiši na seznam \n 2 - izpiši seznam ");
+                    int x = Convert.ToInt32(Console.ReadLine());
+                    if (x == 0)
+                    {
+                        Console.WriteLine("Konec");
+                        break;
+                    }
+                    if (x == 1)
+                    {
+
+                        vpisSadja(seznamSadja);
+                        continue;
+                    }
+                    if (x == 2)
+                    {
+                        Console.WriteLine("Trenutno stanje sadja v shrambi: ");
+                        foreach (var el in seznamSadja)
+                        {
+                            Console.WriteLine(el.imeSadja + " - " + el.kolicinaSadja);
+                        }
+                        continue;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Prišlo je do nepričakovane težave: " + ex.Message);
+                }
+            }
+        }
+
+        public static List<Sadje> vpisSadja(List<Sadje> list)
+        {
+            bool obstaja = false;
+            Console.Write("Napišite ime sadja v shrambi: ");
+            string ime = Console.ReadLine().ToLower();
+            Console.WriteLine();
+            Console.Write($"Koliko {ime} je v shrambi: ");
+            int kolicina = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i].imeSadja == ime)
+                {
+                    obstaja = true;
+                    list[i].kolicinaSadja += kolicina;
+                    Console.WriteLine($"{ime} že imate v shrambi. Količina je bila dodana.");
+                    break;
+                }
+            }
+            if (!obstaja)
+            {
+                list.Add(new Sadje { imeSadja = ime, kolicinaSadja = kolicina });
+                Console.WriteLine("Sadja še nimate v seznamu. Dodali ste novo sadje!");
+            }
+            return list;
         }
         public static void Naloga49()
         {
-            /* Naloga 5.1.0.3. Denimo, da imamo tri sezname v katerih imamo shranjene podatke o delavcih v podjetju. V prvem seznamu so shranjena imena in priimki delavcev, v drugem seznamu so shranjene starosti delavcev, v tretjem seznamu pa so shranjene place delavcev. V vseh treh seznamih je so podatki o doloˇcenem delavcu na istem mestu v seznamu. Napisite program, ki bo omogocal izpisovanje podatkov o delavcih glede na dolocene pogoje.
+            /* Naloga 5.1.0.3. Denimo, da imamo tri sezname v katerih imamo shranjene podatke o delavcih v podjetju. V prvem seznamu so shranjena imena in priimki delavcev, v drugem seznamu so shranjene starosti delavcev, v tretjem seznamu pa so shranjene place delavcev. V vseh treh seznamih je so podatki o dolocenem delavcu na istem mestu v seznamu. Napisite program, ki bo omogocal izpisovanje podatkov o delavcih glede na dolocene pogoje.
                    (a) Izpis povprecne starosti in place vseh zaposlenih.
                    (b) Izpis podatkov vseh delavcev s starostjo nad ali pod starostjo, ki jo poda uporabnik.
                    (c) Izpis podatkov vseh delavcev s placo visjo ali nizjo od povprecne place in skupnim stevilom teh delavcev. */
