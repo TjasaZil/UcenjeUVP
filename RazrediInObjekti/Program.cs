@@ -8,45 +8,64 @@
             //Naloga1();
             //Naloga2();
             //Naloga3();
-            //Naloga4();
-            //Naloga5();
-            //Naloga6();
-            //Naloga7();
-            //Naloga8();
-            //Naloga9();
+            Naloga4();
+            Naloga5();
+            Naloga6();
+            Naloga7();
+            Naloga8();
+            Naloga9();
 
             // VAJE
-            //Naloga10();
-            //Naloga11();
-            //Naloga12();
-            //Naloga13();
-            //Naloga14();
-            //Naloga15();
-            //Naloga16();
-            //Naloga17();
-            //Naloga18();
-            //Naloga19();
-            //Naloga20();
-            //Naloga21();
-            //Naloga22();
+            Naloga10();
+            Naloga11();
+            Naloga12();
+            Naloga13();
+            Naloga14();
+            Naloga15();
+            Naloga16();
+            Naloga17();
+            Naloga18();
+            Naloga19();
+            Naloga20();
+            Naloga21();
+            Naloga22();
             Console.ReadKey();
         }
 
         public static void Naloga1()
         {
+
             /* Naloga 8.1.1.1. Razmislite, katere lastnosti bi pripisali rozi in katere bi ji pripisali v konstruktorjih. Definirajte razred Flower, dodajte mu vsaj tri spremenljivke, ki bodo hranile neke podatke o vsaki instanci, in definirajte vsaj dva konstruktorja.*/
+            //definirana spodaj
+
+            Flower roza1 = new Flower("Rose", "pink", true, 1, 0.75);
+            Flower tulip = new Flower("Tulip", "Yellow", false, 1, 0.5);
+            Flower kaktus = new Flower("Kaktus", "", false, 0, 0.25);
+
         }
         public static void Naloga2()
         {
             /* Naloga 8.2.1.1. Razredu Dress iz razdelka dolocite se dve lastnosti: cena z DDV in cena brez DDV, kjer v konstruktorju kot parameter dobite samo ceno brez DDV. Ceno z DDV izracunate z upostevanjem, da je DDV na obleke 22%.*/
+
+            Dress rdecaObleka = new Dress(100);
+            Console.WriteLine($"cena rdece obleke z DDV je {rdecaObleka.WithDDV}");
+
         }
         public static void Naloga3()
         {
             /* Naloga 8.2.1.2. Napisite razred Drink, ki opisuje napitek, ki ga lahko narocite v lokalni  kavarni. Dolocite mu vsaj dva konstruktorja in vsaj stiri lastnosti, pri cemer sta lahko najvec dve samodejno implementirani.*/
+
+            Drink brezkofeinskaBelaKava = new Drink(true, true, "sweet", false, "brown", true, true);
+            Drink kapucino;
+            Drink podaljsanaKava = new Drink();
+            Drink Kakav;
+            Drink sadniCaj;
+            Drink zeleniCaj;
         }
         public static void Naloga4()
         {
             /* Naloga 8.3.1.1. Napisite razred Figura, ki predstavlja sahovsko figuro. Razmislite, katere lastnosti bi figura morala imeti, in jih implementirajte. Podobno implementirajte tudi vsaj eno metodo zanjo.*/
+            //ime, barva, material
         }
         public static void Naloga5()
         {
@@ -67,12 +86,16 @@
         public static void Naloga9()
         {
             /* Naloga 8.3.1.6. Napisite razreda Dijak in Razred. Razred Dijak naj vsebuje: Lastnosti Ime, PredmetiNaMaturi, SteviloTockNaMaturi, KoncniUspeh (zadosten, dober, prav dober, odliˇcen). En konstruktor, ki omogoca dolocitev natanko dveh lastnosti, in en konstruktor, ki omogoca doloˇcitev vseh stirih lastnosti. Povozite metodo ToString, ki naj izpise vse podatke o dijaku. Razred Razred naj vsebuje: Lastnosti SeznamDijakov in Razrednik. Konstruktor, ki inicializira seznam dijakov in kot parameter dobi razrednika. Metodo, ki izpise povprecno stevilo tock dijakov razreda na maturi. V metodi Main kreirajte instanco razreda Razred, ki naj vsebuje vsaj pet dijakov in izpisite podatke o vseh dijakih, ki so na maturi dosegli vsaj 24 tock. */
+
+            List<string> predmeti = new List<string>() { "Matematika", "Nemščina", "Slovenščina", "Filozofija", "Sociologija" };
+            Dijak Ana = new Dijak("Ana", predmeti, 24, "odločno");
+            Console.Write(Ana.ToString());
         }
 
         // 8.1 Knjiga
         public static void Naloga10()
         {
-            /* Naloga 8.1.0.1. Ustvarite razred Avtor s polji za ime, priimek, spol, starost in email naslov. Dodajte mu konstruktor, ki omogoˇca doloˇcitev vrednosti vseh polj in metodo za izpis njegovih podatkov, ki vrne niz. */
+            /* Naloga 8.1.0.1. Ustvarite razred Avtor s polji za ime, priimek, spol, starost in email naslov. Dodajte mu konstruktor, ki omogoca dolocitev vrednosti vseh polj in metodo za izpis njegovih podatkov, ki vrne niz. */
         }
         public static void Naloga11()
         {
@@ -118,7 +141,7 @@
         public static void Naloga20()
         {
             /* Naloga 8.3.0.5. Ustvarite razred UporabniskiVmesnik za upravljanje banke. Uporabnik naj ima na voljo kreiranje novega bancnega racuna, brisanje obstojecega bancnega racuna in vpogled v stanje svojih bancnih racunov. Ob tem naj ima moznost tudi upravljanja z dolocenim bancnim racunom, kjer lahko opravi polog, izplacilo ali pa izpis transakcij na
-                banˇcnem racunu. */
+                bancnem racunu. */
         }
 
         public static void Naloga21()
@@ -130,4 +153,134 @@
             /* Naloga 8.3.0.7 (Dodatno). V program za upravljanje banke v celoti vkljucite moznost za nakazilo sredstev na poljuben obstojeci bancni racun glede na stevilo racuna. */
         }
     }
+
+
+    /* Naloga 8.1.1.1. Razmislite, katere lastnosti bi pripisali rozi in katere bi ji pripisali v konstruktorjih. Definirajte razred Flower, dodajte mu vsaj tri spremenljivke, ki bodo hranile neke podatke o vsaki instanci, in definirajte vsaj dva konstruktorja.*/
+    public class Flower
+    {
+        public Flower(string name, string color, bool smell, int numOfFlowers, double height)
+        {
+            Name = name;
+            Color = color;
+            Smell = smell;
+            NumOfFlowers = numOfFlowers;
+            Height = height;
+
+        }
+
+        public string Name { get; set; }
+        public string Color { get; set; }
+        public bool Smell { get; set; }
+        public int NumOfFlowers { get; set; }
+        public double Height { get; set; }
+    }
+
+    /* Naloga 8.2.1.1. Razredu Dress iz razdelka dolocite se dve lastnosti: cena z DDV in cena brez DDV, kjer v konstruktorju kot parameter dobite samo ceno brez DDV. Ceno z DDV izracunate z upostevanjem, da je DDV na obleke 22%.*/
+    public class Dress
+    {
+
+        public Dress(double noddv)
+        {
+            NoDDV = noddv;
+        }
+
+        public double NoDDV { get; set; }
+        public double WithDDV
+        {
+            get
+            {
+                return NoDDV * 1.22;
+            }
+        }
+    }
+
+    /* Naloga 8.2.1.2. Napisite razred Drink, ki opisuje napitek, ki ga lahko narocite v lokalni  kavarni. Dolocite mu vsaj dva konstruktorja in vsaj stiri lastnosti, pri cemer sta lahko najvec dve samodejno implementirani.*/
+    public class Drink
+    {
+
+        public Drink(bool isHot, bool hasFoam, string taste, bool hasCaffeine, string color, bool isSweet, bool hasMilk)
+        {
+            this.IsHot = isHot;
+            this.HasFoam = hasFoam;
+            this.Taste = taste;
+            this.HasCaffeine = hasCaffeine;
+            this.Color = color;
+            this.IsSweet = isSweet;
+            this.HasMilk = hasMilk;
+        }
+        public Drink()
+        {
+            this.IsHot = true;
+            this.HasFoam = false;
+            this.Taste = "crap";
+            this.HasCaffeine = true;
+            this.Color = "black";
+            this.IsSweet = false;
+            this.HasMilk = false;
+        }
+
+
+        public bool IsHot { get; set; }
+        public bool HasFoam { get; set; }
+        public string Taste { get; set; }
+        public bool HasCaffeine { get; set; }
+        public string Color { get; set; }
+        public bool IsSweet { get; set; }
+        public bool HasMilk { get; set; }
+    }
+
+    /* Naloga 8.3.1.6. Napisite razreda Dijak in Razred. Razred Dijak naj vsebuje: Lastnosti Ime, PredmetiNaMaturi, SteviloTockNaMaturi, KoncniUspeh (zadosten, dober, prav dober, odlicen). En konstruktor, ki omogoca dolocitev natanko dveh lastnosti, in en konstruktor, ki omogoca doloˇcitev vseh stirih lastnosti. Povozite metodo ToString, ki naj izpise vse podatke o dijaku. Razred Razred naj vsebuje: Lastnosti SeznamDijakov in Razrednik. Konstruktor, ki inicializira seznam dijakov in kot parameter dobi razrednika. Metodo, ki izpise povprecno stevilo tock dijakov razreda na maturi. V metodi Main kreirajte instanco razreda Razred, ki naj vsebuje vsaj pet dijakov in izpisite podatke o vseh dijakih, ki so na maturi dosegli vsaj 24 tock. */
+
+    public class Dijak
+    {
+
+        public Dijak(string ime, List<string> predmetiNaMaturi, int steviloTockNaMaturi, string koncniUspeh)
+        {
+            Ime = ime;
+            PredmetiNaMaturi = predmetiNaMaturi;
+            SteviloTockNaMaturi = steviloTockNaMaturi;
+            KoncniUspeh = koncniUspeh;
+        }
+        public Dijak(string ime, string koncniUspeh)
+        {
+            Ime = ime;
+            KoncniUspeh = koncniUspeh;
+        }
+
+        private List<string> predmeti = new List<string> { "Matematika", "Slovenscina", "Anglescina", "Fizika", "Zgodovina" };
+        private int tocke = 0;
+        public string Ime { get; set; }
+        public List<string> PredmetiNaMaturi
+        {
+            get
+            {
+                return predmeti;
+            }
+
+            set
+            {
+                predmeti = value;
+            }
+        }
+        public int SteviloTockNaMaturi
+        {
+            get
+            {
+                return tocke;
+            }
+
+            set
+            {
+                tocke = value;
+            }
+        }
+        public string KoncniUspeh { get; set; }
+
+        public override string ToString()
+        {
+            return $"Podatki o dijaku:\n ime: {Ime} \n Predmeti na Maturi: {string.Join(", ", PredmetiNaMaturi)} \n Število točk na maturi: {SteviloTockNaMaturi} \n Končni uspeh: {KoncniUspeh}";
+        }
+    }
+
+    public class Razred { }
 }

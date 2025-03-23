@@ -20,5 +20,15 @@
         /// ki imajo ime ali priimek daljši od 6 črk. [7 točk]
         /// </summary> 
         /// 
+
+        //vnos imena in priimka
+        //dodajanje imena in priimka v seznam
+        // odstrani vse goste katerih ime vsebuje črko t ali priimek črko n (malo ali veliko)
+        // izpiši goste iz prečiščenega seznama
+        // koliko gostov ima ime ali priimek daljše od 6 črk?
+        public static void Gostje()
+        {
+
+        }
     }
 }

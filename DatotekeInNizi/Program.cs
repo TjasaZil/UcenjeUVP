@@ -8,7 +8,7 @@
 
             //Naloga1();
             //Naloga2("niziziziz", "i");
-            //Naloga3();
+            //Naloga3(); -> ne
             //Naloga4();
             //Naloga5();
             //Naloga6();
@@ -21,8 +21,8 @@
             //Naloga11();
             //Naloga12();
             //Naloga13();
-            //Naloga14();
-            //Naloga15();
+            Naloga14();
+            Naloga15();
             Console.ReadKey();
 
         }
@@ -57,7 +57,7 @@
         {
             /* Naloga 7.1.1.3. Zgornji primer s podatki o osebi smo zapisali precej naivno. V realnih aplikacijah moramo preveriti in precistiti vnose. Na primer, vrednosti za visino, tezo in starost morajo biti stevilske in iz primernih intervalov (npr. starost med 0 in (recimo) 120). Prav tako obicajno statuse izbiramo iz sifrantov, da nimamo nekaj razlicnih zapisov istega statusa ipd. Dopolnite zgornjo kodo s preverjanjem, da spremenljivke res dobijo ustrezne vrednosti in v primeru napak izpisite obvestilo, s sporocilom, kaj je slo narobe.*/
 
-            //TO DO
+            // NE
         }
         public static void Naloga4()
         {
@@ -93,7 +93,33 @@
         }
         public static void Naloga6()
         {
-            /* Naloga 7.2.1.1. Ustvarite datoteko, ki ima enako ime kot vi in koncnico txt. Uporabite metode iz prejˇsnjih poglavij in v datoteko zapisite prvih sto prastevil, vsako v svojo vrstico.*/
+            /* Naloga 7.2.1.1. Ustvarite datoteko, ki ima enako ime kot vi in koncnico txt. Uporabite metode iz prejsnjih poglavij in v datoteko zapisite prvih sto prastevil, vsako v svojo vrstico.*/
+
+            izpisiPrastevilaVDatoteko();
+        }
+
+        public static void izpisiPrastevilaVDatoteko()
+        {
+            StreamWriter swFile = new StreamWriter("TjasaZilavec.txt", false);
+            bool jePrastevilo = true;
+            for (int i = 2; i <= 100; i++)
+            {
+                for (int j = 1; j < i; j++)
+                {
+                    if (i % j == 0 && j != 1)
+                    {
+                        jePrastevilo = false;
+                        break;
+                    }
+
+                }
+                if (jePrastevilo)
+                    swFile.WriteLine($"{i}");
+
+                jePrastevilo = true;
+            }
+            swFile.Flush();
+            swFile.Close(); //Obvezno! zapre datoteko
         }
         public static void Naloga7()
         {
@@ -102,10 +128,37 @@
         public static void Naloga8()
         {
             /* Naloga 7.3.1.1. Nase programe pisemo v datoteke, ki so na disku shranjene v datotekah s koncnico cs. Izberite si dve in na zaslon izpisite njuno vsebino. */
+
+            StreamReader srFile3 = new StreamReader("TjasaZilavec.txt");
+
+            //primer-> izračun povprečja števil v datoteki
+            int count = 0;
+            int vsota = 0;
+            while (srFile3.EndOfStream == false)
+            {
+
+                string lineString = srFile3.ReadLine();
+                int line = Convert.ToInt32(lineString);
+                vsota += line;
+                count++;
+            }
+            double povprecje = (double)vsota / count;
+            Console.WriteLine($"Povprecje prastevil do 100 je: {povprecje}");
+
+            srFile3.Close();
         }
         public static void Naloga9()
         {
             /* Naloga 7.3.1.2. Na svojem disku poiscite neko tekstovno datoteko in napisite program, ki bo iz datoteke izpisal vse vrstice, ki vsebujejo enega od treh sumnikov (c, s, z). */
+
+            StreamReader srFile = new StreamReader("csz.txt");
+            while (srFile.EndOfStream == false)
+            {
+                string line = srFile.ReadLine();
+                if (line.Contains("č") || line.Contains("š") || line.Contains("ž") || line.Contains("Č") || line.Contains("Š") || line.Contains("Ž"))
+                    Console.WriteLine(line);
+            }
+            srFile.Close();
 
         }
         public static void Naloga10()
@@ -115,10 +168,30 @@
         public static void Naloga11()
         {
             /* Naloga 7.0.0.1. Deklarirajte poljuben seznam nizov in ga zapisite v tekstovno datoteko katere ime izberete sami. */
+
+            List<string> listaNakljucnihBesed = ["jabolko", "miza", "stol", "knjiga", "sonce", "mesec", "reka", "gora", "gozd", "veter", "dež", "cvet", "ptica", "avtomobil", "letalo", "telefon", "računalnik", "svetloba", "senca", "pot", "most", "vrata", "okno", "sončnica", "drevo", "travnik", "oblak", "pes", "mačka", "zvezda"];
+
+            StreamWriter swFile = new StreamWriter("seznamNizov.txt", true);
+            foreach (string el in listaNakljucnihBesed)
+            {
+                swFile.WriteLine(el);
+
+            }
+            swFile.Flush();
+            swFile.Close();
         }
         public static void Naloga12()
         {
             /* Naloga 7.0.0.2. Vsebino datoteke iz prejsnje naloge znova preberite in jo shranite v nov seznam nizov. */
+
+            List<string> novSeznam = new List<string>();
+            StreamReader srFile = new StreamReader("seznamNizov.txt");
+
+            while (srFile.EndOfStream == false)
+            {
+                novSeznam.Add(srFile.ReadLine());
+            }
+            srFile.Close();
         }
         public static void Naloga13()
         {

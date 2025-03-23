@@ -44,13 +44,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazrediInObjekti", "Razredi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DedovanjeInPolimorfizmi", "DedovanjeInPolimorfizmi\DedovanjeInPolimorfizmi.csproj", "{710BFB4F-7C85-4FDF-9C43-108051CA7877}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vislice", "Vislice\Vislice.csproj", "{9E768B48-C236-4845-8280-3EFC5AF51521}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vislice", "Vislice\Vislice.csproj", "{9E768B48-C236-4845-8280-3EFC5AF51521}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku", "Sudoku\Sudoku.csproj", "{BC3757D9-D5C9-4285-B874-1626D7889F23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sudoku", "Sudoku\Sudoku.csproj", "{BC3757D9-D5C9-4285-B874-1626D7889F23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StiriVVrsto", "StiriVVrsto\StiriVVrsto.csproj", "{DC8DA0CF-E7E8-44BF-9C56-CD1D99F5FCDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StiriVVrsto", "StiriVVrsto\StiriVVrsto.csproj", "{DC8DA0CF-E7E8-44BF-9C56-CD1D99F5FCDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KrizciInKrozci", "KrizciInKrozci\KrizciInKrozci.csproj", "{3AC4562C-9F2B-4360-B840-E2345A1A51D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KrizciInKrozci", "KrizciInKrozci\KrizciInKrozci.csproj", "{3AC4562C-9F2B-4360-B840-E2345A1A51D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebParser", "WebParser\WebParser.csproj", "{5A633470-1A98-4E0C-8085-F4B73FF9BF76}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -142,6 +144,10 @@ Global
 		{3AC4562C-9F2B-4360-B840-E2345A1A51D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3AC4562C-9F2B-4360-B840-E2345A1A51D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3AC4562C-9F2B-4360-B840-E2345A1A51D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A633470-1A98-4E0C-8085-F4B73FF9BF76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A633470-1A98-4E0C-8085-F4B73FF9BF76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A633470-1A98-4E0C-8085-F4B73FF9BF76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A633470-1A98-4E0C-8085-F4B73FF9BF76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
