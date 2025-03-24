@@ -42,6 +42,42 @@
             }
             // *** KODE DO TUKAJ OD ZGORNJE MEJE NE SPREMINJAJTE!
 
+            /// Za vsako vpisno številko pripravite instanco razreda Student,
+            /// ki bo imel dano vpisno številko in seznam vseh šestih predmetov,
+            /// pri čemer za vsak predmet oceno izberete slučajno med ocenami
+            /// od 6 do 10. [10 točk]
+
+            List<Student> lstStudentov = new List<Student>();
+            Random random = new Random();
+            for (int i = 0; i < lstVpisneStevilke.Count; i++)
+            {
+                Student student = new Student(lstVpisneStevilke[i]);
+
+                for (int j = 0; j < lstImenaPredmetov.Count; j++)
+                {
+                    int ocena = random.Next(6, 11);
+                    Predmet predmet = new Predmet(lstImenaPredmetov[j], ocena);
+                    student.Ocene.Add(predmet);
+                }
+
+                lstStudentov.Add(student);
+            }
+            
+            /// povprecna ocena pri vsakem od predmetov
+
+            for (int i = 0; i < lstImenaPredmetov.Count; i++)
+            {
+                double vsota=0;
+                foreach (var student in lstStudentov)
+                {
+                    vsota += student.Ocene[i].Ocena;
+                }
+
+                double povprecje = vsota / lstStudentov.Count;
+                Console.WriteLine($"Povprečje pri predmetu {lstImenaPredmetov[i]} je {povprecje}");
+
+            }
+            
 
         }
 
@@ -60,24 +96,17 @@
 
         public List<Predmet> Ocene { get; set; }
 
-        /// <summary>
-        /// Izračuna povprečno oceno študenta
-        /// </summary>
+        /// V razred Student dodajte metodo, ki izračuna in vrne povprečno oceno študenta.
+
         public double PovprecnaOcena()
         {
-            double povprecje = 0;
-
-            // Sprehodimo se po vseh ocenah
-            foreach (Predmet predmet in this.Ocene)
+            double vsota = 0;
+            foreach (var predmet in Ocene)
             {
-                // Prištejemo jih k skupni vsoti
-                povprecje = povprecje + predmet.Ocena;
+                vsota += predmet.Ocena;
             }
-            // Delimo s številom ocen
-            povprecje = povprecje / this.Ocene.Count;
 
-            return povprecje;
-            // Imamo 5 točk
+            return vsota / Ocene.Count;
         }
     }
 
