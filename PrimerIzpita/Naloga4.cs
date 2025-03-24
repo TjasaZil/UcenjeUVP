@@ -20,5 +20,21 @@
         /// </summary>
         ///
 
+        public static void Metuljcek(int n)
+        {
+            //int n = 5;
+            int m = 2 * n - 1;
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < m; j++)
+                {
+                    if (j == 0 || j == m - 1) Console.Write("*");
+                    else if (i == j - i) Console.Write("*");
+                    else if (j == m - 1 - 2 * i) Console.Write("*");
+                    else Console.Write(" ");
+                }
+                Console.WriteLine();
+            }
+        }
     }
 }

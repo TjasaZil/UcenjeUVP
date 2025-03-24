@@ -8,27 +8,24 @@
             //Naloga1();
             //Naloga2();
             //Naloga3();
-            Naloga4();
-            Naloga5();
+            //Naloga4();
+            //Naloga5();
             Naloga6();
-            Naloga7();
-            Naloga8();
-            Naloga9();
+            //Naloga7();
+            //Naloga8();
+            //Naloga9();
 
             // VAJE
-            Naloga10();
-            Naloga11();
-            Naloga12();
-            Naloga13();
-            Naloga14();
-            Naloga15();
-            Naloga16();
-            Naloga17();
-            Naloga18();
-            Naloga19();
-            Naloga20();
-            Naloga21();
-            Naloga22();
+
+            //knjiga
+            //Avtor avtor = new Avtor("Maja", "Tomic", "Zenski", 29, "maja.tomic@gmail.com");
+            //Console.WriteLine(avtor.izpisAvtorja());
+            //Knjig knjig = new Knjig("Maja", "Tomic", "Zenski", 29, "maja.tomic@gmail.com", "Knjiga dolga 500 strani", "Mladinska knjiga", 500);
+            //knjig.izpisPodatkov();
+
+            //naselje
+
+            //banka
             Console.ReadKey();
         }
 
@@ -66,10 +63,21 @@
         {
             /* Naloga 8.3.1.1. Napisite razred Figura, ki predstavlja sahovsko figuro. Razmislite, katere lastnosti bi figura morala imeti, in jih implementirajte. Podobno implementirajte tudi vsaj eno metodo zanjo.*/
             //ime, barva, material
+
+            Figura konj = new Figura("konj", "bela", "les");
+            Console.WriteLine(konj.lastnostiFigure());
         }
         public static void Naloga5()
         {
             /* Naloga 8.3.1.2. Definirajte razred Glagol, ki bo kot vrednost prejel nek glagol, njegove dodatne lastnosti pa bodo Oseba, Stevilo, Cas. Napisite tudi objektno metodo, ki bo vrnila seznam vseh oblik glagola za vse osebe v ednini (vsaj za nekatere korene glagolov).*/
+
+            Glagol okno = new Glagol("okno", "prva", "ednina", "imenovalnik", "srednji");
+            Glagol slon = new Glagol("slon", "prva", "ednina", "imenovalnik", "moski");
+            Glagol zena = new Glagol("zena", "prva", "ednina", "imenovalnik", "zenski");
+
+            Console.WriteLine(string.Join(", ", okno.glagolVEdnini()));
+            Console.WriteLine(string.Join(", ", slon.glagolVEdnini()));
+            Console.WriteLine(string.Join(", ", zena.glagolVEdnini()));
         }
         public static void Naloga6()
         {
@@ -82,76 +90,54 @@
         public static void Naloga8()
         {
             /* Naloga 8.3.1.5. Pripravite razreda Igralec in NogometniKlub. Razred Igralec naj vsebuje: Lastnosti Ime, CenaIgralca, Polozaj (napadalec, vezni, vratar,...), Starost (tej lastnosti lahko vrednost nastavimo samo v konstruktorju!). En konstruktor, ki omogoca dolocitev natanko dveh lastnosti, in en konstruktor, ki omogoca dolocitev vsaj treh lastnosti. Povozite metodo ToString, ki naj izpise vse podatke o igralcu. Razred NogometniKlub naj vsebuje: Lastnosti SeznamIgralcev in VisinaProracuna. Konstruktor, ki inicializira seznam igralcev in nastavi visino proracuna. Metodo, ki izpise vse igralce, ki imajo ceno visjo od danega maksimuma. V metodi Main kreirajte instanco razreda NogometniKlub, ki naj vsebuje vsaj pet igralcev in izpisite podatke o vseh igralcih, ki imajo ceno vsaj 100 000 evrov in so mlajsi od 30 let.*/
+
+            Igralec Benjamin = new Igralec("Benjamin", 100000, "vratar", 30);
+            Igralec Beno = new Igralec("Beno", 120000, "napadalec", 28);
+            Igralec Aljaz = new Igralec("Aljaž", 90000, "napadalec", 32);
+            Igralec Ziga = new Igralec("Žiga", 85000, "napadalec", 24);
+            Igralec Peter = new Igralec("Peter", 105000, "vratar", 35);
+            Igralec Nik = new Igralec("Nik", 75000, "vezni", 27);
+            Igralec Nikola = new Igralec("Nikola", 100000, "vezni", 27);
+
+            List<Igralec> listaIgralcev = new List<Igralec>() { Benjamin, Beno, Aljaz, Ziga, Peter, Nik, Nikola };
+            //Console.WriteLine(Benjamin.ToString());
+            NogometniKlub sava = new NogometniKlub(listaIgralcev, 100000);
+
+            //sava.predragiIgralci();
+            Console.WriteLine("Igralci: ");
+            for (int i = 0; i < sava.SeznamIgralcev.Count; i++)
+            {
+                Igralec igralec = sava.SeznamIgralcev[i];
+                if (igralec.Starost < 30 && igralec.CenaIgralca >= 100000)
+                {
+                    Console.WriteLine($"Ime: {igralec.Ime} Cena: {igralec.CenaIgralca} Polozaj: {igralec.Polozaj} Starost: {igralec.Starost}");
+                }
+            }
         }
         public static void Naloga9()
         {
             /* Naloga 8.3.1.6. Napisite razreda Dijak in Razred. Razred Dijak naj vsebuje: Lastnosti Ime, PredmetiNaMaturi, SteviloTockNaMaturi, KoncniUspeh (zadosten, dober, prav dober, odliˇcen). En konstruktor, ki omogoca dolocitev natanko dveh lastnosti, in en konstruktor, ki omogoca doloˇcitev vseh stirih lastnosti. Povozite metodo ToString, ki naj izpise vse podatke o dijaku. Razred Razred naj vsebuje: Lastnosti SeznamDijakov in Razrednik. Konstruktor, ki inicializira seznam dijakov in kot parameter dobi razrednika. Metodo, ki izpise povprecno stevilo tock dijakov razreda na maturi. V metodi Main kreirajte instanco razreda Razred, ki naj vsebuje vsaj pet dijakov in izpisite podatke o vseh dijakih, ki so na maturi dosegli vsaj 24 tock. */
 
             List<string> predmeti = new List<string>() { "Matematika", "Nemščina", "Slovenščina", "Filozofija", "Sociologija" };
-            Dijak Ana = new Dijak("Ana", predmeti, 24, "odločno");
-            Console.Write(Ana.ToString());
+            Dijak Ana = new Dijak("Ana", predmeti, 24, "odlično");
+            //Console.Write(Ana.ToString());
+
+            Razred razred = new Razred("razrednik");
+            Console.Write(razred.povprecjeTock());
+
+            Console.WriteLine("Podatki o dijakih ki so dosegli vsaj 24 točk na maturi: ");
+            for (int i = 0; i < razred.Dijaki.Count(); i++)
+            {
+                if (razred.Dijaki[i].SteviloTockNaMaturi > 23)
+                {
+                    Console.WriteLine($"ime: {razred.Dijaki[i].Ime} Predmeti: {string.Join(", ", razred.Dijaki[i].PredmetiNaMaturi)} št. točk: {razred.Dijaki[i].SteviloTockNaMaturi} končni uspeh: {razred.Dijaki[i].KoncniUspeh}");
+                }
+            }
+
         }
 
-        // 8.1 Knjiga
-        public static void Naloga10()
-        {
-            /* Naloga 8.1.0.1. Ustvarite razred Avtor s polji za ime, priimek, spol, starost in email naslov. Dodajte mu konstruktor, ki omogoca dolocitev vrednosti vseh polj in metodo za izpis njegovih podatkov, ki vrne niz. */
-        }
-        public static void Naloga11()
-        {
-            /* Naloga 8.1.0.2. Ustvarite razred Knjiga s polji za naslov knjige, avtorja (iz prejsnje  naloge), zalozbo in stevilo strani. Dodajte mu tudi konstruktor, ki doloci avtorja. Ob tem naj vsebuje tudi metodo za izpis, ki izpise podatke o knjigi skupaj s podatki o avtorju. */
-        }
 
-        // 8.2 Naselje
-        public static void Naloga12()
-        {
-            /* Naloga 8.2.0.1. Ustvarite razred Zgradba, ki shranjuje nekaj lastnosti o zgradbi. Vsebuje naj tudi staticno metodo Zgradi, ki uporabnika vprasa po podatkih o zgradbi in vrne objekt tipa Zgradba. Objektu dodajte tudi metodo Porusi, ki objekt unici. Vsebuje naj tudi metodo, ki kreira niz podatkov za izpis. */
-        }
-        public static void Naloga13()
-        {
-            /* Naloga 8.2.0.2. Ustvarite razred Parcela, ki shranjuje podatek o stevilki parcele, o tem ali je na parceli zgradba ali ne, ter ali je zazidljiva ali ne. Dodajte ji metodo za spremembo namembnosti, ter za kreiranje niza podatkov za izpis. */
-        }
-        public static void Naloga14()
-        {
-            /* Naloga 8.2.0.3. Ustvarite razred Naselje, ki shranjuje tabelo parcel. Vse parcele so na zacetku nezazidljive. V razred dodajte se uporabniski vmesnik, ki bo omogocal gradnjo in rusenje zgradb ter spremembo namembnosti parcel glede na stevilko parcele. */
-        }
-        public static void Naloga15()
-        {
-            /* Naloga 8.2.0.4. Razrede Zgradba, Parcela in Naselje ustrezno popravite tako, da boste med izvajanjem programa lahko vse podatke zapisali v datoteko, da bi lahko v prihodnje nadaljevali z delom tam, kjer smo ostali.*/
-        }
 
-        // 8.3 Banka
-        public static void Naloga16()
-        {
-            /* Naloga 8.3.0.1. Ustvarite objekt Stranka s polji: ime (string), naslov (string), starost (int) in spol (char). Dodajte mu konstruktor za poljubno dolocitev vrednosti vseh polj. */
-        }
-        public static void Naloga17()
-        {
-            /* Naloga 8.3.0.2. Ustvarite objekt BancniRacun s polji: stevilka bancnega racuna (int),stranka (Stranka), stanje na racunu (double), seznam transakcij (List<double>) in mudodajte konstruktor, ki nastavi zacetno vrednost za stevilko racuna in stranko. Dodajte mu se funkcionalnosti za polog in izplacilo, ki naj se dodajo v seznam transakcij, ter za
-                  prikaz financnega stanja stranke na racunu. Vsebuje naj tudi izpis vseh transakcij na racunu. */
-        }
-        public static void Naloga18()
-        {
-            /* Naloga 8.3.0.3. Objektu Stranka dodajte polje denarnica (double) in popravite funkcionalnosti za polog in izplacilo razreda BancniRacun, da popravite tudi stanje v denarnici stranke (najprej morate preveriti, ali je podana vrednost za polog oz. izplacilo sploh mogoca). */
-        }
-        public static void Naloga19()
-        {
-            /* Naloga 8.3.0.4. Ustvarite objekt Banka, ki shranjuje seznam strank in bancnih racunov. Vsebovati mora tudi funkcionalnost za izpis stevilke racuna in stanja za vse bancne racune glede na ime stranke. Ob tem naj vsebuje tudi funkcionalnosti za ustvariti racun stranke, ter za izbris racuna stranke po stevilki racuna. V kolikor stranka nima vec nobenega racuna na banki, naj se izbrise iz seznama strank. */
-        }
-        public static void Naloga20()
-        {
-            /* Naloga 8.3.0.5. Ustvarite razred UporabniskiVmesnik za upravljanje banke. Uporabnik naj ima na voljo kreiranje novega bancnega racuna, brisanje obstojecega bancnega racuna in vpogled v stanje svojih bancnih racunov. Ob tem naj ima moznost tudi upravljanja z dolocenim bancnim racunom, kjer lahko opravi polog, izplacilo ali pa izpis transakcij na
-                bancnem racunu. */
-        }
-
-        public static void Naloga21()
-        {
-            /* Naloga 8.3.0.6. Programu za upravljanje z banko dodajte moznost za shranjevanje podatkov v datoteko in branje iz nje tako, da boste lahko vsakic, ko ponovno poˇzenete program ponovno upravljali z enakim stanjem, kot ste program zakljucili. */
-        }
-        public static void Naloga22()
-        {
-            /* Naloga 8.3.0.7 (Dodatno). V program za upravljanje banke v celoti vkljucite moznost za nakazilo sredstev na poljuben obstojeci bancni racun glede na stevilo racuna. */
-        }
     }
 
 
@@ -281,6 +267,184 @@
             return $"Podatki o dijaku:\n ime: {Ime} \n Predmeti na Maturi: {string.Join(", ", PredmetiNaMaturi)} \n Število točk na maturi: {SteviloTockNaMaturi} \n Končni uspeh: {KoncniUspeh}";
         }
     }
+    /* Razred Razred naj vsebuje: Lastnosti SeznamDijakov in Razrednik. Konstruktor, ki inicializira seznam dijakov in kot parameter dobi razrednika. Metodo, ki izpise povprecno stevilo tock dijakov razreda na maturi. V metodi Main kreirajte instanco razreda Razred, ki naj vsebuje vsaj pet dijakov in izpisite podatke o vseh dijakih, ki so na maturi dosegli vsaj 24 tock. */
+    public class Razred
+    {
 
-    public class Razred { }
+        public List<Dijak> Dijaki;
+        public string Razrednik { get; set; }
+
+        public Razred(string razrednik)
+        {
+            Razrednik = razrednik;
+            List<string> predmeti = new List<string>() { "Matematika", "Nemščina", "Slovenščina", "Filozofija", "Sociologija" };
+            Dijak Ana = new Dijak("Ana", predmeti, 24, "odločno");
+            Dijak Anja = new Dijak("Anja", predmeti, 20, "prav dobro");
+            Dijak Luka = new Dijak("Luka", predmeti, 23, "odločno");
+            Dijak Peter = new Dijak("Peter", predmeti, 24, "odločno");
+            Dijak Nika = new Dijak("Nika", predmeti, 24, "prav dobro");
+            Dijak Anze = new Dijak("Anze", predmeti, 22, "prav dobro");
+            Dijaki = new List<Dijak>() { Ana, Anja, Luka, Peter, Nika, Anze };
+        }
+
+
+
+        public int povprecjeTock()
+        {
+            int vseTocke = 0;
+            for (int i = 0; i < Dijaki.Count; i++)
+            {
+
+                vseTocke += Dijaki[i].SteviloTockNaMaturi;
+            }
+
+            return vseTocke / Dijaki.Count();
+        }
+
+    }
+
+    /* Naloga 8.3.1.5. Pripravite razreda Igralec in NogometniKlub. Razred Igralec naj vsebuje: Lastnosti Ime, CenaIgralca, Polozaj (napadalec, vezni, vratar,...), Starost (tej lastnosti lahko vrednost nastavimo samo v konstruktorju!). En konstruktor, ki omogoca dolocitev natanko dveh lastnosti, in en konstruktor, ki omogoca dolocitev vsaj treh lastnosti. Povozite metodo ToString, ki naj izpise vse podatke o igralcu. Razred NogometniKlub naj vsebuje: Lastnosti SeznamIgralcev in VisinaProracuna. Konstruktor, ki inicializira seznam igralcev in nastavi visino proracuna. Metodo, ki izpise vse igralce, ki imajo ceno visjo od danega maksimuma. V metodi Main kreirajte instanco razreda NogometniKlub, ki naj vsebuje vsaj pet igralcev in izpisite podatke o vseh igralcih, ki imajo ceno vsaj 100 000 evrov in so mlajsi od 30 let.*/
+
+    public class Igralec
+    {
+        public Igralec(string ime, int cenaIgralca, string polozaj, int starost)
+        {
+            Ime = ime;
+            CenaIgralca = cenaIgralca;
+            Polozaj = polozaj;
+            Starost = starost;
+        }
+        public Igralec(string ime, int starost)
+        {
+            Ime = ime;
+            Starost = starost;
+        }
+        public string Ime { get; set; }
+        public int CenaIgralca { get; set; }
+        public string Polozaj { get; set; }
+        public int Starost { get; set; }
+
+        public override string ToString()
+        {
+            return $"Ime: {Ime}, cena igralca: {CenaIgralca}, polozaj: {Polozaj}, starost: {Starost}";
+        }
+    }
+
+    /*  Razred NogometniKlub naj vsebuje: Lastnosti SeznamIgralcev in VisinaProracuna. Konstruktor, ki inicializira seznam igralcev in nastavi visino proracuna. Metodo, ki izpise vse igralce, ki imajo ceno visjo od danega maksimuma. V metodi Main kreirajte instanco razreda NogometniKlub, ki naj vsebuje vsaj pet igralcev in izpisite podatke o vseh igralcih, ki imajo ceno vsaj 100 000 evrov in so mlajsi od 30 let.*/
+    public class NogometniKlub
+    {
+        public NogometniKlub(List<Igralec> seznamIgralcev, int visinaProracuna)
+        {
+
+            SeznamIgralcev = seznamIgralcev;
+            VisinaProracuna = visinaProracuna;
+        }
+        public List<Igralec> SeznamIgralcev { get; set; }
+        public int VisinaProracuna { get; set; }
+
+        public void predragiIgralci()
+        {
+            List<string> predragiIgralec = new List<string>();
+
+            for (int i = 0; i < SeznamIgralcev.Count; i++)
+            {
+                if (SeznamIgralcev[i].CenaIgralca > VisinaProracuna)
+                {
+                    predragiIgralec.Add(SeznamIgralcev[i].Ime);
+                }
+            }
+
+            Console.Write("Ti igralci imajo višjo ceno od minimuma: ");
+            foreach (string el in predragiIgralec)
+            {
+                Console.Write(" " + el);
+            }
+            Console.WriteLine();
+
+        }
+    }
+
+    /* Naloga 8.3.1.1. Napisite razred Figura, ki predstavlja sahovsko figuro. Razmislite, katere lastnosti bi figura morala imeti, in jih implementirajte. Podobno implementirajte tudi vsaj eno metodo zanjo.*/
+    //ime, barva, material
+
+    public class Figura
+    {
+        public Figura(string ime, string barva, string material)
+        {
+            Ime = ime;
+            Barva = barva;
+            Material = material;
+        }
+
+        public string Ime { get; set; }
+        public string Barva { get; set; }
+        public string Material { get; set; }
+
+        public string lastnostiFigure()
+        {
+            return $"Ime: {Ime} Barva: {Barva} Material: {Material}";
+        }
+    }
+
+    /* Naloga 8.3.1.2. Definirajte razred Glagol, ki bo kot vrednost prejel nek glagol, njegove dodatne lastnosti pa bodo Oseba, Stevilo, Cas. Napisite tudi objektno metodo, ki bo vrnila seznam vseh oblik glagola za vse osebe v ednini (vsaj za nekatere korene glagolov).*/
+
+    public class Glagol
+    {
+        public Glagol(string beseda, string oseba, string stevilo, string cas, string spol)
+        {
+            Beseda = beseda;
+            Oseba = oseba;
+            Stevilo = stevilo;
+            Cas = cas;
+            Spol = spol;
+        }
+
+        public string Beseda { get; set; }
+        public string Oseba { get; set; }
+        public string Stevilo { get; set; }
+        public string Cas { get; set; }
+        public string Spol { get; set; }
+
+        public List<string> glagolVEdnini()
+        {
+            List<string> sklanjatve = new List<string>();
+            for (int i = 1; i <= 6; i++)
+            {
+                string krajsaBeseda = Beseda.Substring(0, Beseda.Length - 1);
+                if (Spol.ToLower() == "moski")
+                {
+                    if (i == 1) sklanjatve.Add(Beseda);
+                    else if (i == 2) sklanjatve.Add(Beseda + "a");
+                    else if (i == 3) sklanjatve.Add(Beseda + "u");
+                    else if (i == 4) sklanjatve.Add(Beseda + "a");
+                    else if (i == 5) sklanjatve.Add(Beseda + "u");
+                    else if (i == 6) sklanjatve.Add(Beseda + "om");
+                    else break;
+                }
+                else if (Spol.ToLower() == "zenski")
+                {
+                    if (i == 1) sklanjatve.Add(Beseda);
+                    else if (i == 2) sklanjatve.Add(krajsaBeseda + "e");
+                    else if (i == 3) sklanjatve.Add(krajsaBeseda + "i");
+                    else if (i == 4) sklanjatve.Add(krajsaBeseda + "o");
+                    else if (i == 5) sklanjatve.Add(krajsaBeseda + "i");
+                    else if (i == 6) sklanjatve.Add(krajsaBeseda + "o");
+                    else break;
+                }
+                else
+                {
+                    if (i == 1) sklanjatve.Add(Beseda);
+                    else if (i == 2) sklanjatve.Add(krajsaBeseda + "a");
+                    else if (i == 3) sklanjatve.Add(krajsaBeseda + "u");
+                    else if (i == 4) sklanjatve.Add(krajsaBeseda + "o");
+                    else if (i == 5) sklanjatve.Add(krajsaBeseda + "u");
+                    else if (i == 6) sklanjatve.Add(krajsaBeseda + "om");
+                    else break;
+                }
+
+            }
+            return sklanjatve;
+
+        }
+    }
 }
