@@ -6,7 +6,9 @@
         {
 
 
-
+//Naloga1.UganiBesedo();
+//Naloga3.ResitevNaloge();
+Naloga4.ResitevNaloge();
 
 
 

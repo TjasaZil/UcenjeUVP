@@ -22,5 +22,26 @@
         /// V metodi ResitevNaloge pripravite klic metode, ki za parameter
         /// dobi število n, ki naj ga poda uporabnik.                               [5 točk]
         /// </summary>
+        public static void Postevanka(int stevilo)
+        {
+            for (int i = 1; i <= stevilo; i++)
+            {
+                for (int j = 1; j <= stevilo; j++)
+                {
+                    int zmnozek = i * j;
+                    int vsota = i  + j -1;
+                    if (vsota % 2 != 0 && i!=1 && j!=1 && i!=stevilo && j!=stevilo) Console.Write(" * ");
+                    else Console.Write(" " + zmnozek + " ");
+                }
+                Console.WriteLine();
+            }
+        }
+
+        public static void ResitevNaloge()
+        {
+            Console.Write("Vpiši naravno celo število: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            Postevanka(n);
+        }
     }
 }

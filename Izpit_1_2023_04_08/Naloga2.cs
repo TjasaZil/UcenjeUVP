@@ -30,5 +30,32 @@
         /// od tega vsak natanko eno jed tipa Sladica. 
         /// Na koncu oba menuja tudi izpišite                       [5 točk]
         /// </summary>
+        ///
+        /// 
+    }
+    
+    public class Menu
+    {
+        public Menu(string dan)
+        {
+            Dan = dan;
+            Jedi = new List<Jed>();
+        }
+
+        public string Dan { get; set; }
+
+        public List<Jed> Jedi { get; set; }
+    }
+
+    public class Jed
+    {
+        public Jed(string naziv, double cena)
+        {
+            Naziv = naziv;
+            Cena = cena;
+        }
+
+        public string Naziv { get; set; }
+        public double Cena { get; set; }
     }
 }
