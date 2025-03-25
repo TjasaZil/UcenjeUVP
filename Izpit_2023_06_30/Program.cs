@@ -5,6 +5,10 @@
         static void Main(string[] args)
         {
 
+            //Naloga1.ResitevNaloge();
+            //Naloga2.ResitevNaloge();
+            //Naloga3.ResitevNaloge();
+            Naloga4.ResitevNaloge();
 
 
 
@@ -14,6 +18,7 @@
 
 
 
+            Console.ReadLine();
         }
     }
 }

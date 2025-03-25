@@ -20,5 +20,44 @@
         /// Na koncu izpišite vse artikle na seznamu uporabnika in skupno število kosov. [5 točk]
         /// </summary>
         /// 
+
+        public static void ResitevNaloge()
+        {
+            List<Artikel> nakupovalniSeznam = new List<Artikel>();
+            while (true)
+            {
+                Console.Write("Napišite ime artikla ali zaključite vnos (X): ");
+                string imeArtikla = Console.ReadLine();
+                Console.WriteLine();
+                if (imeArtikla == "X") break;
+                Console.Write("Napišite število kosov: ");
+                int stKosov = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine();
+
+
+                nakupovalniSeznam.Add(new Artikel(imeArtikla, stKosov));
+            }
+            int kosi = 0;
+            foreach (var el in nakupovalniSeznam)
+            {
+                Console.WriteLine($"Ime artikla: {el.Ime}\nKolicina artikla: {el.Kolicina}");
+                Console.WriteLine();
+                kosi += el.Kolicina;
+            }
+            Console.WriteLine("Skupno število kosov: " + kosi);
+        }
+
+        public class Artikel
+        {
+            public Artikel(string ime, int kolicina)
+            {
+                Ime = ime;
+                Kolicina = kolicina;
+            }
+            public string Ime { get; set; }
+            public int Kolicina { get; set; }
+        }
     }
+
+
 }

@@ -6,11 +6,12 @@
         {
 
 
-//Naloga1.UganiBesedo();
-//Naloga3.ResitevNaloge();
-Naloga4.ResitevNaloge();
+            //Naloga1.UganiBesedo();
+            //Naloga2.ResitevNaloge();
+            //Naloga3.ResitevNaloge();
+            //Naloga4.ResitevNaloge();
 
-
+            Console.ReadLine();
 
 
         }
