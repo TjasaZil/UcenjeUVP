@@ -7,8 +7,9 @@ internal class UstvariZapis
         Console.Write("Prosim zapišite naslov datoteke: ");
         string fileName = Console.ReadLine();
         Console.WriteLine();
+        //Preveri če file mogoče že obstaja. Če že obstaja potem lahko samo popraviš zapis ali ga ustvariš
         string pravaPot = "C:/Users/tjasa/RiderProjects/UcenjeUVP/PersonalDiary/bin/Debug/net8.0/" + fileName +".txt";
-        StreamWriter swFile = new StreamWriter(fileName);
+        StreamWriter swFile = new StreamWriter(fileName+"txt");
         Zapis zapis = new Zapis();
         //podatki za zapis
         zapis.Cas=DateTime.Now;

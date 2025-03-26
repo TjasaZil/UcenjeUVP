@@ -17,7 +17,7 @@ class Program
             try
             {
                 Console.WriteLine(
-                    "Kaj želite storiti?:\n1 - Ustvari nov zapis\n2 - preberi obstoječi zapis\n3 - popravi obstoječi zapis\nX - zapri aplikacijo");
+                    "Kaj želite storiti?:\n1 - Ustvari nov zapis\n2 - preberi obstoječi zapis\n3 - popravi obstoječi zapis\n4 - izpiši imena vseh tekstovnih datotek\nX - zapri aplikacijo");
                 string userInput = Console.ReadLine();
                 if (userInput == "X" || userInput == "x") break;
                 if (userInput == "1") Metode.UstvariZapis.Ustvari();
