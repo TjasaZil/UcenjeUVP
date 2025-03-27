@@ -21,5 +21,54 @@
         /// in izpišite rezultat v ukazno vrstico.                                      [3 točke]
         /// </summary>
         /// 
+
+        public static void ResitevNaloge()
+        {
+            string filePath1 = "Viri/matrix.txt";
+            string filePath2 = "Viri/matrixBig.txt";
+
+            Console.WriteLine($"Rezultat za manjšo datoteko: {ManipulacijaDatotek(filePath1)}");
+            Console.WriteLine($"Rezultat za večjo datoteko: {ManipulacijaDatotek(filePath2)}");
+
+        }
+
+        public static int ManipulacijaDatotek(string pot)
+        {
+            StreamReader srFile = new StreamReader(pot);
+            List<int> najvecjeStevilke = new List<int>();
+            List<int> najmanjseStevilke = new List<int>();
+            while (srFile.EndOfStream == false)
+            {
+                string line = srFile.ReadLine();
+                string[] tabela = line.Split("\t");
+                int min = int.Parse(tabela[0]);
+                int max = int.Parse(tabela[0]);
+                for (int i = 0; i < tabela.Length; i++)
+                {
+                    if (min > int.Parse(tabela[i])) min = int.Parse(tabela[i]);
+                    else if (max < int.Parse(tabela[i])) max = int.Parse(tabela[i]);
+                }
+                najvecjeStevilke.Add(max);
+                najmanjseStevilke.Add(min);
+            }
+            int vsotaNajvecjih = VsotaStevk(najvecjeStevilke);
+            int vsotaNajmanjsih = VsotaStevk(najmanjseStevilke);
+
+            return vsotaNajvecjih - vsotaNajmanjsih;
+        }
+
+        public static int VsotaStevk(List<int> stevilke)
+        {
+            int vsota = 0;
+            foreach (var el in stevilke)
+            {
+
+                vsota += el;
+            }
+            return vsota;
+
+        }
     }
+
+
 }

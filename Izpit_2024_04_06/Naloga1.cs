@@ -19,5 +19,36 @@
         /// ki vsebujejo znak 'a'.                                              [5 točk]
         /// </summary>
         /// 
+        public static void ResitevNaloge()
+        {
+            List<string> seznam = new List<string>() { "banAna", "Ananas", "Bo", "Lučka", "LimonA", "KoLO" };
+            char znak = 'a';
+            int steviloBesed = Frekvenca(seznam, znak);
+            Console.WriteLine($"Število besed ki vsebujejo znak {znak} je : {steviloBesed}");
+        }
+
+        public static int Frekvenca(List<string> seznam, char znak)
+        {
+            int steviloBesed = 0;
+            foreach (var beseda in seznam)
+            {
+                int stevecCrk = 0;
+                if (beseda.ToLower().Contains(znak.ToString().ToLower()))
+                {
+                    steviloBesed++;
+                }
+                string manjsaBeseda = beseda.ToLower();
+                int stevecZnaka = 0;
+                for (int i = 0; i < manjsaBeseda.Length; i++)
+                {
+                    if (manjsaBeseda[i].ToString() == znak.ToString().ToLower()) stevecZnaka++;
+                }
+                //če dani znak vsebuje vsaj dvakrat
+                if (stevecZnaka > 1) Console.WriteLine(beseda);
+            }
+
+            return steviloBesed;
+        }
     }
+
 }

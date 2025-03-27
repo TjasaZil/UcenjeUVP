@@ -4,11 +4,11 @@ class Program
 {
     static void Main(string[] args)
     {
-       /*
-         * Aplikacija kjer lahko user vpisuje notri različne stvari in se te potem shranijo v datotelko
-         * lahko dodajamo ali beremo zapise.
-         */
-      ZazeniAplikacijo();
+        /*
+          * Aplikacija kjer lahko user vpisuje notri različne stvari in se te potem shranijo v datoteko
+          * lahko dodajamo ali beremo zapise -> opcijsko se zapisi lahko tudi urejajo
+          */
+        ZazeniAplikacijo();
     }
     public static void ZazeniAplikacijo()
     {
@@ -37,13 +37,13 @@ class Program
             {
                 Console.WriteLine(ex.Message);
             }
-            
-            catch(Exception ex)
+
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
         }
-        
+
     }
 
-   }
+}
