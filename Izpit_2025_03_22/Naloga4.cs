@@ -28,5 +28,39 @@ public class Naloga4
         string filePath1 = "Viri/matrix.txt";
         string filePath2 = "Viri/matrixBig.txt";
 
-    }                
+        AnalizaZadnjih(filePath1, "Viri/novaMatrix.txt");
+        AnalizaZadnjih(filePath2, "Viri/novaMatrixBig.txt");
+
+    }
+
+
+    public static void AnalizaZadnjih(string pot, string novaDatoteka)
+    {
+        StreamReader srFile = new StreamReader(pot);
+        StreamWriter swFile = new StreamWriter(novaDatoteka, false);
+        while (srFile.EndOfStream == false)
+        {
+            string line = srFile.ReadLine();
+            string[] tabela = line.Split("\t");
+            int zadnjaStevka = int.Parse(tabela[tabela.Length - 1]); //prebere zadnjo stevko ampak kaj z njo nrdi?
+            int prvaStevka = int.Parse(tabela[0]);
+            int min = prvaStevka;
+            foreach (var stevka in tabela)
+            {
+                if (int.Parse(stevka) < min) min = int.Parse(stevka);
+            }
+            int Vsota = prvaStevka + min;
+            tabela[0] = Vsota.ToString();
+            string niz = "";
+            //spremenimo nazaj iz tabele v niz ki loči s tabulatorjem preden zapišemo
+            foreach (var el in tabela)
+            {
+                niz += el + "\t";
+            }
+            swFile.WriteLine(niz);
+        }
+        swFile.Flush();
+        srFile.Close();
+        swFile.Close();
+    }
 }

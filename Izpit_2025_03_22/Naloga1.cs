@@ -22,6 +22,30 @@ public class Naloga1
     /// </summary>
     public static void ResitevNaloge()
     {
+        List<double> seznam = new List<double>() { 1.23, 5.6, 9.18, 13.2, 10.7, 12.4, 1.53, 5.4, 10.18, 14.2, 10.17, 13.4 };
+        Zaokrozevanje(seznam);
+    }
 
+    public static void Zaokrozevanje(List<double> seznamDecimalk)
+    {
+        double povprecjeZaokrozenih = 0;
+        int zaokrozeneNavzgor = 0;
+        for (int i = 0; i < seznamDecimalk.Count; i++)
+        {
+            double decimalka = seznamDecimalk[i] % 1;
+            if (decimalka < 0.5) seznamDecimalk[i] = seznamDecimalk[i] - decimalka;
+            else
+            {
+                //Console.WriteLine(seznamDecimalk[i]);
+                seznamDecimalk[i] = (seznamDecimalk[i] - decimalka + 1);
+                //Console.WriteLine(seznamDecimalk[i] + "*");
+                zaokrozeneNavzgor++;
+            }
+            povprecjeZaokrozenih += seznamDecimalk[i];
+        }
+
+        double povprecje = povprecjeZaokrozenih / seznamDecimalk.Count;
+        Console.WriteLine($"Na gor smo zaokrožili {zaokrozeneNavzgor} številk v seznamu");
+        Console.WriteLine($"Povprečna vrednost zaokroženih števil je: {povprecje:0.00}");
     }
 }
