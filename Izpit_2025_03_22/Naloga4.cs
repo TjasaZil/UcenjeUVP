@@ -55,7 +55,7 @@ public class Naloga4
             if (stevka < min) min = stevka;
         }
         
-        //tole ni najbolj idealno ampak vseeno sem naredila tako ker se mi je zdela najbolj hitra rešitev.
+        //tole ni najbolj idealno ampak vseeno sem naredila tako ker se mi je zdela najbolj hitra rešitev brez dvojnih list.
         srFile.Close();
         srFile = new StreamReader(pot);
             
