@@ -8,31 +8,28 @@
         /// Menu predstavlja dnevni menu v restavraciji (glede na dan),
         /// ki ima kot lastnost tudi seznam jedi.
         /// Posamezna jed ima lastnosti naziv in cena.
-        /// 
+        
         /// Za razred Jed naredite podrazred Sladica, 
-        /// ki bo imel dodatno lastnost Kalorije.        da           [3 točke]
-        /// 
+        /// ki bo imel dodatno lastnost Kalorije.                   [3 točke]
+         
         /// V razredih Jed in Sladica povozite metodo ToString, 
-        /// da bo ustrezno vračala vse lastnosti instanc.    da       [5 točk]
-        /// 
+        /// da bo ustrezno vračala vse lastnosti instanc.           [5 točk]
+         
         /// Metodo ToString povozite tudi v razredu Menu,
         /// vrne naj niz z dnevom in vsemi jedmi, ki so na menuju, 
-        /// med seboj pa naj bodo ločene s prazno vrstico.   da       [5 točk]
-        /// 
+        /// med seboj pa naj bodo ločene s prazno vrstico.          [5 točk]
+          
         /// V razredu Menu napišite še metodo, ki bo izpisala skupno ceno menuja.
         /// Metoda naj ima vhodni parameter tipa bool, ki bo določal, 
         /// ali želite ob ceni plačati še 10% napitnine ali ne.
-        /// Če je vrednost parametra true, naj se skupna cena primerno izračuna. da
-        ///                                                         [7 točk]
-        ///                                                         
+        /// Če je vrednost parametra true, naj se skupna cena primerno izračuna. 
+                                                                 
         /// Za vsaj dva dni v tednu pripravite instanci razreda Menu,
         /// ki bosta imeli na seznamu jedi vsaj po tri jedi, 
         /// od tega vsak natanko eno jed tipa Sladica. 
         /// Na koncu oba menuja tudi izpišite                       [5 točk]
         /// </summary>
-        ///
-        /// 
-
+        
         /// Za vsaj dva dni v tednu pripravite instanci razreda Menu,
         /// ki bosta imeli na seznamu jedi vsaj po tri jedi, 
         /// od tega vsak natanko eno jed tipa Sladica. 
@@ -85,7 +82,7 @@
         }
 
 
-        public double cenaMenija(bool napitnina)
+        public double CenaMenija(bool napitnina)
         {
             double cena = 0;
             foreach (var jed in Jedi)
