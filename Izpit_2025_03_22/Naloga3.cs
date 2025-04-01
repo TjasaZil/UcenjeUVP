@@ -43,7 +43,7 @@ public class Naloga3
         Kostanj.Starost = 26;
         Kostanj.Volumen = 33.2;
         Kostanj.Visina = 15;
-        Iglavec Bor = new Iglavec("Bor", false);
+        Iglavec Bor = new Iglavec("Bor", true);
         Bor.Starost = 50;
         Bor.Volumen = 23.2;
         Bor.Visina = 13;
@@ -107,19 +107,17 @@ public class Iglavec : Drevo
     public bool JeZimzelen { get; set; }
     public override string ToString()
     {
-        return base.ToString() + $"Je Zimzelen: {JeZimzelen}\n";
+        string zimzelen = JeZimzelen ? "da" : "ne";
+        return base.ToString() + $"Je Zimzelen: {zimzelen}\n";
     }
 }
 
 
 public class Gozd
 {
-    public Gozd()
-    {
-        Drevesa = new List<Drevo>();
-    }
+   
     public string Lokacija { get; set; }
-    public List<Drevo> Drevesa { get; set; }
+    public List<Drevo> Drevesa { get; set; } = new List<Drevo>();
 
     public double VolumenIglavcev()
     {
@@ -143,9 +141,7 @@ public class Gozd
                 skupnaStarost += drevo.Starost;
                 stDreves++;
             }
-
         }
-
         return (double)skupnaStarost / stDreves;
     }
 }
