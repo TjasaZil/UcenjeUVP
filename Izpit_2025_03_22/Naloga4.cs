@@ -37,27 +37,45 @@ public class Naloga4
     public static void AnalizaZadnjih(string pot, string novaDatoteka)
     {
         StreamReader srFile = new StreamReader(pot);
-        StreamWriter swFile = new StreamWriter(novaDatoteka, false);
+        StreamWriter swFile = new StreamWriter(novaDatoteka);
+        List<int> zadnjeStevke = new List<int>();
+        
+        
         while (srFile.EndOfStream == false)
         {
             string line = srFile.ReadLine();
             string[] tabela = line.Split("\t");
             int zadnjaStevka = int.Parse(tabela[tabela.Length - 1]); //prebere zadnjo stevko ampak kaj z njo nrdi?
+            zadnjeStevke.Add(zadnjaStevka);
+           
+        }
+        int min = zadnjeStevke[0];
+        foreach (int stevka in zadnjeStevke)
+        {
+            if (stevka < min) min = stevka;
+        }
+        
+        //tole ni najbolj idealno ampak vseeno sem naredila tako ker se mi je zdela najbolj hitra rešitev.
+        srFile.Close();
+        srFile = new StreamReader(pot);
+            
+        while (srFile.EndOfStream == false)
+        {
+            string line = srFile.ReadLine();
+            string[] tabela = line.Split("\t");
             int prvaStevka = int.Parse(tabela[0]);
-            int min = prvaStevka;
-            foreach (var stevka in tabela)
-            {
-                if (int.Parse(stevka) < min) min = int.Parse(stevka);
-            }
-            int Vsota = prvaStevka + min;
-            tabela[0] = Vsota.ToString();
-            string niz = "";
-            //spremenimo nazaj iz tabele v niz ki loči s tabulatorjem preden zapišemo
-            foreach (var el in tabela)
-            {
-                niz += el + "\t";
-            }
-            swFile.WriteLine(niz);
+           
+           int Vsota = prvaStevka + min;
+           tabela[0] = Vsota.ToString();
+           string niz = "";
+           //spremenimo nazaj iz tabele v niz ki loči s tabulatorjem preden zapišemo
+           foreach (var el in tabela)
+           {
+               niz += el + "\t";
+           }
+           
+           swFile.WriteLine(niz);
+           
         }
         swFile.Flush();
         srFile.Close();
