@@ -29,6 +29,105 @@
         /// in na njegov seznam dodajte tri atletska orodja različnih tipov.
         ///                                                                 [5 točk]
         /// </summary>
-        ///
+
+
+        public static void ResitevNaloge()
+        {
+            AtletskiKlub klub = new AtletskiKlub();
+            klub.Naziv = "AK Novo Mesto";
+            klub.Naslov = "Mala ulica 123";
+            Kladivo kladivo = new Kladivo("proizvajalec 1", 30.2);
+            kladivo.LetnicaProizvodnje = 1992;
+            Kopje kopje = new Kopje("proizvajalec 2", 200.5);
+            kopje.LetnicaProizvodnje = 2020;
+            Krogla krogla = new Krogla("proizvajalec 3", 20.4);
+            krogla.LetnicaProizvodnje = 2002;
+            klub.SeznamOrodij.Add(krogla);
+            klub.SeznamOrodij.Add(kopje);
+            klub.SeznamOrodij.Add(kladivo);
+            Console.WriteLine(klub.ToString());
+
+        }
     }
+
+    public class AtletskoOrodje
+    {
+        public AtletskoOrodje(string proizvajalec)
+        {
+            Proizvajalec = proizvajalec;
+        }
+        public string Proizvajalec { get; set; }
+        public int LetnicaProizvodnje;
+
+        public override string ToString()
+        {
+            return $"Proizvajalec: {Proizvajalec}\nLetnicaProizvodnje: {LetnicaProizvodnje}\n";
+        }
+    }
+
+    public class Krogla : AtletskoOrodje
+    {
+        public Krogla(string proizvajalec, double radij) : base(proizvajalec)
+        {
+            Radij = radij;
+        }
+        public double Radij { get; set; }
+
+        public override string ToString()
+        {
+            return base.ToString() + $"Radij: {Radij}\n";
+        }
+    }
+    public class Kopje : AtletskoOrodje
+    {
+        public Kopje(string proizvajalec, double dolzina) : base(proizvajalec)
+        {
+            Dolzina = dolzina;
+        }
+        public double Dolzina { get; set; }
+
+        public override string ToString()
+        {
+            return base.ToString() + $"Dolzina: {Dolzina}\n";
+        }
+    }
+    public class Kladivo : AtletskoOrodje
+    {
+        public Kladivo(string proizvajalec, double teza) : base(proizvajalec)
+        {
+            Teza = teza;
+        }
+        public double Teza { get; set; }
+
+        public override string ToString()
+        {
+            return base.ToString() + $"Teza: {Teza}\n";
+        }
+    }
+
+
+    public class AtletskiKlub
+    {
+        public AtletskiKlub()
+        {
+            SeznamOrodij = new List<AtletskoOrodje>();
+        }
+        public string Naziv;
+        public string Naslov;
+        public List<AtletskoOrodje> SeznamOrodij;
+
+        public override string ToString()
+        {
+            string niz = "";
+            niz += $"Naslov: {Naslov}\nNaziv: {Naziv}\n";
+
+            foreach (var el in SeznamOrodij)
+            {
+                niz += el.ToString();
+            }
+            return niz;
+        }
+
+    }
+
 }
