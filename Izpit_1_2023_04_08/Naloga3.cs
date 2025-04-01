@@ -36,8 +36,6 @@
             igralci.Add(Anze);
             igralci.Add(Nikola);
             NogometniKlub klub = new NogometniKlub(1000000, igralci);
-            /// in izpišite podatke o vseh igralcih, ki imajo ceno vsaj 100_000 evrov 
-            /// in so mlajši od 30 let.          [5 točk]
 
             for (int i = 0; i < igralci.Count; i++)
             {
@@ -50,20 +48,12 @@
         }
     }
 
-    /// Razred Igralec naj vsebuje: 
-    /// -   Lastnosti Ime, CenaIgralca, Položaj (napadalec, vezni, vratar,...), Starost (tej lastnosti lahko vrednost nastavimo samo v konstruktorju!). da
-    /// -   En konstruktor, ki omogoča določitev natanko dveh lastnosti, 
-    ///     in en konstruktor, ki omogoča določitev vsaj treh lastnosti.
-    /// -   Povozite metodo ToString, ki naj izpiše vse podatke o igralcu.              [10 točk]
-
     public class Igralec
     {
-        public Igralec(string ime, string polozaj)
+        public Igralec(string ime, int starost)
         {
             Ime = ime;
-            CenaIgralca = 100000;
-            Polozaj = polozaj;
-            Starost = 29;
+            Starost = starost;
         }
 
         public Igralec(string ime, int cenaIgralca, string polozaj, int starost)
@@ -76,18 +66,13 @@
         public string Ime { get; set; }
         public int CenaIgralca { get; set; }
         public string Polozaj { get; set; }
-        public int Starost { get; set; }
+        public int Starost { get; } //brez seta ker je samo v konstruktorju možna nastavitev
 
         public override string ToString()
         {
             return $"Podatki o igralcu:\nIme: {Ime}\nCena igralca: {CenaIgralca}\nPolozaj: {Polozaj}\nStarost: {Starost}";
         }
     }
-
-    /// Razred NogometniKlub naj vsebuje:
-    /// -   Lastnosti SeznamIgralcev in VišinaProračuna. da
-    /// -   Konstruktor, ki inicializira seznam igralcev in nastavi višino proračuna. da
-    /// -   Metodo, ki izpiše vse igralce, ki imajo ceno višjo od danega maksimuma.     [10 točk]
 
     public class NogometniKlub
     {
