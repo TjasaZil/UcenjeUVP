@@ -21,5 +21,47 @@
         /// in izpišite rezultata v ukazno vrstico.                                     [5 točke]
         /// </summary>
         /// 
+
+        public static void ResitevNaloge()
+        {
+            string filePath1 = "Viri/matrix.txt";
+            string filePath2 = "Viri/matrixBig.txt";
+            int razlika1 = VsotaSodih(filePath1);
+            int razlika2 = VsotaSodih(filePath2);
+
+            Console.WriteLine("razlika med sodimi in lihimi za prvo datoteko: " + razlika1);
+            Console.WriteLine("razlika med sodimi in lihimi za drugo datoteko: " + razlika2);
+        }
+
+        public static int VsotaSodih(string pot)
+        {
+            string niz = "";
+
+            StreamReader srFile = new StreamReader(pot);
+
+            while (srFile.EndOfStream == false)
+            {
+                string line = srFile.ReadLine();
+                string[] table = line.Split("\t");
+                foreach (var el in table)
+                {
+                    niz += el;
+                }
+            }
+
+            int vsotaSoda = 0;
+            int vsotaLiha = 0;
+            for (int i = 0; i < niz.Length; i++)
+            {
+                if (i % 2 == 0) vsotaSoda += Convert.ToInt32(niz[i]);
+                else vsotaLiha += Convert.ToInt32(niz[i]);
+
+            }
+
+
+            return vsotaSoda - vsotaLiha;
+
+        }
+
     }
 }

@@ -32,5 +32,122 @@
         /// ceno najdražje naprave tega zaposlenega.                                [5 točk]
         /// </summary>
         /// 
+
+
+        public static void ResitevNaloge()
+        {
+            Zaposleni zaposleni = new Zaposleni();
+            Telefon telefon = new Telefon(2025, "Črna", false);
+            telefon.Cena = 1100.13M;
+            Tablica tablica = new Tablica(2024, 87, true);
+            tablica.Cena = 1300.13M;
+            Prenosnik prenosnik = new Prenosnik(2022, 15, true);
+            prenosnik.Cena = 3200.26M;
+            zaposleni.Naprave.Add(telefon);
+            zaposleni.Naprave.Add(tablica);
+            zaposleni.Naprave.Add(prenosnik);
+            MobilnaNaprava najdrazja = zaposleni.NajdrazjaNaprava();
+            Console.WriteLine("Cena najdražje naprave zaposlenega: " + najdrazja.Cena);
+        }
+    }
+
+
+    public class MobilnaNaprava
+    {
+        public MobilnaNaprava(int leto)
+        {
+            LetoIzdelave = leto;
+        }
+
+        public int LetoIzdelave { get; set; }
+        public decimal Cena;
+        public bool Ima5GModul;
+        public string TipProcesorja;
+
+        public override string ToString()
+        {
+
+            return $"LetoIzdelave:{LetoIzdelave}\nCena:{Cena}\nIma5GModul:{Ima5GModul}\nTipProcesorja:{TipProcesorja}\n";
+        }
+    }
+
+    public class Telefon : MobilnaNaprava
+    {
+
+        public Telefon(int leto, string barva, bool brezzicnoPolnjenje) : base(leto)
+        {
+            Barva = barva;
+            BrezzicnoPolnjenje = brezzicnoPolnjenje;
+        }
+        public string Barva { get; set; }
+        public bool BrezzicnoPolnjenje { get; set; }
+        public override string ToString()
+        {
+
+            return base.ToString() + $"Barva:{Barva}\nBrezzicnoPolnjenje:{BrezzicnoPolnjenje}\n";
+        }
+    }
+    public class Tablica : MobilnaNaprava
+    {
+
+        public Tablica(int leto, int zmogljivostBaterije, bool dela) : base(leto)
+        {
+            ZmogljivostBaterije = zmogljivostBaterije;
+            Dela = dela;
+        }
+        public int ZmogljivostBaterije { get; set; }
+        public bool Dela { get; set; }
+        public override string ToString()
+        {
+
+            return base.ToString() + $"ZmogljivostBaterije:{ZmogljivostBaterije}\nDela:{Dela}\n";
+        }
+    }
+    public class Prenosnik : MobilnaNaprava
+    {
+
+        public Prenosnik(int leto, double velikostEkrana, bool vecEkranov) : base(leto)
+        {
+            VelikostEkrana = velikostEkrana;
+            VecEkranov = vecEkranov;
+        }
+        public double VelikostEkrana { get; set; }
+        public bool VecEkranov { get; set; }
+        public override string ToString()
+        {
+
+            return base.ToString() + $"VelikostEkrana:{VelikostEkrana}\nVecEkranov:{VecEkranov}\n";
+        }
+    }
+
+    public class Zaposleni
+    {
+        public Zaposleni()
+        {
+            Naprave = new List<MobilnaNaprava>();
+        }
+        public List<MobilnaNaprava> Naprave;
+        public decimal SkupnaVrednost;
+
+        public MobilnaNaprava NajdrazjaNaprava()
+        {
+            MobilnaNaprava naprava = Naprave[0]; ;
+            for (int i = 0; i < Naprave.Count; i++)
+            {
+                if (Naprave[i].Cena > naprava.Cena) naprava = Naprave[i];
+            }
+
+            return naprava;
+        }
+        public MobilnaNaprava NajstarejsaNaprava()
+        {
+            MobilnaNaprava naprava = Naprave[0]; ;
+            for (int i = 0; i < Naprave.Count; i++)
+            {
+                if (Naprave[i].LetoIzdelave < naprava.LetoIzdelave) naprava = Naprave[i];
+            }
+
+            return naprava;
+        }
     }
 }
