@@ -38,6 +38,36 @@
             /// Nato v ukazno vrstico izpišite podatke o podjetju 
             /// ter katero vozilo iz voznega parka podjetja ima najbližji datum registracije. 
             /// </summary>
+
+            Vozilo motor = new Vozilo(12345678);
+            motor.Znamka="Mitsubishi";
+            motor.Letnik = 2022;
+            motor.Tip = "motor";
+            var dateMotor = new DateTime(2025, 9, 5, 20, 0, 0);
+            motor.DatumRegistracije= DateOnly.FromDateTime(dateMotor);
+            Vozilo kombi = new Vozilo(12345619);
+            kombi.Znamka="Ford";
+            kombi.Letnik = 2002;
+            kombi.Tip = "kombi";
+            var dateKombi = new DateTime(2025, 12, 3, 20, 0, 0);
+            kombi.DatumRegistracije= DateOnly.FromDateTime(dateKombi);
+            Vozilo avto = new Vozilo(10345678);
+            avto.Znamka="Renault";
+            avto.Letnik = 2016;
+            avto.Tip = "Avto";
+            var dateAvto = new DateTime(2026, 1, 5, 20, 0, 0);
+            avto.DatumRegistracije= DateOnly.FromDateTime(dateAvto);
+            
+            Podjetje podjetje = new Podjetje();
+            podjetje.Naslov = "Naslovna lica 123";
+            podjetje.Naziv = "Veliko podjetje";
+            podjetje.Dejavnost = "Deklica za vse";
+            podjetje.VozniPark.Add(kombi);
+            podjetje.VozniPark.Add(avto);
+            podjetje.VozniPark.Add(motor);
+            Console.WriteLine(podjetje.ToString());
+            string servis = podjetje.NaslednjaRegistracija().ToString();
+            Console.WriteLine("Najbližje servisiranju je: " + servis);
         }
     }
 
@@ -56,7 +86,7 @@
 
         public override string ToString()
         {
-            return $"VOZILO:\nRegistrska stevilka: {RegistrskaStevilka}\nZnamka: {Znamka}\nLetnik: {Letnik}\nTip: {Tip}\nDatum Registracije: {DatumRegistracije}\n";
+            return $"\nRegistrska stevilka: {RegistrskaStevilka}\nZnamka: {Znamka}\nLetnik: {Letnik}\nTip: {Tip}\nDatum Registracije: {DatumRegistracije}\n";
         }
 
     }
@@ -69,7 +99,7 @@
         public string Naziv { get; set; }
         public string Naslov { get; set; }
         public string Dejavnost { get; set; }
-        public List<Vozilo> VozniPark { get; set; }
+        public List<Vozilo> VozniPark { get; set; } = new List<Vozilo>();
 
         public override string ToString()
         {
