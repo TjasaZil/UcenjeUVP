@@ -1,6 +1,6 @@
-﻿namespace Izpit_2024_09_26
+﻿namespace PredizpitniTest
 {
-    internal class Naloga4
+    internal class Naloga1
     {
         /// <summary>
         /// NALOGA 4:
@@ -20,15 +20,13 @@
         /// V tej metodi pokličite pripravljeno metodo za obe datoteki. 
         /// Rezultat bosta dve novi datoteki.                                           [5 točke]
         /// </summary>
-        /// 
-
         public static void ResitevNaloge()
         {
             string filePath1 = "Viri/matrix.txt";
             string filePath2 = "Viri/matrixBig.txt";
 
+
+
         }
     }
-
-
 }

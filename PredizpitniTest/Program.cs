@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace Izpit_2024_09_26
+namespace PredizpitniTest
 {
     public class Program
     {
@@ -9,7 +9,11 @@ namespace Izpit_2024_09_26
             Naloga1 = 1,
             Naloga2 = 2,
             Naloga3 = 3,
-            Naloga4 = 4
+            Naloga4 = 4,
+            Naloga5 = 5,
+            Naloga6 = 6,
+            Naloga7 = 7,
+            Naloga8 = 8
         }
 
         static void Main(string[] args)
@@ -37,6 +41,26 @@ namespace Izpit_2024_09_26
                 case Naloge.Naloga4:
                     {
                         Naloga4.ResitevNaloge();
+                    }
+                    break;
+                case Naloge.Naloga5:
+                    {
+                        Naloga5.ResitevNaloge();
+                    }
+                    break;
+                case Naloge.Naloga6:
+                    {
+                        Naloga6.ResitevNaloge();
+                    }
+                    break;
+                case Naloge.Naloga7:
+                    {
+                        Naloga7.ResitevNaloge();
+                    }
+                    break;
+                case Naloge.Naloga8:
+                    {
+                        Naloga8.ResitevNaloge();
                     }
                     break;
                 default:

@@ -27,5 +27,7 @@
         /// izpišite skupen volumen vseh iglavcev v gozdu.                          [5 točk]
         /// </summary>
         /// 
+
+        public static void ResitevNaloge() { }
     }
 }

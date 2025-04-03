@@ -50,6 +50,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalDiary", "PersonalDi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Izpit_2025_03_22", "Izpit_2025_03_22\Izpit_2025_03_22.csproj", "{682A7FC0-74A0-4B89-910A-4439E9134749}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PredizpitniTest", "PredizpitniTest\PredizpitniTest.csproj", "{A849DE5C-1DCB-4BAF-ABDF-AFE52B2B2CBE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -136,6 +138,10 @@ Global
 		{682A7FC0-74A0-4B89-910A-4439E9134749}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{682A7FC0-74A0-4B89-910A-4439E9134749}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{682A7FC0-74A0-4B89-910A-4439E9134749}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A849DE5C-1DCB-4BAF-ABDF-AFE52B2B2CBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A849DE5C-1DCB-4BAF-ABDF-AFE52B2B2CBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A849DE5C-1DCB-4BAF-ABDF-AFE52B2B2CBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A849DE5C-1DCB-4BAF-ABDF-AFE52B2B2CBE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
