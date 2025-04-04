@@ -32,32 +32,26 @@
 
         public static void ResitevNaloge()
         {
-            //DateOnly today = DateOnly.FromDateTime(DateTime.Now)
-            /// V metodi ResitevNaloge kreirajte tri instance razreda Vozilo in 
-            /// eno instanco razreda Podjetje. 
-            /// Nato v ukazno vrstico izpišite podatke o podjetju 
-            /// ter katero vozilo iz voznega parka podjetja ima najbližji datum registracije. 
-            /// </summary>
 
             Vozilo motor = new Vozilo(12345678);
-            motor.Znamka="Mitsubishi";
+            motor.Znamka = "Mitsubishi";
             motor.Letnik = 2022;
             motor.Tip = "motor";
             var dateMotor = new DateTime(2025, 9, 5, 20, 0, 0);
-            motor.DatumRegistracije= DateOnly.FromDateTime(dateMotor);
+            motor.DatumRegistracije = DateOnly.FromDateTime(dateMotor);
             Vozilo kombi = new Vozilo(12345619);
-            kombi.Znamka="Ford";
+            kombi.Znamka = "Ford";
             kombi.Letnik = 2002;
             kombi.Tip = "kombi";
             var dateKombi = new DateTime(2025, 12, 3, 20, 0, 0);
-            kombi.DatumRegistracije= DateOnly.FromDateTime(dateKombi);
+            kombi.DatumRegistracije = DateOnly.FromDateTime(dateKombi);
             Vozilo avto = new Vozilo(10345678);
-            avto.Znamka="Renault";
+            avto.Znamka = "Renault";
             avto.Letnik = 2016;
             avto.Tip = "Avto";
             var dateAvto = new DateTime(2026, 1, 5, 20, 0, 0);
-            avto.DatumRegistracije= DateOnly.FromDateTime(dateAvto);
-            
+            avto.DatumRegistracije = DateOnly.FromDateTime(dateAvto);
+
             Podjetje podjetje = new Podjetje();
             podjetje.Naslov = "Naslovna lica 123";
             podjetje.Naziv = "Veliko podjetje";
