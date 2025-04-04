@@ -24,9 +24,7 @@
         {
             string filePath1 = "Viri/matrix.txt";
             string filePath2 = "Viri/matrixBig.txt";
-
-
-
+            //naredila že dvakrat
         }
     }
 }

@@ -22,6 +22,30 @@
         {
             string filePath1 = "Viri/matrix.txt";
             string filePath2 = "Viri/matrixBig.txt";
+            Console.WriteLine($"Stevilo vrstic kjer je vec lihih kot sodih stevil v vrstici, 1. datoteka:{ManipulacijaDatoteke(filePath1)}");
+            Console.WriteLine($"Stevilo vrstic kjer je vec lihih kot sodih stevil v vrstici, 2. datoteka:{ManipulacijaDatoteke(filePath2)}");
+        }
+
+        public static int ManipulacijaDatoteke(string pot)
+        {
+            StreamReader sr = new StreamReader(pot);
+            int stevec = 0;
+            while (sr.EndOfStream == false)
+            {
+                string line = sr.ReadLine();
+                string[] table = line.Split("\t");
+                int stLihih = 0;
+                int stSodih = 0;
+                foreach (string el in table)
+                {
+                    if (int.Parse(el) % 2 == 0) stSodih++;
+                    else stLihih++;
+                }
+                if (stLihih > stSodih) stevec++;
+            }
+            sr.Close();
+
+            return stevec;
         }
     }
 }

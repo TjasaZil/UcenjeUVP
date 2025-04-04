@@ -19,6 +19,7 @@
     internal class Naloga7
     {
         public static void ResitevNaloge() { }
+        //sem že dvakrat rešila
 
     }
 }
