@@ -1,100 +1,126 @@
-﻿namespace Izpit_2024_04_20
+﻿using System.Text;
+
+namespace Izpit_2024_04_20
 {
     internal class Program
     {
+
+
+        enum Naloge
+        {
+            Naloga1 = 1,
+            Naloga2 = 2,
+            Naloga3 = 3,
+            Naloga4 = 4
+        }
+
         static void Main(string[] args)
         {
-            /// <summary>
-            /// NALOGA 1:
-            /// 
-            /// Napišite metodo VelikeMale, ki kot parameter prejme besedilo. 
-            /// Naloga metode je zapisati prvo črko vsake besede v besedilu z veliko začetnico
-            /// (pri tem upoštevajte, da so besede med seboj ločene s presledki ali tabulatorji). 
-            /// Z veliko začetnico naj zapiše tudi vse samoglasnike (to so a, e, i, o in u) .
-            /// Ostale črke naj bodo zapisane z malimi črkami.                          
-            /// Popravljeno besedilo naj metoda vrne.                                   [20 točk]
-            /// 
-            /// V metodi ResitevNaloge pripravite neko besedilo z vsaj petimi besedami,
-            /// pokličite metodo VelikeMale in izpišite popravljeno besedilo, 
-            /// ki ga metoda vrne, v ukazno vrstico.                                    [5 točk]
-            /// </summary>
-            /// 
 
-            /// <summary>
-            /// NALOGA 2:
-            /// 
-            /// Člani atletskega kluba se z avtobusom odpravljajo na tekmovanje.
-            /// S seboj imajo kup atletske prtljage.
-            /// Da svoje opreme ne bi izgubili, si želijo pripraviti evidenco.
-            /// Pomagajte jim tako, da pripravite naslednje razrede.
-            /// 
-            /// Razred AtletskoOrodje, ki ima lastnosti Proizvajalec in LetnicaProizvodnje.
-            /// V razredu pripravite še natanko en konstruktor, 
-            /// ki kot parameter dobi proizvajalca orodja. 
-            /// Povozite tudi metodo ToString.                                  [6 točk]
-            /// 
-            /// Za razred AtletskoOrodje pripravite tri podrazrede, 
-            /// ki vsak predstavlja eno od atletskih orodij 
-            /// (npr. kroglo, kopje, disk, kladivo).
-            /// V vsakem razredu določite eno primerno specifično lastnost,
-            /// konstruktor in povozite metodo ToString.                        [10 točk]
-            /// 
-            /// Pripravite še razred AtletskiKlub, ki ima lastnosti
-            /// Naziv, Naslov in SeznamOrodij.
-            /// V njem povozite metodo ToString, ki naj vrača opis kluba.       [4 točk]
-            /// 
-            /// V metodi ResitevNaloge ustvarite eno instanco razreda AtletskiKlub 
-            /// in na njegov seznam dodajte tri atletska orodja različnih tipov.
-            ///                                                                 [5 točk]
-            /// </summary>
-            /// 
+            Naloge tipNaloge = ChooseSection<Naloge>();
 
-            /// <summary>
-            /// NALOGA 3:
-            /// Pripravite razreda Predstava in Gledalisce.
-            /// 
-            /// Razred Predstava naj vsebuje:
-            /// -   Lastnosti Naslov, Avtor, Datum, UraPricetka (kot celo število), 
-            ///     CasTrajanja (v urah, ki so lahko decimalno število).
-            /// -   Natanko en konstruktor, ki nastavi samo lastnost UraPricetka.                      
-            /// -   Metodo ToString, ki izpiše vse podrobnosti o predstavi.           [6 točk]
-            /// 
-            /// Razred Gledalisce naj vsebuje: 
-            /// -   Lastnosti Naziv, Naslov, Direktor, SeznamPredstav.
-            /// -   En konstruktor, ki omogoča določitev natanko dveh lastnosti, 
-            ///     in en prazen konstruktor, v katerem inicializirate seznam predstav.
-            /// -   Metodo ToString, ki naj izpiše vse podrobnosti o gledališču,
-            ///     vključno z vsemi predstavami.                                       [8 točk]
-            ///     
-            /// V razredu Gledalisce napišite še metodo IzpišiPredstave, 
-            /// ki v ukazno vrstico izpiše vse predstave, ki se končajo 
-            /// (pozor - končajo, ne začnejo!) do dane ure.
-            /// Število takih predstav pa metoda vrne.                                  [6 točk]
-            /// 
-            /// V metodi ResitevNaloge kreirajte instanco razreda Gledalisce, 
-            /// ki naj vsebuje vsaj tri predstave. 
-            /// Pokličite še metodo IzpišiPredstave.                                    [5 točk]
-            /// </summary>
-            /// 
+            switch (tipNaloge)
+            {
+                case Naloge.Naloga1:
+                    {
+                        Naloga1.ResitevNaloge();
+                    }
+                    break;
+                case Naloge.Naloga2:
+                    {
+                        Naloga2.ResitevNaloge();
+                    }
+                    break;
+                case Naloge.Naloga3:
+                    {
+                        Naloga3.ResitevNaloge();
+                    }
+                    break;
+                case Naloge.Naloga4:
+                    {
+                        Naloga4.ResitevNaloge();
+                    }
+                    break;
+                default:
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Ta izbira ni na voljo. Zapiram program...");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    break;
+            }
 
-            /// <summary>
-            /// NALOGA 4:
-            /// 
-            /// V mapi Viri imate pripravljeni dve datoteki s tabelama števil. 
-            /// Števila so v posamezni vrstici ločena s tabulatorjem.
-            /// 
-            /// Napišite metodo, ki kot parameter prejme pot do datoteke s tabelo števil.   
-            /// Metoda naj v vsaki vrstici preveri, če je v njej več sodih ali lihih števil.
-            /// Število vrstic, v katerih je (strogo) več lihih števil, naj metoda vrne.     [20 točk]
-            /// 
-            /// V metodi ResitevNaloge že imate pripravljeni dve spremenljivki 
-            /// s potema do datotek s primeroma tabel.
-            /// V tej metodi pokličite pripravljeno metodo za obe datoteki 
-            /// in izpišite rezultat v ukazno vrstico.                                      [5 točke]
-            /// </summary>
-            /// 
-
-
+            MakeFooter();
         }
+
+        private static void MakeFooter()
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write(" ----  ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("Konec izvajanja");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write(" ----  ");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.ReadLine();
+        }
+
+        private static T ChooseSection<T>() where T : Enum
+        {
+            // Izpis sekcij za izbiro 
+            int i = 1;
+            Console.WriteLine("--\t--\t--\t--");
+            Console.WriteLine($"{typeof(T).Name}:\n");
+            foreach (var section in Enum.GetValues(typeof(T)))
+            {
+                var value = Convert.ChangeType(section, Type.GetTypeCode(typeof(T)));
+                Console.WriteLine($"{value}. {section}");
+
+                if ((int)value > i)
+                    i = (int)value;
+            }
+            Console.WriteLine("\n--\t--\t--\t--");
+            Console.Write($"Choose {typeof(T).Name} to run: ");
+
+            string input = Console.ReadLine();
+            bool isFormatCorrect = int.TryParse(input, out int chosen);
+            if (!isFormatCorrect)
+            {
+                Console.WriteLine($"\n The input {input} is not an integer! The execution is stopped.");
+                return default;
+            }
+            else if (chosen < 0 || chosen > i)
+            {
+                Console.WriteLine($"\n There is no Section {input}! The execution is stopped.");
+                return default;
+            }
+
+            Console.Write("\n");
+            Console.WriteLine($"Running {typeof(T).Name} {(T)(object)chosen}...");
+            Console.Write("\n\n");
+
+            // Pretvorba (cast) iz int nazaj v enumeracijo ni možna 
+            // neposredno iz int (saj je enumeracija lahko kakega drugega
+            // celoštevilskega tipa), zato chosen najprej pretvorimo v
+            // object in šele nato v T.
+            return (T)(object)chosen;
+        }
+
+        public static string WriteCollection<T>(ICollection<T> collection)
+        {
+            StringBuilder output = new StringBuilder();
+            output.Append("{");
+            int counter = 0;
+            foreach (var item in collection)
+            {
+                if (counter > 0)
+                    output.Append($", {item}");
+                else
+                    output.Append($"{item}");
+                counter++;
+            }
+            output.Append("}");
+
+            return output.ToString();
+        }
+
     }
 }

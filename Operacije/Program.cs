@@ -7,19 +7,19 @@
         static void Main(string[] args)
         {
             //PREDAVANJA
-            Naloga1();
-            Naloga2();
-            Naloga3();
-            Naloga4();
-            Naloga5();
-            Naloga6();
-            Naloga7();
-            Naloga8();
-            Naloga9();
-            Naloga10();
-            Naloga11();
-            Naloga12();
-            Naloga13();
+            //Naloga1();
+            //Naloga2();
+            //Naloga3();
+            //Naloga4();
+            //Naloga5();
+            //Naloga6();
+            //Naloga7();
+            //Naloga8();
+            //Naloga9();
+            //Naloga10();
+            //Naloga11();
+            //Naloga12();
+            //Naloga13();
             Console.ReadLine();
         }
 
@@ -167,6 +167,25 @@
             v predavalnici in trenutno temperaturo zunaj. S pomocjo primerjav dolocite vrednost
             spremenljivki normalno, ki bo imela vrednost true, ce je zunaj kvecjemu 7 stopinj celzija,
             notri pa vsaj 21. */
+
+            Console.Write("Kakšna je temperatura zunaj?");
+            int temperaturaZunaj = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Kakšna je temperatura notri?");
+            int temperaturaNotri = Convert.ToInt32(Console.ReadLine());
+
+            bool normalno;
+
+            if (temperaturaZunaj <= 7 && temperaturaNotri >= 21)
+            {
+                normalno = true;
+            }
+            else
+            {
+                normalno = false;
+            }
+
+            Console.WriteLine($"Vrednost spremenljivke normalno je: {normalno}");
+
         }
         public static void Naloga13()
         {
@@ -174,6 +193,23 @@
             /* Naloga 3.3.1.4. Definirajte spremenljivko, v katero boste zapisali svojo visino, in spremenljivko spol, ki bo imela vrednost true, ce ste zenska, in false, ce ste moski. S pomocjo
             primerjav dolocite vrednost spremenljivki nadpovprecna, ki bo imela vrednost true, ce je
             vasa visina vsaj 180 cm, ce ste moski, in vsaj 170 cm, ce ste zenska. */
+
+            Console.Write("Kakšna je vaša višina?");
+            int visina = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine();
+            Console.Write("Kakšen je vaš spol?");
+            string spolString = Console.ReadLine();
+            bool spol;
+            bool nadpovprecna;
+
+            if (spolString == "ženska") spol = false;
+            else spol = true;
+
+            if (!spol && visina >= 170) nadpovprecna = true;
+            else if (spol && visina >= 180) nadpovprecna = true;
+            else nadpovprecna = false;
+
+            Console.WriteLine($"Vrednost spremenljivke nadpovprečna je: {nadpovprecna}");
 
         }
     }
